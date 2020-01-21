@@ -1,0 +1,83 @@
+Player: [playerName]     Style: [playerStyle]     Path: [playerPath]     Tier: [playerTier]
+Outward: [playerOutward]     Inward: [playerInward]     Background: [playerBackground]     Role: [playerRole]
+
+Spirit Bond: *** (up to three spirit bonds)
+
+Proficiency Bonus: [playerProficiency]
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+Max Stamina: [staminaMax]
+Stamina: [playerStamina]
+
+Max Fortitude: [fortitudeMax]
+Fortitude: [playerFortitude]
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+Power: [playerPower] ([powerBonus])
+[proficiency]Power Saving Throw: []
+
+Finesse: [playerFinesse] ([finesseBonus])
+[proficiency]Finesse Saving Throw: []
+
+Vitality: [playerVitality] ([vitalityBonus])
+[proficiency]Vitality Saving Throw: []
+
+Knowledge: [playerKnowledge] ([knowledgeBonus])
+[proficiency]Knowledge Saving Throw: []
+
+Reason: [playerReason] ([reasonBonus])
+[proficiency]Reason Saving Throw: []
+
+Character: [playerReason] ([reasonBonus])
+[proficiency]Character Saving Throw: []
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+Power:
+[athleticsProficiency]Athletics [modifier]
+
+Finesse:
+[acrobaticsProficiency]Acrobatics [modifier]
+[escamotageProficiency]Escamotage [modifier]
+[stealthProficiency]Stealth [modifier]
+
+Vitality:
+[willpowerProficiency]Willpower [modifier]
+
+Knowledge:
+[historyProficiency]History [modifier]
+[investigationProficiency]Investigation [modifier]
+[natureProficiency]Nature [modifier]
+[seafaringProficiency]Seafaring [modifier]
+[spiritProficiency]Spirit [modifier]
+
+Reason:
+[tamingProficiency]Taming [modifier]
+[huntingProficiency]Hunting [modifier]
+[inightProficiency]Insight [modifier]
+[medicineProficiency]Medicine [modifier]
+[perceptionProficiency]Perception [modifier]
+
+Character:
+[deceptionProficiency]Deception [modifier]
+[intimidationProficiency]Intimidation [modifier]
+[performaceProficiency]Performance [modifier]
+[persuasionProficiency]Persuasion [modifier]
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+Features:
+[featureList]
+
+Party Members: [partyMembers]
+
+Allies: [partyAllies]
+
+Important Notes: [importantNotes]
+
+Inventory: [inventory]
+
+Copper: [copper]  Silver: [silver]  Gold: [gold]
+
