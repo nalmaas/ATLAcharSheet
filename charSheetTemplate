@@ -7,6 +7,9 @@ Proficiency Bonus: [playerProficiency]
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
+Max Health: [healthMax]
+Health: [playerHealth]
+
 Max Stamina: [staminaMax]
 Stamina: [playerStamina]
 

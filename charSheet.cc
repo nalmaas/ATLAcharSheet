@@ -7,6 +7,14 @@ using namespace std;
 
 int userAnswer;
 int condition;
+int partyMax = 100;
+int alliesMax = 100;
+int notesMax = 100;
+int featureMax = 4;
+int inventoryMax = 100;
+int scrollMax = 14;
+
+//if you ever update these Max values make sure to change the corresponding array lengths
 
 string playerName;
 string playerStyle;
@@ -43,14 +51,18 @@ bool reasonSave;
 bool characterSave;
 
 string playerParty[100];
+int partyCount;
 string playerAllies[100];
+int alliesCount;
 string playerNotes[100];
+int notesCount;
 
 string featureName[4];
 string featureDescription[4];
+int featureCount;
 
-int inventoryCount;
 string inventory[100];
+int inventoryCount;
 
 int playerCopper;
 int playerSilver;
@@ -58,6 +70,7 @@ int playerGold;
 
 string scrollName[14];
 string scrollDescription[14];
+int scrollCount;
 
 bool athleticsProf;
 bool acrobaticsProf;
@@ -432,7 +445,35 @@ int createCharacter(){
         cin >> inventory[i];
     }*/
 
-//party member support will come later
+//party member support will maybe come later
+    while( condition == 0 ) {
+        cout << "How many party members do you have?" << endl;
+        cin >> userAnswer;
+        partyCount = userAnswer;    
+        data.open("Data/Other/partyCount.txt", std::fstream::trunc);
+        data << userAnswer;
+        data.close();
+        if ( userAnswer <= partyMax ) {
+            condition = 1;
+        }
+        else {
+            cout << "Maximum number of party members is " << partyMax << endl;
+        }   
+    }
+    condition = 0;
+    data.open("Data/Other/party.txt", std::fstream::trunc);
+    data << "";
+    data.close();
+    data.open("Data/Other/party.txt", std::fstream::app);
+    cout << "Enter the names of your party members. DO NOT USE ANY SPACES. PLEASE FOR THE LOVE OF GOD, I HAVEN'T FIGURED OUT HOW TO NOT MAKE THINGS BREAK" << endl;
+    for (int n = 0; n < userAnswer; n++) {
+        cout << (n + 1) << ". ";
+        cin >> playerParty[n];
+        data << playerParty[n] << endl;
+    }
+    data.close();
+
+
 //ally member support will come later
 //notes support will come later
 //features support will come later
@@ -972,6 +1013,18 @@ int loadCharacter(){
     data.close();
 
 //will add party members
+    ifstream extracting;
+    extracting.open("Data/Other/party.txt", std::ifstream::in);
+    int count = 0;
+    while(!extracting.eof() && count < partyCount)
+    {
+        getline(extracting, playerParty[count], '\n');
+        cout << count << ". " << playerParty[count] << endl;
+        count = count + 1;
+    }
+    extracting.close();
+
+
 //will add allies
 //will add notes
 //will add features
@@ -1067,6 +1120,7 @@ int loadCharacter(){
     data >> persuasionProf;
     data.close();
 
+    
     return 0;
 };
 
