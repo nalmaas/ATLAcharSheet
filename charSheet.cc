@@ -61,7 +61,7 @@ string featureName[4];
 string featureDescription[4];
 int featureCount;
 
-string inventory[100];
+string playerInventory[100];
 int inventoryCount;
 
 int playerCopper;
@@ -438,12 +438,33 @@ int createCharacter(){
     data.close();
 
 //inventory support will come later
-    /*cout << "How many items do you have in your inventory?" << endl;
-    cin >> inventoryCount;
-    for(int i = 0, i < inventoryCount, i++){
-        cout << "What is item number " << i << "?" << endl;
-        cin >> inventory[i];
-    }*/
+    while( condition == 0 ) {
+        cout << "How many items do you have in your inventory?" << endl;
+        cin >> userAnswer;
+        inventoryCount = userAnswer;    
+        data.open("Data/Other/inventoryCount.txt", std::fstream::trunc);
+        data << userAnswer;
+        data.close();
+        if ( userAnswer <= inventoryMax ) {
+            condition = 1;
+        }
+        else {
+            cout << "Maximum number of items is " << inventoryMax << endl;
+        }   
+    }
+    condition = 0;
+    data.open("Data/Other/inventory.txt", std::fstream::trunc);
+    data << "";
+    data.close();
+    data.open("Data/Other/inventory.txt", std::fstream::app);
+    cout << "Enter the names of your items. DO NOT USE ANY SPACES. PLEASE FOR THE LOVE OF GOD, I HAVEN'T FIGURED OUT HOW TO NOT MAKE THINGS BREAK. Instead use an underscore (_) to represent spaces." << endl;
+    for (int n = 0; n < userAnswer; n++) {
+        cout << (n + 1) << ". ";
+        cin >> playerInventory[n];
+        data << playerInventory[n] << endl;
+    }
+    data.close();
+
 
 //party member support will maybe come later
     while( condition == 0 ) {
@@ -1012,14 +1033,14 @@ int loadCharacter(){
     data >> characterSave;
     data.close();
 
-//will add party members
+//will add party members *added*
     ifstream extracting;
     extracting.open("Data/Other/party.txt", std::ifstream::in);
     int count = 0;
     while(!extracting.eof() && count < partyCount)
     {
         getline(extracting, playerParty[count], '\n');
-        cout << count << ". " << playerParty[count] << endl;
+        //cout << count << ". " << playerParty[count] << endl;
         count = count + 1;
     }
     extracting.close();
@@ -1028,7 +1049,18 @@ int loadCharacter(){
 //will add allies
 //will add notes
 //will add features
-//will add inventory
+
+
+//will add inventory *added*
+    extracting.open("Data/Other/inventory.txt", std::ifstream::in);
+    count = 0;
+    while(!extracting.eof() && count < inventoryCount)
+    {
+        getline(extracting, playerInventory[count], '\n');
+        //cout << count << ". " << playerInventory[count] << endl;
+        count = count + 1;
+    }
+    extracting.close();
 
     data.open("Data/Money/copper.txt");
     data >> playerCopper;
