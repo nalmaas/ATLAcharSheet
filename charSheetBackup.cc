@@ -13,7 +13,6 @@
 using namespace std;
 
 int userAnswer;
-string inputWait;
 int condition;
 int partyMax = 100;
 int alliesMax = 100;
@@ -158,101 +157,101 @@ struct characterInfo{
 
 string wT1S1name = "Water Blast";
 string wT1S1description = "Using a focused torrent of water, you blast an enemy from 20/40 feet, dealing 6d4 water damage.";
-int wT1S1diceType = 4;
-int wT1S1diceCount = 6;
-int wT1S1tier = 1;
+string wT1S1diceType = "4";
+string wT1S1diceCount = "6";
+string wT1S1tier = "1";
 
 string wT1S2name = "Rising Shield";
 string wT1S2description = "As a reaction, you pull up a water shield that can deflect or stop an incoming attack.";
-int wT1S2diceType = 0;
-int wT1S2diceCount = 0;
-int wT1S2tier = 1;
+string wT1S2diceType = "0";
+string wT1S2diceCount = "0";
+string wT1S2tier = "1";
 
 string wT1S3name = "Water Whip";
 string wT1S3description = "Lashing out at nearby objects or people, the water whip deals 6d4 water damage.  If the target’s fortitude is at or below 13, you may instead have the whip pull the target 10 feet closer.";
-int wT1S3diceType = 4;
-int wT1S3diceCount = 6;
-int wT1S3tier = 1;
+string wT1S3diceType = "4";
+string wT1S3diceCount = "6";
+string wT1S3tier = "1";
 
 string wT1S4name = "Frozen Ground";
 string wT1S4description = "Using quick, creeping tendrils of water, you wet the ground and freeze it in a 20 foot cone. Anyone attempting to cross this area will have to pass a DC 13 Finesse saving throw.";
-int wT1S4diceType = 0;
-int wT1S4diceCount = 0;
-int wT1S4tier = 1;
+string wT1S4diceType = "0";
+string wT1S4diceCount = "0";
+string wT1S4tier = "1";
 
 string wT1S5name = "Water Slash";
 string wT1S5description = "Taking a small amount of water, you slash at an enemy from 10/20 feet, dealing 7d4 water damage.";
-int wT1S5diceType = 4;
-int wT1S5diceCount = 7;
-int wT1S5tier = 1;
+string wT1S5diceType = "4";
+string wT1S5diceCount = "7";
+string wT1S5tier = "1";
 
 string wT2S1name = "wT2S1";
 string wT2S1description = "Placeholder";
-int wT2S1diceType = 1;
-int wT2S1diceCount = 1;
-int wT2S1tier = 2;
+string wT2S1diceType = "1";
+string wT2S1diceCount = "1";
+string wT2S1tier = "2";
 
 
 string eT1S1name = "Earth Blast";
 string eT1S1description = "Picking up a small, dense boulder, you launch it at a foe 20/40 feet away and deal 6d4 earth damage.";
-int eT1S1diceType = 4;
-int eT1S1diceCount = 6;
-int eT1S1tier = 1;
+string eT1S1diceType = "4";
+string eT1S1diceCount = "6";
+string eT1S1tier = "1";
 
 string eT1S2name = "Unstable Footing";
 string eT1S2description = "Using short, controlled stomp, you create unstable ground underneath the target up to 30 feet away if their fortitude is equal to or below 13. If successful, this will give the target disadvantage on their next attack.";
-int eT1S2diceType = 0;
-int eT1S2diceCount = 0;
-int eT1S2tier = 1;
+string eT1S2diceType = "0";
+string eT1S2diceCount = "0";
+string eT1S2tier = "1";
 
 string eT1S3name = "Rock Wall";
 string eT1S3description = "As a reaction, you bring up a 5 foot rock wall directly in front of you. This wall withstands one direct blow. Upon your next turn, it may be used as an improved Earth Blast (8d4).";
-int eT1S3diceType = 0;
-int eT1S3diceCount = 0;
-int eT1S3tier = 1;
+string eT1S3diceType = "0";
+string eT1S3diceCount = "0";
+string eT1S3tier = "1";
 //placeholder dice values
 string eT1S4name = "Jolting Column";
 string eT1S4description = "With a swift movement, you send a swift line of earth towards a target 20/40 feet away. Once this creeping mound reaches its target, a solid column of earth rises out of the ground and hits the target. Failing a Finesse save of 13 causes the target to fall prone and take 6d4 earth damage. Succeeding the save, the target takes half damage and stays upright. Using this move on a friendly target lets you be able to aid their movement. Adds a 5 foot boost vertically or horizontally in combat.";
-int eT1S4diceType = 4;
-int eT1S4diceCount = 6;
-int eT1S4tier = 1;
+string eT1S4diceType = "4";
+string eT1S4diceCount = "6";
+string eT1S4tier = "1";
 
 string eT1S5name = "eT1S5";
 string eT1S5description = "Placeholder";
-int eT1S5diceType = 1;
-int eT1S5diceCount = 1;
-int eT1S5tier = 1;
+string eT1S5diceType = "1";
+string eT1S5diceCount = "1";
+string eT1S5tier = "1";
 
 
 string fT1S1name = "Fire Blast";
 string fT1S1description = "With a powerful stance, you strike at an opponent, releasing a blast of flame that deals 6d4 fire damage within 20/40 feet.";
-int fT1S1diceType = 4;
-int fT1S1diceCount = 6;
-int fT1S1tier = 1;
+string fT1S1diceType = "4";
+string fT1S1diceCount = "6";
+string fT1S1tier = "1";
 
 string fT1S2name = "Flame Daggers";
 string fT1S2description = "Using constant, concentrated fire daggers, you attack one target within 5 feet twice and deal 4d4 fire damage per attack.";
-int fT1S2diceType = 4;
-int fT1S2diceCount = 4;
-int fT1S2tier = 1;
+string fT1S2diceType = "4";
+string fT1S2diceCount = "4";
+string fT1S2tier = "1";
 
 string fT1S3name = "Falling Strike";
 string fT1S3description = "Placeholder";
-int fT1S3diceType = 1;
-int fT1S3diceCount = 1;
-int fT1S3tier = 1;
+string fT1S3diceType = "1";
+string fT1S3diceCount = "1";
+string fT1S3tier = "1";
 
 string fT1S4name = "Streaming Fire";
 string fT1S4description = "Placeholder";
-int fT1S4diceType = 1;
-int fT1S4diceCount = 1;
-int fT1S4tier = 1;
+string fT1S4diceType = "1";
+string fT1S4diceCount = "1";
+string fT1S4tier = "1";
 
 string fT1S5name = "fT1S5";
 string fT1S5description = "Placeholder";
-int fT1S5diceType = 1;
-int fT1S5diceCount = 1;
-int fT1S5tier = 1;
+string fT1S5diceType = "1";
+string fT1S5diceCount = "1";
+string fT1S5tier = "1";
 
 //5,5,6,3 (bender)
 //6,3,6,3 (non-bender)
@@ -260,70 +259,70 @@ int fT1S5tier = 1;
 
 string aT1S1name = "Air Blast";
 string aT1S1description = "Unleashing a broad, unfocused blast of air, you deal 6d4 air damage within 20/40 feet.";
-int aT1S1diceType = 4;
-int aT1S1diceCount = 6;
-int aT1S1tier = 1;
+string aT1S1diceType = "4";
+string aT1S1diceCount = "6";
+string aT1S1tier = "1";
 
 string aT1S2name = "Air Push";
 string aT1S2description = "Using a powerful, precise burst of air, you push anyone within a 15 foot line up to 10 feet away, and they must make a DC 13 Finesse saving throw, falling prone on a failed save. If the target hits a solid object, they take 3d4 strike damage.";
-int aT1S2diceType = 4;
-int aT1S2diceCount = 3;
-int aT1S2tier = 1;
+string aT1S2diceType = "4";
+string aT1S2diceCount = "3";
+string aT1S2tier = "1";
 
 string aT1S3name = "Air Tier 1 Scroll 3";
 string aT1S3description = "Placeholder";
-int aT1S3diceType = 1;
-int aT1S3diceCount = 1;
-int aT1S3tier = 1;
+string aT1S3diceType = "1";
+string aT1S3diceCount = "1";
+string aT1S3tier = "1";
 
 string aT1S4name = "Air Deflect";
 string aT1S4description = "With cyclical movements, you can deflect incoming projectile attacks and move them to the right or left 5 feet.";
-int aT1S4diceType = 0;
-int aT1S4diceCount = 0;
-int aT1S4tier = 1;
+string aT1S4diceType = "0";
+string aT1S4diceCount = "0";
+string aT1S4tier = "1";
 
 string aT1S5name = "Air Tier 1 Scroll 5";
 string aT1S5description = "Placeholder";
-int aT1S5diceType = 1;
-int aT1S5diceCount = 1;
-int aT1S5tier = 1;
+string aT1S5diceType = "1";
+string aT1S5diceCount = "1";
+string aT1S5tier = "1";
 
 
 string dcbT1S1name = "Quick Jabs";
 string dcbT1S1description = "Using your fists, you may attack up to two times, targeting one enemy, or two enemies if both are within 5 feet of each other. Each jab does 3d4 strike damage.";
-int dcbT1S1diceType = 4;
-int dcbT1S1diceCount = 3;
-int dcbT1S1tier = 1;
+string dcbT1S1diceType = "4";
+string dcbT1S1diceCount = "3";
+string dcbT1S1tier = "1";
 
 string dcbT1S2name = "Dodge";
 string dcbT1S2description = "The next time you would be attacked, you dodge instead. If you use this move during your turn, you may still use it as a reaction before your next turn.";
-int dcbT1S2diceType = 0;
-int dcbT1S2diceCount = 0;
-int dcbT1S2tier = 1;
+string dcbT1S2diceType = "0";
+string dcbT1S2diceCount = "0";
+string dcbT1S2tier = "1";
 
 string ddT1S1name = "Slice";
 string ddT1S1description = "Using your weapon, you lash out at an enemy, dealing 6d4 strike damage.";
-int ddT1S1diceType = 4;
-int ddT1S1diceCount = 6;
-int ddT1S1tier = 1;
+stringddT1S1diceType = "4";
+stringddT1S1diceCount = "6";
+stringddT1S1tier = "1";
 
 string ddT1S2name = "Riposte";
 string ddT1S2description = "The next time you would take damage and are within 5 feet of an enemy, you may choose to attack that enemy. If you use this move during your turn, you may still use it as a reaction before your next turn.";
-int ddT1S2diceType = 0;
-int ddT1S2diceCount = 0;
-int ddT1S2tier = 1;
+stringddT1S2diceType = "0";
+stringddT1S2diceCount = "0";
+stringddT1S2tier = "1";
 
 string daT1S1name = "Throwing Knives";
 string daT1S1description = "Using three small throwing knives, you can throw them at up to three enemies within 20/40 feet. Each blade does 2d4 strike damage.";
-int daT1S1diceType = 4;
-int daT1S1diceCount = 2;
-int daT1S1tier = 1;
+stringdaT1S1diceType = "4";
+stringdaT1S1diceCount = "2";
+stringdaT1S1tier = "1";
 
 string daT1S2name = "Smoke Bomb";
 string daT1S2description = "Until your next turn, a 10 foot sphere of thick smoke appears centered on a point within 20 feet. As a reaction, the sphere is centered on yourself. If you use this move during your turn, you may use it as a reaction before your next turn.4";
-int daT1S2diceType = 0;
-int daT1S2diceCount = 0;
-int daT1S2tier = 1;
+stringdaT1S2diceType = "0";
+stringdaT1S2diceCount = "0";
+stringdaT1S2tier = "1";
 
 
 
@@ -347,8 +346,6 @@ characterInfo createCharacter();
 characterInfo loadCharacter();
 int characterSheet(characterInfo player);
 int diceRoll(int diceType, int diceCount, int diceMod);
-int statRoll(int statMod);
-int scrollRoll(int diceType, int diceCount, int diceMod, string description, string name);
 //int changeLine(string filePath, string fileBackup, string lineCount,  string replacement, int userChoice);
 
 int main(){
@@ -3031,154 +3028,11 @@ int characterSheet(characterInfo player){
             cout << (i + 1) << ". " << player.scrollName[i] << "\n  Tier: " << player.scrollTier[i] << "\n  -" << player.scrollDescription[i] << endl << endl;
         }
 
-        cout << "\n1. Roll for Stat\n2. Roll for Scroll Attack\n3. Roll for Weapon Attack\n4. Edit Something\n5. Quit\n";
-        cin >> userAnswer;
-        switch(userAnswer){
-            case 1:
-                cout << "1. Power\n2. Power Save\n3. Finesse\n4. Finesse Save\n5. Vitality\n6. Vitality Save\n7. Knowledge\n8. Knowledge Save\n9. Reason\n10. Reason Save\n11. Character\n12. Character Save\n13. Athletics\n14. Acrobatics\n15. Escamotage\n16. Stealth\n17. Willpower\n18. History\n19. Investigation\n20. Nature\n21. Seafaring\n22. Spirit\n23. Taming\n24. Hunting\n25. Insight\n26. Medicine\n27. Perception\n28. Deception\n29. Intimidation\n30. Performance\n31. Persuasion\n32. Back\n";
-                cin >> userAnswer;
-                switch(userAnswer){
-                    case 1:
-                       statRoll(player.powerMod);
-                       break;
-                    case 2:
-                       statRoll(player.powerSaveMod);
-                       break;
-                    case 3:
-                       statRoll(player.finesseMod);
-                       break;
-                    case 4:
-                       statRoll(player.finesseSaveMod);
-                       break;
-                    case 5:
-                       statRoll(player.vitalityMod);
-                       break;
-                    case 6:
-                       statRoll(player.vitalitySaveMod);
-                       break;
-                    case 7:
-                       statRoll(player.knowledgeMod);
-                       break;
-                    case 8:
-                       statRoll(player.knowledgeSaveMod);
-                       break;
-                    case 9:
-                       statRoll(player.reasonMod);
-                       break;
-                    case 10:
-                       statRoll(player.reasonSaveMod);
-                       break;
-                    case 11:
-                       statRoll(player.characterMod);
-                       break;
-                    case 12:
-                       statRoll(player.characterSaveMod);
-                       break;
-                    case 13:
-                       statRoll(player.athleticsMod);
-                       break;
-                    case 14:
-                       statRoll(player.acrobaticsMod);
-                       break;
-                    case 15:
-                       statRoll(player.escamotageMod);
-                       break;
-                    case 16:
-                       statRoll(player.stealthMod);
-                       break;
-                    case 17:
-                       statRoll(player.willpowerMod);
-                       break;
-                    case 18:
-                       statRoll(player.historyMod);
-                       break;
-                    case 19:
-                       statRoll(player.investigationMod);
-                       break;
-                    case 20:
-                       statRoll(player.natureMod);
-                       break;
-                    case 21:
-                       statRoll(player.seafaringMod);
-                       break;
-                    case 22:
-                       statRoll(player.spiritMod);
-                       break;
-                    case 23:
-                       statRoll(player.tamingMod);
-                       break;
-                    case 24:
-                       statRoll(player.huntingMod);
-                       break;
-                    case 25:
-                       statRoll(player.insightMod);
-                       break;
-                    case 26:
-                       statRoll(player.medicineMod);
-                       break;
-                    case 27:
-                       statRoll(player.perceptionMod);
-                       break;
-                    case 28:
-                       statRoll(player.deceptionMod);
-                       break;
-                    case 29:
-                       statRoll(player.intimidationMod);
-                       break;
-                    case 30:
-                       statRoll(player.performanceMod);
-                       break;
-                    case 31:
-                       statRoll(player.persuasionMod);
-                       break;
-                    default:
-                        break;
-                }
-                cout << "Input anything to continue...";
-                cin >> inputWait;
-                break;
-            case 2:
-                cout << "Which scroll?\n";
-                for(int i = 0; i < player.scrollCount; i++){
-                    cout << (i + 1) << ". " << player.scrollName[i] << endl;
-                }
-                cin >> userAnswer;
-                if( userAnswer > player.scrollCount ){
-                    cout << "Invalid Option\n"; 
-                } else{
-                    if(player.playerStyle == "Water"){
-                        scrollRoll(player.scrollDiceType[userAnswer - 1], player.scrollDiceCount[userAnswer - 1], player.finesseMod, player.scrollDescription[userAnswer - 1], player.scrollName[userAnswer - 1]);
-                    }else if(player.playerStyle == "Earth"){
-                        scrollRoll(player.scrollDiceType[userAnswer - 1], player.scrollDiceCount[userAnswer - 1], player.powerMod, player.scrollDescription[userAnswer - 1], player.scrollName[userAnswer - 1]);
-                    }else if(player.playerStyle == "Fire"){
-                        scrollRoll(player.scrollDiceType[userAnswer - 1], player.scrollDiceCount[userAnswer - 1], player.powerMod, player.scrollDescription[userAnswer - 1], player.scrollName[userAnswer - 1]);
-                    }else if(player.playerStyle == "Air"){
-                        scrollRoll(player.scrollDiceType[userAnswer - 1], player.scrollDiceCount[userAnswer - 1], player.powerMod, player.scrollDescription[userAnswer - 1], player.scrollName[userAnswer - 1]);
-//mod for air and devoted are set as power by default, go back and change later after Luis or Josh tells me the correct stat
-                    }else if(player.playerStyle == "Devoted"){
-                        scrollRoll(player.scrollDiceType[userAnswer - 1], player.scrollDiceCount[userAnswer - 1], player.powerMod, player.scrollDescription[userAnswer - 1], player.scrollName[userAnswer - 1]);
-                    }else{
-                        cout << "Pretty large error, you don't appear to have a valid style. I honestly don't know how you could have done that.\n";
-                        return 0;
-                    }
-                }
-                cout << "Input anything to continue...";
-                cin >> inputWait;
-                break;
-            case 3:
-                cout << "I haven't implemented weapons yet, soon though.";
-                break;
-            case 4:
-                cout << "I will implement editing soon (sooner than I implement weapons).";
-                break;
-            default:
-                return 0;
-        }
 
 
 
     //get rid of this return statement in final version
-        //return 0;
+        return 0;
 
     }
     //cout << player.playerName << endl << player.playerAllies[0] << endl;
@@ -3208,44 +3062,5 @@ int diceRoll(int diceType, int diceCount, int diceMod){
     }
     cout << "\nSum of all rolls is " << rollSum << endl;
     cout << "Sum of all roll without modifiers is " << rollSumNoMod << endl;
-    return 0;
-};
-int statRoll(int statMod){
-    ifstream data;
-    data.open("Data/Other/chat.txt", std::fstream::app);
-    int roll1;
-    int roll2;    
-    roll1 = (rand()%20) + 1;
-    roll2 = (rand()%20) + 1;    
-    if(statMod < 0){
-        cout << "First roll: " << roll1 + statMod << " (" << roll1 << " -" << abs(statMod) << ")\n";
-        //data >> "First roll: " << roll1 + statMod << " (" << roll1 << " -" << abs(statMod) << ")\n";
-        cout << "Second roll: " << roll2 + statMod << " (" << roll2 << " -" << abs(statMod) << ")\n";
-        //data >> "Second roll: " << roll2 + statMod << " (" << roll2 << " -" << abs(statMod) << ")\n";
-    } else{
-        cout << "First roll: " << roll1 + statMod << " (" << roll1 << " +" << statMod << ")\n";
-        //data >> "First roll: " << roll1 + statMod << " (" << roll1 << " +" << statMod << ")\n";
-        cout << "Second roll: " << roll2 + statMod << " (" << roll2 << " +" << statMod << ")\n";
-        //data >> "Second roll: " << roll2 + statMod << " (" << roll2 << " +" << statMod << ")\n";
-    }
-    return 0;
-};
-int scrollRoll(int diceType, int diceCount, int diceMod, string description, string name){
-    int roll;
-    int rollSum = 0;
-    cout << "(";
-    for(int i = 0; i < diceCount; i++){
-        roll = (rand()%diceType) + 1;
-        cout << roll << ", ";
-        rollSum = rollSum + roll;
-    }
-    //cout << ")\nYou rolled a " << rollSum + diceMod << "";
-    if(diceMod < 0){
-        cout << ")\nYou rolled a(n) " << rollSum + diceMod << " (" << rollSum << " -" << abs(diceMod) << ")\n";
-        return 0;
-    } else{
-        cout << ")\nYou rolled a(n) " << rollSum + diceMod << " (" << rollSum << " +" << diceMod << ")\n";
-        return 0;
-    }
     return 0;
 };

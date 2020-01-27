@@ -1,3 +1,0 @@
-first_item
-second_item
-third_item

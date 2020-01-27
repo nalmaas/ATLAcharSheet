@@ -1,0 +1,100 @@
+Player: Karaak     Style: Fire     Path: None     Tier: 1
+Outward: Ambivalent     Inward: Benevolant     Background: Traveler, huntsman     Role: Recluse
+
+Spirit Bond: _ _ _
+
+Proficiency Bonus: +2
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+Max Health: 35
+Health: 12
+
+Max Stamina: 14
+Stamina: 13
+
+Max Fortitude: 14
+Fortitude: 12
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+Power: 15 (+2)
+_ Power Saving Throw: (+2)
+
+Finesse: 13 (+1)
+_ Finesse Saving Throw: (+1)
+
+Vitality: 14 (+2)
+* Vitality Saving Throw: (+4)
+
+Knowledge: 13 (+1)
+_ Knowledge Saving Throw: (+1)
+
+Reason: 14 (+2)
+* Reason Saving Throw: (+4)
+
+Character: 9 (-1)
+_ Character Saving Throw: (-1)
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+Power:
+_ Athletics (+2)
+
+Finesse:
+_ Acrobatics (+1)
+_ Escamotage (+1)
+_ Stealth (+1)
+
+Vitality:
+_ Willpower (+2)
+
+Knowledge:
+_ History (+1)
+* Investigation (+3)
+* Nature (+3)
+_ Seafaring (+1)
+_ Spirit (+1)
+
+Reason:
+_ Taming (+2)
+* Hunting (+4)
+_ Insight (+2)
+_ Medicine (+2)
+* Perception (+4)
+
+Character:
+_ Deception (-1)
+_ Intimidation (-1)
+_ Performance (-1)
+_ Persuasion (-1)
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+Features:
+1. Trail Companion
+    -Huntsmen spend years honing their tracking skills alongside their bestial scent-companions, the result being an inseparable bond. Work with your DM to choose an animal companion.
+2.
+
+Party Members:
+1. Hunter
+2. Edgar
+3. Nohemi
+4. Luis
+
+Allies:
+
+Important Notes:
+1. Note filler
+
+Inventory:
+1. clothing
+
+Copper: 0  Silver: 0  Gold: 104gp
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+Scrolls:
+1. Fire Blast (stamina 1)
+    -With a powerful stance, you strike at an opponent and release a blast of flame that deals 6d4 fire damage.
+20/40 foot range.
