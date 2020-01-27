@@ -2063,6 +2063,7 @@ characterInfo loadCharacter(){
 
 int characterSheet(characterInfo player){
     condition = 0;
+    ofstream data;
     while ( condition == 0 ){
 //need to recalculate the ability modifiers and proficiency bonus each time the character sheet is displayed because variables may have changed
 
@@ -3169,7 +3170,275 @@ int characterSheet(characterInfo player){
                 cout << "I haven't implemented weapons yet, soon though.";
                 break;
             case 4:
-                cout << "I will implement editing soon (sooner than I implement weapons).";
+                cout << "1. Change Name\n2. Style\n3. Path\n4. Tier\n5. Outward\n6. Inward\n7. Background\n8. Role\n9. Spirit Bond\n10. Max Health\n11. Current Health\n12. Max Stamina\n13. Current Stamina\n14. Max Fortitude\n15. Current Fortitude\n16. Stats\n17. Proficiencies\n18. Party Members\n19. Allies\n20. Inventory\n21. Money\n22. Scrolls\n23. Back\n";
+                cin >> userAnswer;
+                switch(userAnswer){
+                    case 1:
+                        cout << "What would you like to change your name to?\n";
+                        cin >> player.playerName;
+                        data.open("Data/Other/name.txt", std::fstream::trunc);
+                        data << player.playerName;
+                        data.close();
+                        break;
+                    case 2:
+                        condition = 0;
+                        while( condition == 0 ) {
+                            cout << "What is your character's new style?\n1. Water\n2. Earth\n3. Fire\n4. Air\n5. Devoted" << endl;
+                            cin >> userAnswer;        
+                            switch(userAnswer){
+                                case 1:
+                                    player.playerStyle = "Water";
+                                    condition = 1;
+                                    break;
+                                case 2:
+                                    player.playerStyle = "Earth";
+                                    condition = 1;
+                                    break;
+                                case 3:
+                                    player.playerStyle = "Fire";
+                                    condition = 1;
+                                    break;
+                                case 4:
+                                    player.playerStyle = "Air";
+                                    condition = 1;
+                                    break;
+                                case 5:
+                                    player.playerStyle = "Devoted";
+                                    condition = 1;
+                                    break;
+                               default:
+                                    cout << "Not a valid response, please try again.\n";
+                                    break;
+                                }    
+                            }
+                        condition = 0;
+                        data.open("Data/Other/style.txt", std::fstream::trunc);
+                        data << player.playerStyle;
+                        data.close();
+                        break;
+                    case 3:
+                        if( player.playerStyle == "Water" ){
+                            while( condition == 0 ) {
+                                cout << "What is your character's new path?\n1. Path of Restoration\n2. Path of the Stoic\n3. Path of Subjugation\n4. None" << endl;
+                                cin >> userAnswer;        
+                                switch(userAnswer){
+                                    case 1:
+                                        player.playerPath = "Path of Restoration";
+                                        condition = 1;
+                                        break;
+                                    case 2:
+                                        player.playerPath = "Path of the Stoic";
+                                        condition = 1;
+                                        break;
+                                    case 3:
+                                        player.playerPath = "Path of Subjugation";
+                                        condition = 1;
+                                        break;
+                                    default:
+                                        player.playerPath = "None";
+                                        condition = 1;
+                                        break;} 
+                            }
+                            condition = 0;
+                        } else if( player.playerStyle == "Earth" ){
+                            while( condition == 0 ) {
+                                cout << "What is your character's new path?\n1. Path of the Peacekeeper\n2. Path of the Purist\n3. Path of the Ravager\n4. None" << endl;
+                                cin >> userAnswer;        
+                                switch(userAnswer){
+                                    case 1:
+                                        player.playerPath = "Path of the Peacekeeper";
+                                        condition = 1;
+                                        break;
+                                    case 2:
+                                        player.playerPath = "Path of the Purist";
+                                        condition = 1;
+                                        break;
+                                    case 3:
+                                        player.playerPath = "Path of the Ravager";
+                                        condition = 1;
+                                        break;
+                                    default:
+                                        player.playerPath = "None";
+                                        condition = 1;
+                                        break;}
+                            }
+                            condition = 0;
+                        } else if( player.playerStyle == "Fire" ){
+                            while( condition == 0 ) {
+                                cout << "What is your character's new path?\n1. Path of the Elevated\n2. Path of the Zelous\n3. Path of the Fanatic\n4. None" << endl;
+                                cin >> userAnswer;        
+                                switch(userAnswer){
+                                   case 1:
+                                        player.playerPath = "Path of the Elevated";
+                                        condition = 1;
+                                        break;
+                                    case 2:
+                                        player.playerPath = "Path of the Zelous";
+                                        condition = 1;
+                                        break;
+                                    case 3:
+                                        player.playerPath = "Path of the Fanatic";
+                                        condition = 1;
+                                        break;
+                                    default:
+                                        player.playerPath = "None";
+                                        condition = 1;
+                                        break;}
+                            }
+                            condition = 0;
+                        } else if( player.playerStyle == "Air" ){
+                            while( condition == 0 ) {
+                                cout << "What is your character's new path?\n1. Path of Peace\n2. Path of Indifference\n3. Path of Conflict\n4. None" << endl;
+                                cin >> userAnswer;        
+                                switch(userAnswer){
+                                    case 1:
+                                        player.playerPath = "Path of Peace";
+                                        condition = 1;
+                                        break;
+                                    case 2:
+                                        player.playerPath = "Path of Indifference";
+                                        condition = 1;
+                                        break;
+                                    case 3:
+                                        player.playerPath = "Path of Conflict";
+                                        condition = 1;
+                                        break;
+                                    default:
+                                        player.playerPath = "None";
+                                        condition = 1;
+                                        break;}
+                            }
+                                condition = 0;
+                        } else if( player.playerStyle == "Devoted" ){
+                            while( condition == 0 ) {
+                                cout << "What is your character's new path?\n1. Chi Blocker\n2. The Duelist\n3. The Assassin\n4. None" << endl;
+                                cin >> userAnswer;        
+                                switch(userAnswer){
+                                    case 1:
+                                        player.playerPath = "Chi Blocker";
+                                        condition = 1;
+                                        break;
+                                    case 2:
+                                        player.playerPath = "The Duelist";
+                                        condition = 1;
+                                        break;
+                                    case 3:
+                                        player.playerPath = "The Assassin";
+                                        condition = 1;
+                                        break;
+                                    default:
+                                        player.playerPath = "None";
+                                        condition = 1;
+                                        break;}
+                            }
+                            condition = 0;
+                    }
+                        data.open("Data/Other/path.txt", std::fstream::trunc);
+                        data << player.playerPath;
+                        data.close();
+                        break;
+                    case 4:
+                        cout << "What is your new tier?\n";
+                        cin >> userAnswer;
+                            switch(userAnswer){
+                                case 2:
+                                    player.playerTier = 2;
+                                    break;
+                                case 3:
+                                    player.playerTier  = 3;
+                                    break;
+                                case 4:
+                                    player.playerTier = 4;
+                                    break;
+                                default:
+                                    player.playerTier = 1;
+                                    break;
+                        data.open("Data/Other/tier.txt", std::fstream::trunc);
+                        data << player.playerTier;
+                        data.close();
+                            }
+                        break;
+                    case 5:
+                        cout << "What is your character's new outward personality?" << endl << "1. Benevolent\n2. Malevolent\n3. Ambivalent\n";
+                        cin >> userAnswer;        
+                        switch(userAnswer){
+                            case 1:
+                                player.playerOutward = "Benevolent";
+                                break;
+                            case 2:
+                                player.playerOutward = "Malevolent";
+                                break;
+                            default:
+                                player.playerOutward = "Ambivalent";
+                                break;
+                        }
+                        data.open("Data/Other/outward.txt", std::fstream::trunc);
+                        data << player.playerOutward;
+                        data.close();
+                        break;
+                    case 6:
+                        cout << "What is your character's new inward personality?" << endl << "1. Benevolent\n2. Malevolent\n3. Ambivalent\n";
+                        cin >> userAnswer;        
+                        switch(userAnswer){
+                            case 1:
+                                player.playerInward = "Benevolent";
+                                break;
+                            case 2:
+                                player.playerInward = "Malevolent";
+                                break;
+                            default:
+                                player.playerInward = "Ambivalent";
+                                break;
+                        }
+                        data.open("Data/Other/inawrd.txt", std::fstream::trunc);
+                        data << player.playerInward;
+                        data.close();
+                        break;
+                    case 7:
+                        cout << "What is your character's new background?\n";
+                        cin >> player.playerBackground;
+                        data.open("Data/Other/background.txt", std::fstream::trunc);
+                        data << player.playerBackground;
+                        data.close();
+                        break;
+                    case 8:
+                        cout << "What is your character's new role?\n";
+                        cin >> player.playerRole;
+                        data.open("Data/Other/role.txt", std::fstream::trunc);
+                        data << player.playerRole;
+                        data.close();
+                        break;
+                    case 9:
+                        break;
+                    case 10:
+                        break;
+                    case 11:
+                        break;
+                    case 12:
+                        break;
+                    case 13:
+                        break;
+                    case 14:
+                        break;
+                    case 15:
+                        break;
+                    case 16:
+                        break;
+                    case 17:
+                        break;
+                    case 18:
+                        break;
+                    case 19:
+                        break;
+                    case 20:
+                        break;
+                    case 21:
+                        break;
+                    case 22:
+                        break;
+                    default:
+                        break;
+                }
                 break;
             default:
                 return 0;
