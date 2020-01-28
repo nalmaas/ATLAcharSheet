@@ -396,7 +396,7 @@ characterInfo createCharacter(){
 
     //cout << "What is your character's style?" << endl;
     while( condition == 0 ) {
-        cout << "What is your character's style?\n1. Water\n2. Earth\n3. Fire\n4. Air\n5. Devoted" << endl;
+        cout << "\nWhat is your character's style?\n1. Water\n2. Earth\n3. Fire\n4. Air\n5. Devoted" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -434,7 +434,7 @@ characterInfo createCharacter(){
 
     if( player.playerStyle == "Water" ){
         while( condition == 0 ) {
-            cout << "What is your character's path?\n1. Path of Restoration\n2. Path of the Stoic\n3. Path of Subjugation\n4. None" << endl;
+            cout << "\nWhat is your character's path?\n1. Path of Restoration\n2. Path of the Stoic\n3. Path of Subjugation\n4. None" << endl;
             cin >> userAnswer;        
             switch(userAnswer){
                 case 1:
@@ -457,7 +457,7 @@ characterInfo createCharacter(){
         condition = 0;
     } else if( player.playerStyle == "Earth" ){
         while( condition == 0 ) {
-            cout << "What is your character's path?\n1. Path of the Peacekeeper\n2. Path of the Purist\n3. Path of the Ravager\n4. None" << endl;
+            cout << "\nWhat is your character's path?\n1. Path of the Peacekeeper\n2. Path of the Purist\n3. Path of the Ravager\n4. None" << endl;
             cin >> userAnswer;        
             switch(userAnswer){
                 case 1:
@@ -480,7 +480,7 @@ characterInfo createCharacter(){
         condition = 0;
     } else if( player.playerStyle == "Fire" ){
         while( condition == 0 ) {
-            cout << "What is your character's path?\n1. Path of the Elevated\n2. Path of the Zelous\n3. Path of the Fanatic\n4. None" << endl;
+            cout << "\nWhat is your character's path?\n1. Path of the Elevated\n2. Path of the Zelous\n3. Path of the Fanatic\n4. None" << endl;
             cin >> userAnswer;        
             switch(userAnswer){
                 case 1:
@@ -503,7 +503,7 @@ characterInfo createCharacter(){
         condition = 0;
     } else if( player.playerStyle == "Air" ){
         while( condition == 0 ) {
-            cout << "What is your character's path?\n1. Path of Peace\n2. Path of Indifference\n3. Path of Conflict\n4. None" << endl;
+            cout << "\nWhat is your character's path?\n1. Path of Peace\n2. Path of Indifference\n3. Path of Conflict\n4. None" << endl;
             cin >> userAnswer;        
             switch(userAnswer){
                 case 1:
@@ -526,7 +526,7 @@ characterInfo createCharacter(){
         condition = 0;
     } else if( player.playerStyle == "Devoted" ){
         while( condition == 0 ) {
-            cout << "What is your character's path?\n1. Chi Blocker\n2. The Duelist\n3. The Assassin\n4. None" << endl;
+            cout << "\nWhat is your character's path?\n1. Chi Blocker\n2. The Duelist\n3. The Assassin\n4. None" << endl;
             cin >> userAnswer;        
             switch(userAnswer){
                 case 1:
@@ -560,7 +560,7 @@ characterInfo createCharacter(){
 
     //cout << "What is your character's tier?" << endl;
     while( condition == 0 ) {
-        cout << "What is your character's tier? 1, 2, 3, or 4?" << endl;
+        cout << "\nWhat is your character's tier? 1, 2, 3, or 4?" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -594,7 +594,7 @@ characterInfo createCharacter(){
 
     //cout << "What is your character's outward personality?" << endl;
     while( condition == 0 ) {
-        cout << "What is your character's outward personality?" << endl << "1. Benevolent\n2. Malevolent\n3. Ambivalent\n";
+        cout << "\nWhat is your character's outward personality?" << endl << "1. Benevolent\n2. Malevolent\n3. Ambivalent\n";
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -625,7 +625,7 @@ characterInfo createCharacter(){
 
 
     while( condition == 0 ) {
-        cout << "What is your character's inward personality?" << endl << "1. Benevolent\n2. Malevolent\n3. Ambivalent\n";
+        cout << "\nWhat is your character's inward personality?" << endl << "1. Benevolent\n2. Malevolent\n3. Ambivalent\n";
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -651,19 +651,19 @@ characterInfo createCharacter(){
     data << player.playerInward;
     data.close();
 
-    cout << "What is your character's background?" << endl;
+    cout << "\nWhat is your character's background?" << endl;
     cin >> player.playerBackground;
     data.open("Data/Other/background.txt", std::fstream::trunc);
     data << player.playerBackground;
     data.close();
 
-    cout << "What is your character's role?" << endl;
+    cout << "\nWhat is your character's role?" << endl;
     cin >> player.playerRole;
     data.open("Data/Other/role.txt", std::fstream::trunc);
     data << player.playerRole;
     data.close();
 
-    cout << "What is your character's maximum stamina?" << endl;
+    cout << "\nWhat is your character's maximum stamina?" << endl;
     cin >> player.playerStaminaMax;
     player.playerStamina = player.playerStaminaMax;
     data.open("Data/Stats/staminaMax.txt", std::fstream::trunc);
@@ -673,7 +673,7 @@ characterInfo createCharacter(){
     data << player.playerStamina;
     data.close();
 
-    cout << "What is your character's maximum health?" << endl;
+    cout << "\nWhat is your character's maximum health?" << endl;
     cin >> player.playerHealthMax;
     player.playerHealth = player.playerHealthMax;
     data.open("Data/Stats/healthMax.txt", std::fstream::trunc);
@@ -683,7 +683,7 @@ characterInfo createCharacter(){
     data << player.playerHealth;
     data.close();
 
-    cout << "What is your character's maximum fortitude?" << endl;
+    cout << "\nWhat is your character's maximum fortitude?" << endl;
     cin >> player.playerFortitudeMax;
     player.playerFortitude = player.playerFortitudeMax;
     data.open("Data/Stats/fortitudeMax.txt", std::fstream::trunc);
@@ -695,7 +695,7 @@ characterInfo createCharacter(){
 
     condition = 0;
     while( condition == 0 ) {
-        cout << "How many spirit bonds does your character have? 0, 1, 2, or 3?" << endl;
+        cout << "\nHow many spirit bonds does your character have? 0, 1, 2, or 3?" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 0:
@@ -729,7 +729,7 @@ characterInfo createCharacter(){
     data << playerSpiritBond;
     data.close();*/
 
-    cout << "What is your character's power?" << endl;
+    cout << "\nWhat is your character's power?" << endl;
     cin >> player.playerPower;
     data.open("Data/Stats/power.txt", std::fstream::trunc);
     data << player.playerPower;
@@ -737,7 +737,7 @@ characterInfo createCharacter(){
 
     condition = 0;
     while( condition == 0 ) {
-        cout << "Does your character have proficiency in power saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
+        cout << "\nDoes your character have proficiency in power saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -759,14 +759,14 @@ characterInfo createCharacter(){
     condition = 0;
 
 
-    cout << "What is your character's finesse?" << endl;
+    cout << "\nWhat is your character's finesse?" << endl;
     cin >> player.playerFinesse;
     data.open("Data/Stats/finesse.txt", std::fstream::trunc);
     data << player.playerFinesse;
     data.close();
 
     while( condition == 0 ) {
-        cout << "Does your character have proficiency in finesse saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
+        cout << "\nDoes your character have proficiency in finesse saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -788,14 +788,14 @@ characterInfo createCharacter(){
     condition = 0;
 
 
-    cout << "What is your character's vitality?" << endl;
+    cout << "\nWhat is your character's vitality?" << endl;
     cin >> player.playerVitality;
     data.open("Data/Stats/vitality.txt", std::fstream::trunc);
     data << player.playerVitality;
     data.close();
 
     while( condition == 0 ) {
-        cout << "Does your character have proficiency in vitality saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
+        cout << "\nDoes your character have proficiency in vitality saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -817,14 +817,14 @@ characterInfo createCharacter(){
     condition = 0;
 
 
-    cout << "What is your character's knowledge?" << endl;
+    cout << "\nWhat is your character's knowledge?" << endl;
     cin >> player.playerKnowledge;
     data.open("Data/Stats/knowledge.txt", std::fstream::trunc);
     data << player.playerKnowledge;
     data.close();
 
     while( condition == 0 ) {
-        cout << "Does your character have proficiency in knowledge saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
+        cout << "\nDoes your character have proficiency in knowledge saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -846,14 +846,14 @@ characterInfo createCharacter(){
     condition = 0;
 
 
-    cout << "What is your character's reason?" << endl;
+    cout << "\nWhat is your character's reason?" << endl;
     cin >> player.playerReason;
     data.open("Data/Stats/reason.txt", std::fstream::trunc);
     data << player.playerReason;
     data.close();
 
     while( condition == 0 ) {
-        cout << "Does your character have proficiency in reason saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
+        cout << "\nDoes your character have proficiency in reason saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -875,14 +875,14 @@ characterInfo createCharacter(){
     condition = 0;
 
 
-    cout << "What is your character's character?" << endl;
+    cout << "\nWhat is your character's character?" << endl;
     cin >> player.playerCharacter;
     data.open("Data/Stats/character.txt", std::fstream::trunc);
     data << player.playerCharacter;
     data.close();
 
     while( condition == 0 ) {
-        cout << "Does your character have proficiency in character saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
+        cout << "\nDoes your character have proficiency in character saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -904,20 +904,20 @@ characterInfo createCharacter(){
     condition = 0;
 
 
-    cout << "How much gold does your character have?" << endl;
+    cout << "\nHow much gold does your character have?" << endl;
     cin >> player.playerGold;
     data.open("Data/Money/gold.txt", std::fstream::trunc);
     data << player.playerGold;
     data.close();
 
 
-    cout << "How much silver does your character have?" << endl;
+    cout << "\nHow much silver does your character have?" << endl;
     cin >> player.playerSilver;
     data.open("Data/Money/silver.txt", std::fstream::trunc);
     data << player.playerSilver;
     data.close();
 
-    cout << "How much copper does your character have?" << endl;
+    cout << "\nHow much copper does your character have?" << endl;
     cin >> player.playerCopper;
     data.open("Data/Money/copper.txt", std::fstream::trunc);
     data << player.playerCopper;
@@ -925,7 +925,7 @@ characterInfo createCharacter(){
 
 //inventory support will come later
     while( condition == 0 ) {
-        cout << "How many items do you have in your inventory?" << endl;
+        cout << "\nHow many items do you have in your inventory?" << endl;
         cin >> userAnswer;
         player.inventoryCount = userAnswer;    
         data.open("Data/Other/inventoryCount.txt", std::fstream::trunc);
@@ -943,7 +943,9 @@ characterInfo createCharacter(){
     data << "";
     data.close();
     data.open("Data/Other/inventory.txt", std::fstream::app);
-    cout << "Enter the names of your items. DO NOT USE ANY SPACES. PLEASE FOR THE LOVE OF GOD, I HAVEN'T FIGURED OUT HOW TO NOT MAKE THINGS BREAK. Instead use an underscore (_) to represent spaces." << endl;
+    if(player.inventoryCount != 0){
+        cout << "\nEnter the names of your items. DO NOT USE ANY SPACES. PLEASE FOR THE LOVE OF GOD, I HAVEN'T FIGURED OUT HOW TO NOT MAKE THINGS BREAK. Instead use an underscore (_) to represent spaces." << endl;
+    }
     for (int n = 0; n < userAnswer; n++) {
         cout << (n + 1) << ". ";
         cin >> player.playerInventory[n];
@@ -954,7 +956,7 @@ characterInfo createCharacter(){
 
 //party member support will maybe come later
     while( condition == 0 ) {
-        cout << "How many party members do you have?" << endl;
+        cout << "\nHow many party members do you have?" << endl;
         cin >> userAnswer;
         player.partyCount = userAnswer;    
         data.open("Data/Other/partyCount.txt", std::fstream::trunc);
@@ -964,7 +966,7 @@ characterInfo createCharacter(){
             condition = 1;
         }
         else {
-            cout << "Maximum number of party members is " << partyMax << endl;
+            cout << "\nMaximum number of party members is " << partyMax << endl;
         }   
     }
     condition = 0;
@@ -972,7 +974,9 @@ characterInfo createCharacter(){
     data << "";
     data.close();
     data.open("Data/Other/party.txt", std::fstream::app);
-    cout << "Enter the names of your party members. DO NOT USE ANY SPACES. PLEASE FOR THE LOVE OF GOD, I HAVEN'T FIGURED OUT HOW TO NOT MAKE THINGS BREAK. Instead use an underscore (_) to represent spaces." << endl;
+    if(player.partyCount != 0){
+        cout << "\nEnter the names of your party members. DO NOT USE ANY SPACES. PLEASE FOR THE LOVE OF GOD, I HAVEN'T FIGURED OUT HOW TO NOT MAKE THINGS BREAK. Instead use an underscore (_) to represent spaces." << endl;
+    }
     for (int n = 0; n < userAnswer; n++) {
         cout << (n + 1) << ". ";
         cin >> player.playerParty[n];
@@ -983,7 +987,7 @@ characterInfo createCharacter(){
 
 //ally member support will come later
     while( condition == 0 ) {
-        cout << "How many allies do you have?" << endl;
+        cout << "\nHow many allies do you have?" << endl;
         cin >> userAnswer;
         player.alliesCount = userAnswer;    
         data.open("Data/Other/alliesCount.txt", std::fstream::trunc);
@@ -993,7 +997,7 @@ characterInfo createCharacter(){
             condition = 1;
         }
         else {
-            cout << "Maximum number of allies is " << partyMax << endl;
+            cout << "\nMaximum number of allies is " << partyMax << endl;
         }   
     }
     condition = 0;
@@ -1001,7 +1005,9 @@ characterInfo createCharacter(){
     data << "";
     data.close();
     data.open("Data/Other/allies.txt", std::fstream::app);
-    cout << "Enter the names of your allies. DO NOT USE ANY SPACES. PLEASE FOR THE LOVE OF GOD, I HAVEN'T FIGURED OUT HOW TO NOT MAKE THINGS BREAK. Instead use an underscore (_) to represent spaces." << endl;
+    if(player.alliesCount != 0){
+        cout << "\nEnter the names of your allies. DO NOT USE ANY SPACES. PLEASE FOR THE LOVE OF GOD, I HAVEN'T FIGURED OUT HOW TO NOT MAKE THINGS BREAK. Instead use an underscore (_) to represent spaces." << endl;
+    }
     for (int n = 0; n < userAnswer; n++) {
         cout << (n + 1) << ". ";
         cin >> player.playerAllies[n];
@@ -1013,11 +1019,11 @@ characterInfo createCharacter(){
 //features support will come later
 //scrolls support will come later
 
-    cout << "How many scrolls do you have? There is a maximum of 14.\n";
+    cout << "\nHow many scrolls do you have? There is a maximum of 14.\n";
     while( condition == 0 ) {
         cin >> userAnswer;
         if (userAnswer > scrollMax){
-            cout << "The maximum number of scrolls is 14.";
+            cout << "\nThe maximum number of scrolls is 14.";
         } else{
             player.scrollCount = userAnswer;
             condition = 1;
@@ -1045,10 +1051,10 @@ characterInfo createCharacter(){
     data.close();
     cout << endl << player.scrollCount << endl;
     for(int i = 0; i < player.scrollCount; i++){
-        cout << "test statement" << endl;
+        //cout << "test statement" << endl;
         //cout << player.playerStyle << endl;
         if(player.playerStyle == "Water"){
-            cout << "1. " << wT1S1name << "\n2. " << wT1S2name << "\n3. " << wT1S3name << "\n4. " << wT1S4name << "\n5. " << wT1S5name << "\n";
+            cout << "\n1. " << wT1S1name << "\n2. " << wT1S2name << "\n3. " << wT1S3name << "\n4. " << wT1S4name << "\n5. " << wT1S5name << "\n";
             cin >> userAnswer;
             switch(userAnswer){
                 case 1:
@@ -1185,7 +1191,7 @@ characterInfo createCharacter(){
                     break;
             }
         } else if(player.playerStyle == "Earth"){
-            cout << "1. " << eT1S1name << "\n2. " << eT1S2name << "\n3. " << eT1S3name << "\n4. " << eT1S4name << "\n5. " << eT1S5name << "\n";
+            cout << "\n1. " << eT1S1name << "\n2. " << eT1S2name << "\n3. " << eT1S3name << "\n4. " << eT1S4name << "\n5. " << eT1S5name << "\n";
             cin >> userAnswer;
             switch(userAnswer){
                 case 1:
@@ -1333,7 +1339,7 @@ characterInfo createCharacter(){
 
 
     while( condition == 0 ) {
-        cout << "Does your character have proficiency in athletics?" << endl << "1. Yes" << endl << "2. No" << endl;
+        cout << "\nDoes your character have proficiency in athletics?" << endl << "1. Yes" << endl << "2. No" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -1345,7 +1351,7 @@ characterInfo createCharacter(){
                 condition = 1;
                 break;
             default:
-                cout << "Not a valid response, please try again.\n";
+                cout << "\nNot a valid response, please try again.\n";
                 break;
         }    
     }
@@ -1355,7 +1361,7 @@ characterInfo createCharacter(){
     condition = 0;
 
     while( condition == 0 ) {
-        cout << "Does your character have proficiency in acrobatics?" << endl << "1. Yes" << endl << "2. No" << endl;
+        cout << "\nDoes your character have proficiency in acrobatics?" << endl << "1. Yes" << endl << "2. No" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -1367,7 +1373,7 @@ characterInfo createCharacter(){
                 condition = 1;
                 break;
             default:
-                cout << "Not a valid response, please try again.\n";
+                cout << "\nNot a valid response, please try again.\n";
                 break;
         }    
     }
@@ -1377,7 +1383,7 @@ characterInfo createCharacter(){
     condition = 0;
 
     while( condition == 0 ) {
-        cout << "Does your character have proficiency in escamotage?" << endl << "1. Yes" << endl << "2. No" << endl;
+        cout << "\nDoes your character have proficiency in escamotage?" << endl << "1. Yes" << endl << "2. No" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -1389,7 +1395,7 @@ characterInfo createCharacter(){
                 condition = 1;
                 break;
             default:
-                cout << "Not a valid response, please try again.\n";
+                cout << "\nNot a valid response, please try again.\n";
                 break;
         }    
     }
@@ -1399,7 +1405,7 @@ characterInfo createCharacter(){
     condition = 0;
 
     while( condition == 0 ) {
-        cout << "Does your character have proficiency in stealth?" << endl << "1. Yes" << endl << "2. No" << endl;
+        cout << "\nDoes your character have proficiency in stealth?" << endl << "1. Yes" << endl << "2. No" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -1411,7 +1417,7 @@ characterInfo createCharacter(){
                 condition = 1;
                 break;
             default:
-                cout << "Not a valid response, please try again.\n";
+                cout << "\nNot a valid response, please try again.\n";
                 break;
         }    
     }
@@ -1421,7 +1427,7 @@ characterInfo createCharacter(){
     condition = 0;
 
     while( condition == 0 ) {
-        cout << "Does your character have proficiency in willpower?" << endl << "1. Yes" << endl << "2. No" << endl;
+        cout << "\nDoes your character have proficiency in willpower?" << endl << "1. Yes" << endl << "2. No" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -1433,7 +1439,7 @@ characterInfo createCharacter(){
                 condition = 1;
                 break;
             default:
-                cout << "Not a valid response, please try again.\n";
+                cout << "\nNot a valid response, please try again.\n";
                 break;
         }    
     }
@@ -1443,7 +1449,7 @@ characterInfo createCharacter(){
     condition = 0;
 
     while( condition == 0 ) {
-        cout << "Does your character have proficiency in history?" << endl << "1. Yes" << endl << "2. No" << endl;
+        cout << "\nDoes your character have proficiency in history?" << endl << "1. Yes" << endl << "2. No" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -1455,7 +1461,7 @@ characterInfo createCharacter(){
                 condition = 1;
                 break;
             default:
-                cout << "Not a valid response, please try again.\n";
+                cout << "\nNot a valid response, please try again.\n";
                 break;
         }    
     }
@@ -1465,7 +1471,7 @@ characterInfo createCharacter(){
     condition = 0;
 
     while( condition == 0 ) {
-        cout << "Does your character have proficiency in investigation?" << endl << "1. Yes" << endl << "2. No" << endl;
+        cout << "\nDoes your character have proficiency in investigation?" << endl << "1. Yes" << endl << "2. No" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -1477,7 +1483,7 @@ characterInfo createCharacter(){
                 condition = 1;
                 break;
             default:
-                cout << "Not a valid response, please try again.\n";
+                cout << "\nNot a valid response, please try again.\n";
                 break;
         }    
     }
@@ -1487,7 +1493,7 @@ characterInfo createCharacter(){
     condition = 0;
 
     while( condition == 0 ) {
-        cout << "Does your character have proficiency in nature?" << endl << "1. Yes" << endl << "2. No" << endl;
+        cout << "\nDoes your character have proficiency in nature?" << endl << "1. Yes" << endl << "2. No" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -1499,7 +1505,7 @@ characterInfo createCharacter(){
                 condition = 1;
                 break;
             default:
-                cout << "Not a valid response, please try again.\n";
+                cout << "\nNot a valid response, please try again.\n";
                 break;
         }    
     }
@@ -1509,7 +1515,7 @@ characterInfo createCharacter(){
     condition = 0;
 
     while( condition == 0 ) {
-        cout << "Does your character have proficiency in seafaring?" << endl << "1. Yes" << endl << "2. No" << endl;
+        cout << "\nDoes your character have proficiency in seafaring?" << endl << "1. Yes" << endl << "2. No" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -1521,7 +1527,7 @@ characterInfo createCharacter(){
                 condition = 1;
                 break;
             default:
-                cout << "Not a valid response, please try again.\n";
+                cout << "\nNot a valid response, please try again.\n";
                 break;
         }    
     }
@@ -1531,7 +1537,7 @@ characterInfo createCharacter(){
     condition = 0;
 
     while( condition == 0 ) {
-        cout << "Does your character have proficiency in spirit?" << endl << "1. Yes" << endl << "2. No" << endl;
+        cout << "\nDoes your character have proficiency in spirit?" << endl << "1. Yes" << endl << "2. No" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -1543,7 +1549,7 @@ characterInfo createCharacter(){
                 condition = 1;
                 break;
             default:
-                cout << "Not a valid response, please try again.\n";
+                cout << "\nNot a valid response, please try again.\n";
                 break;
         }    
     }
@@ -1553,7 +1559,7 @@ characterInfo createCharacter(){
     condition = 0;
 
     while( condition == 0 ) {
-        cout << "Does your character have proficiency in taming?" << endl << "1. Yes" << endl << "2. No" << endl;
+        cout << "\nDoes your character have proficiency in taming?" << endl << "1. Yes" << endl << "2. No" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -1565,7 +1571,7 @@ characterInfo createCharacter(){
                 condition = 1;
                 break;
             default:
-                cout << "Not a valid response, please try again.\n";
+                cout << "\nNot a valid response, please try again.\n";
                 break;
         }    
     }
@@ -1575,7 +1581,7 @@ characterInfo createCharacter(){
     condition = 0;
 
     while( condition == 0 ) {
-        cout << "Does your character have proficiency in hunting?" << endl << "1. Yes" << endl << "2. No" << endl;
+        cout << "\nDoes your character have proficiency in hunting?" << endl << "1. Yes" << endl << "2. No" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -1587,7 +1593,7 @@ characterInfo createCharacter(){
                 condition = 1;
                 break;
             default:
-                cout << "Not a valid response, please try again.\n";
+                cout << "\nNot a valid response, please try again.\n";
                 break;
         }    
     }
@@ -1597,7 +1603,7 @@ characterInfo createCharacter(){
     condition = 0;
 
     while( condition == 0 ) {
-        cout << "Does your character have proficiency in insight?" << endl << "1. Yes" << endl << "2. No" << endl;
+        cout << "\nDoes your character have proficiency in insight?" << endl << "1. Yes" << endl << "2. No" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -1609,7 +1615,7 @@ characterInfo createCharacter(){
                 condition = 1;
                 break;
             default:
-                cout << "Not a valid response, please try again.\n";
+                cout << "\nNot a valid response, please try again.\n";
                 break;
         }    
     }
@@ -1619,7 +1625,7 @@ characterInfo createCharacter(){
     condition = 0;
 
     while( condition == 0 ) {
-        cout << "Does your character have proficiency in medicine?" << endl << "1. Yes" << endl << "2. No" << endl;
+        cout << "\nDoes your character have proficiency in medicine?" << endl << "1. Yes" << endl << "2. No" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -1631,7 +1637,7 @@ characterInfo createCharacter(){
                 condition = 1;
                 break;
             default:
-                cout << "Not a valid response, please try again.\n";
+                cout << "\nNot a valid response, please try again.\n";
                 break;
         }    
     }
@@ -1641,7 +1647,7 @@ characterInfo createCharacter(){
     condition = 0;
 
     while( condition == 0 ) {
-        cout << "Does your character have proficiency in perception?" << endl << "1. Yes" << endl << "2. No" << endl;
+        cout << "\nDoes your character have proficiency in perception?" << endl << "1. Yes" << endl << "2. No" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -1653,7 +1659,7 @@ characterInfo createCharacter(){
                 condition = 1;
                 break;
             default:
-                cout << "Not a valid response, please try again.\n";
+                cout << "\nNot a valid response, please try again.\n";
                 break;
         }    
     }
@@ -1663,7 +1669,7 @@ characterInfo createCharacter(){
     condition = 0;
 
     while( condition == 0 ) {
-        cout << "Does your character have proficiency in deception?" << endl << "1. Yes" << endl << "2. No" << endl;
+        cout << "\nDoes your character have proficiency in deception?" << endl << "1. Yes" << endl << "2. No" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -1675,7 +1681,7 @@ characterInfo createCharacter(){
                 condition = 1;
                 break;
             default:
-                cout << "Not a valid response, please try again.\n";
+                cout << "\nNot a valid response, please try again.\n";
                 break;
         }    
     }
@@ -1685,7 +1691,7 @@ characterInfo createCharacter(){
     condition = 0;
 
     while( condition == 0 ) {
-        cout << "Does your character have proficiency in intimidation?" << endl << "1. Yes" << endl << "2. No" << endl;
+        cout << "\nDoes your character have proficiency in intimidation?" << endl << "1. Yes" << endl << "2. No" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -1697,7 +1703,7 @@ characterInfo createCharacter(){
                 condition = 1;
                 break;
             default:
-                cout << "Not a valid response, please try again.\n";
+                cout << "\nNot a valid response, please try again.\n";
                 break;
         }    
     }
@@ -1707,7 +1713,7 @@ characterInfo createCharacter(){
     condition = 0;
 
     while( condition == 0 ) {
-        cout << "Does your character have proficiency in performance?" << endl << "1. Yes" << endl << "2. No" << endl;
+        cout << "\nDoes your character have proficiency in performance?" << endl << "1. Yes" << endl << "2. No" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -1719,7 +1725,7 @@ characterInfo createCharacter(){
                 condition = 1;
                 break;
             default:
-                cout << "Not a valid response, please try again.\n";
+                cout << "\nNot a valid response, please try again.\n";
                 break;
         }    
     }
@@ -1729,7 +1735,7 @@ characterInfo createCharacter(){
     condition = 0;
 
     while( condition == 0 ) {
-        cout << "Does your character have proficiency in persuasion?" << endl << "1. Yes" << endl << "2. No" << endl;
+        cout << "\nDoes your character have proficiency in persuasion?" << endl << "1. Yes" << endl << "2. No" << endl;
         cin >> userAnswer;        
         switch(userAnswer){
             case 1:
@@ -1741,7 +1747,7 @@ characterInfo createCharacter(){
                 condition = 1;
                 break;
             default:
-                cout << "Not a valid response, please try again.\n";
+                cout << "\nNot a valid response, please try again.\n";
                 break;
         }    
     }
@@ -2627,7 +2633,7 @@ int characterSheet(characterInfo player){
             cout << "\n* Vitality Saving Throw:";
         }
         else{
-            cout << "\n_ vitality Saving Throw:";
+            cout << "\n_ Vitality Saving Throw:";
         }
 
         if(player.vitalitySaveMod < 0){
@@ -3016,7 +3022,7 @@ int characterSheet(characterInfo player){
             cout << (i + 1) << ". " << player.playerAllies[i] << endl;
         }
 
-        cout << "\nImportant Notes\n";
+        cout << "\nImportant Notes:\n";
         cout << "1. I probably won't add support for notes, if I every do it will be after I figure out how to allow input with spaces first. For now just write it down yourself (lazy bums).";
 
         cout << "\n\nInventory:\n";
