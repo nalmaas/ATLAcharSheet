@@ -1,3 +1,6 @@
-Water Blast
-Rising Shield
-Water Whip
+Quick Jabs
+Dodge
+Slice
+Riposte
+Throwing Knives
+Smoke Bomb

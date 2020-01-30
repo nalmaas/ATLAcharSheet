@@ -666,7 +666,10 @@ characterInfo createCharacter(){
     data.close();
 
     cout << "\nWhat is your character's role?" << endl;
-    cin >> player.playerRole;
+    cin.clear();
+    cin.ignore();
+    getline(cin, player.playerRole);
+    //cin >> player.playerRole;
     data.open("Data/Other/role.txt", std::fstream::trunc);
     data << player.playerRole;
     data.close();
@@ -1610,7 +1613,164 @@ characterInfo createCharacter(){
                     break;
             }
         } else if(player.playerStyle == "Devoted"){
-
+            cout << "\n1. " << dcbT1S1name << "\n2. " << dcbT1S2name << "\n3. " << ddT1S1name << "\n4. " << ddT1S2name << "\n5. " << daT1S1name << "\n6. " << daT1S2name << "\n";
+            cin >> userAnswer;
+            switch(userAnswer){
+                case 1:
+                    player.scrollName[i] = dcbT1S1name;
+                    player.scrollDescription[i] = dcbT1S1description;
+                    player.scrollDiceType[i] = dcbT1S1diceType;
+                    player.scrollDiceCount[i] = dcbT1S1diceCount;
+                    player.scrollTier[i] = dcbT1S1tier;
+                    data.open("Data/Scrolls/scrollNames.txt", std::fstream::app);
+                    data << player.scrollName[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDescriptions.txt", std::fstream::app);
+                    data << player.scrollDescription[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceTypes.txt", std::fstream::app);
+                    data << player.scrollDiceType[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceCounts.txt", std::fstream::app);
+                    data << player.scrollDiceCount[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollTiers.txt", std::fstream::app);
+                    data << player.scrollTier[i] << endl;
+                    data.close();
+                    break;
+                case 2:
+                    player.scrollName[i] = dcbT1S2name;
+                    player.scrollDescription[i] = dcbT1S2description;
+                    player.scrollDiceType[i] = dcbT1S2diceType;
+                    player.scrollDiceCount[i] = dcbT1S2diceCount;
+                    player.scrollTier[i] = dcbT1S2tier;
+                    data.open("Data/Scrolls/scrollNames.txt", std::fstream::app);
+                    data << player.scrollName[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDescriptions.txt", std::fstream::app);
+                    data << player.scrollDescription[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceTypes.txt", std::fstream::app);
+                    data << player.scrollDiceType[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceCounts.txt", std::fstream::app);
+                    data << player.scrollDiceCount[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollTiers.txt", std::fstream::app);
+                    data << player.scrollTier[i] << endl;
+                    data.close();
+                    break;
+                case 3:
+                    player.scrollName[i] = ddT1S1name;
+                    player.scrollDescription[i] = ddT1S1description;
+                    player.scrollDiceType[i] = ddT1S1diceType;
+                    player.scrollDiceCount[i] = ddT1S1diceCount;
+                    player.scrollTier[i] = ddT1S1tier;
+                    data.open("Data/Scrolls/scrollNames.txt", std::fstream::app);
+                    data << player.scrollName[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDescriptions.txt", std::fstream::app);
+                    data << player.scrollDescription[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceTypes.txt", std::fstream::app);
+                    data << player.scrollDiceType[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceCounts.txt", std::fstream::app);
+                    data << player.scrollDiceCount[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollTiers.txt", std::fstream::app);
+                    data << player.scrollTier[i] << endl;
+                    data.close();
+                    break;
+                case 4:
+                    player.scrollName[i] = ddT1S2name;
+                    player.scrollDescription[i] = ddT1S2description;
+                    player.scrollDiceType[i] = ddT1S2diceType;
+                    player.scrollDiceCount[i] = ddT1S2diceCount;
+                    player.scrollTier[i] = ddT1S2tier;
+                    data.open("Data/Scrolls/scrollNames.txt", std::fstream::app);
+                    data << player.scrollName[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDescriptions.txt", std::fstream::app);
+                    data << player.scrollDescription[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceTypes.txt", std::fstream::app);
+                    data << player.scrollDiceType[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceCounts.txt", std::fstream::app);
+                    data << player.scrollDiceCount[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollTiers.txt", std::fstream::app);
+                    data << player.scrollTier[i] << endl;
+                    data.close();
+                    break;
+                case 5:
+                    player.scrollName[i] = daT1S1name;
+                    player.scrollDescription[i] = daT1S1description;
+                    player.scrollDiceType[i] = daT1S1diceType;
+                    player.scrollDiceCount[i] = daT1S1diceCount;
+                    player.scrollTier[i] = daT1S1tier;
+                    data.open("Data/Scrolls/scrollNames.txt", std::fstream::app);
+                    data << player.scrollName[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDescriptions.txt", std::fstream::app);
+                    data << player.scrollDescription[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceTypes.txt", std::fstream::app);
+                    data << player.scrollDiceType[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceCounts.txt", std::fstream::app);
+                    data << player.scrollDiceCount[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollTiers.txt", std::fstream::app);
+                    data << player.scrollTier[i] << endl;
+                    data.close();
+                    break;
+                case 6:
+                    player.scrollName[i] = daT1S2name;
+                    player.scrollDescription[i] = daT1S2description;
+                    player.scrollDiceType[i] = daT1S2diceType;
+                    player.scrollDiceCount[i] = daT1S2diceCount;
+                    player.scrollTier[i] = daT1S2tier;
+                    data.open("Data/Scrolls/scrollNames.txt", std::fstream::app);
+                    data << player.scrollName[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDescriptions.txt", std::fstream::app);
+                    data << player.scrollDescription[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceTypes.txt", std::fstream::app);
+                    data << player.scrollDiceType[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceCounts.txt", std::fstream::app);
+                    data << player.scrollDiceCount[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollTiers.txt", std::fstream::app);
+                    data << player.scrollTier[i] << endl;
+                    data.close();
+                    break;
+                default:
+                    player.scrollName[i] = "";
+                    player.scrollDescription[i] = "";
+                    player.scrollDiceType[i] = 0;
+                    player.scrollDiceCount[i] = 0;
+                    player.scrollTier[i] = 0;
+                    data.open("Data/Scrolls/scrollNames.txt", std::fstream::app);
+                    data << player.scrollName[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDescriptions.txt", std::fstream::app);
+                    data << player.scrollDescription[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceTypes.txt", std::fstream::app);
+                    data << player.scrollDiceType[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceCounts.txt", std::fstream::app);
+                    data << player.scrollDiceCount[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollTiers.txt", std::fstream::app);
+                    data << player.scrollTier[i] << endl;
+                    data.close();
+                    break;
+            }
         }
     }
 
@@ -2072,7 +2232,8 @@ characterInfo loadCharacter(){
     data.close();
 
     data.open("Data/Other/role.txt");
-    data >> player.playerRole;
+    getline(data, player.playerRole);
+    //data >> player.playerRole;
     data.close();
 
 //read the player proficiency bonus
@@ -2842,7 +3003,7 @@ int characterSheet(characterInfo player){
                 cout << "Spirit Bond: * * *\n\n";
                 break;
             default:
-                cout << "Spirit Bond: ERROR, PLEASE TALK TO NATHAN\n\n";
+                cout << "Spirit Bond: ERROR, YOU SHOULD NOT BE SEEING THIS. PLEASE TALK TO NATHAN\n\n";
         }
         cout << "Proficiency Bonus: +" << player.playerProficiencyBonus << "\n\n--------------------------------------------------------------------------------\n\n";
 
