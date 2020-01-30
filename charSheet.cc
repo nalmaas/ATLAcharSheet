@@ -264,7 +264,7 @@ int aT1S1diceType = 4;
 int aT1S1diceCount = 6;
 int aT1S1tier = 1;
 
-string aT1S2name = "Air Push";
+string aT1S2name = "Forceful Gale";
 string aT1S2description = "Using a powerful, precise burst of air, you push anyone within a 15 foot line up to 10 feet away, and they must make a DC 13 Finesse saving throw, falling prone on a failed save. If the target hits a solid object, they take 3d4 strike damage.";
 int aT1S2diceType = 4;
 int aT1S2diceCount = 3;
@@ -347,15 +347,15 @@ characterInfo createCharacter();
 characterInfo loadCharacter();
 int characterSheet(characterInfo player);
 int diceRoll(int diceType, int diceCount, int diceMod);
-int statRoll(int statMod);
+int statRoll(int statMod, string stat);
 int scrollRoll(int diceType, int diceCount, int diceMod, string description, string name);
 //int changeLine(string filePath, string fileBackup, string lineCount,  string replacement, int userChoice);
 
 int main(){
 //setting up random number generator
-    cout << floor((7 - 10) / 2) << endl;
+    //cout << floor((7 - 10) / 2) << endl;
     srand (time(NULL));
-    diceRoll(20, 1, -20);
+    //diceRoll(20, 1, -20);
     characterInfo characterData;
     while( condition == 0 ) {
         cout << "What would you like to do?" << endl << "1. Create a new character\n2. Use the currently existing character\n3. Quit" << endl;
@@ -389,7 +389,12 @@ characterInfo createCharacter(){
     cout << "Welcome to the character creator! Just follow the instructions to create your character. Don't worry if you input something incorrectly. You can go back and change it later so just continue filling in everything else." << endl << endl;
 
     cout << "What is your character's name?" << endl;
-    cin >> player.playerName;
+    cin.ignore();
+    cin.clear();    
+    getline(cin, player.playerName);
+    //cin.ignore();
+    //cin.clear();    
+    //cin >> player.playerName;
     data.open("Data/Other/name.txt", std::fstream::trunc);
     data << player.playerName;
     data.close();
@@ -652,7 +657,10 @@ characterInfo createCharacter(){
     data.close();
 
     cout << "\nWhat is your character's background?" << endl;
-    cin >> player.playerBackground;
+    cin.clear();
+    cin.ignore();
+    getline(cin, player.playerBackground);
+    //cin >> player.playerBackground;
     data.open("Data/Other/background.txt", std::fstream::trunc);
     data << player.playerBackground;
     data.close();
@@ -1049,7 +1057,7 @@ characterInfo createCharacter(){
     data.open("Data/Scrolls/scrollTiers.txt", std::fstream::trunc);
     data << "";
     data.close();
-    cout << endl << player.scrollCount << endl;
+    //cout << endl << player.scrollCount << endl;
     for(int i = 0; i < player.scrollCount; i++){
         //cout << "test statement" << endl;
         //cout << player.playerStyle << endl;
@@ -1327,11 +1335,280 @@ characterInfo createCharacter(){
                     data.close();
                     break;
             }
-
         } else if(player.playerStyle == "Fire"){
-
+            cout << "\n1. " << eT1S1name << "\n2. " << eT1S2name << "\n3. " << eT1S3name << "\n4. " << eT1S4name << "\n5. " << eT1S5name << "\n";
+            cin >> userAnswer;
+            switch(userAnswer){
+                case 1:
+                    player.scrollName[i] = fT1S1name;
+                    player.scrollDescription[i] = fT1S1description;
+                    player.scrollDiceType[i] = fT1S1diceType;
+                    player.scrollDiceCount[i] = fT1S1diceCount;
+                    player.scrollTier[i] = fT1S1tier;
+                    data.open("Data/Scrolls/scrollNames.txt", std::fstream::app);
+                    data << player.scrollName[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDescriptions.txt", std::fstream::app);
+                    data << player.scrollDescription[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceTypes.txt", std::fstream::app);
+                    data << player.scrollDiceType[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceCounts.txt", std::fstream::app);
+                    data << player.scrollDiceCount[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollTiers.txt", std::fstream::app);
+                    data << player.scrollTier[i] << endl;
+                    data.close();
+                    break;
+                case 2:
+                    player.scrollName[i] = fT1S2name;
+                    player.scrollDescription[i] = fT1S2description;
+                    player.scrollDiceType[i] = fT1S2diceType;
+                    player.scrollDiceCount[i] = fT1S2diceCount;
+                    player.scrollTier[i] = fT1S2tier;
+                    data.open("Data/Scrolls/scrollNames.txt", std::fstream::app);
+                    data << player.scrollName[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDescriptions.txt", std::fstream::app);
+                    data << player.scrollDescription[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceTypes.txt", std::fstream::app);
+                    data << player.scrollDiceType[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceCounts.txt", std::fstream::app);
+                    data << player.scrollDiceCount[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollTiers.txt", std::fstream::app);
+                    data << player.scrollTier[i] << endl;
+                    data.close();
+                    break;
+                case 3:
+                    player.scrollName[i] = fT1S3name;
+                    player.scrollDescription[i] = fT1S3description;
+                    player.scrollDiceType[i] = fT1S3diceType;
+                    player.scrollDiceCount[i] = fT1S3diceCount;
+                    player.scrollTier[i] = fT1S3tier;
+                    data.open("Data/Scrolls/scrollNames.txt", std::fstream::app);
+                    data << player.scrollName[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDescriptions.txt", std::fstream::app);
+                    data << player.scrollDescription[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceTypes.txt", std::fstream::app);
+                    data << player.scrollDiceType[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceCounts.txt", std::fstream::app);
+                    data << player.scrollDiceCount[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollTiers.txt", std::fstream::app);
+                    data << player.scrollTier[i] << endl;
+                    data.close();
+                    break;
+                case 4:
+                    player.scrollName[i] = fT1S4name;
+                    player.scrollDescription[i] = fT1S4description;
+                    player.scrollDiceType[i] = fT1S4diceType;
+                    player.scrollDiceCount[i] = fT1S4diceCount;
+                    player.scrollTier[i] = fT1S4tier;
+                    data.open("Data/Scrolls/scrollNames.txt", std::fstream::app);
+                    data << player.scrollName[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDescriptions.txt", std::fstream::app);
+                    data << player.scrollDescription[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceTypes.txt", std::fstream::app);
+                    data << player.scrollDiceType[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceCounts.txt", std::fstream::app);
+                    data << player.scrollDiceCount[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollTiers.txt", std::fstream::app);
+                    data << player.scrollTier[i] << endl;
+                    data.close();
+                    break;
+                case 5:
+                    player.scrollName[i] = fT1S5name;
+                    player.scrollDescription[i] = fT1S5description;
+                    player.scrollDiceType[i] = fT1S5diceType;
+                    player.scrollDiceCount[i] = fT1S5diceCount;
+                    player.scrollTier[i] = fT1S5tier;
+                    data.open("Data/Scrolls/scrollNames.txt", std::fstream::app);
+                    data << player.scrollName[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDescriptions.txt", std::fstream::app);
+                    data << player.scrollDescription[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceTypes.txt", std::fstream::app);
+                    data << player.scrollDiceType[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceCounts.txt", std::fstream::app);
+                    data << player.scrollDiceCount[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollTiers.txt", std::fstream::app);
+                    data << player.scrollTier[i] << endl;
+                    data.close();
+                    break;
+                default:
+                    player.scrollName[i] = "";
+                    player.scrollDescription[i] = "";
+                    player.scrollDiceType[i] = 0;
+                    player.scrollDiceCount[i] = 0;
+                    player.scrollTier[i] = 0;
+                    data.open("Data/Scrolls/scrollNames.txt", std::fstream::app);
+                    data << player.scrollName[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDescriptions.txt", std::fstream::app);
+                    data << player.scrollDescription[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceTypes.txt", std::fstream::app);
+                    data << player.scrollDiceType[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceCounts.txt", std::fstream::app);
+                    data << player.scrollDiceCount[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollTiers.txt", std::fstream::app);
+                    data << player.scrollTier[i] << endl;
+                    data.close();
+                    break;
+            }
         } else if(player.playerStyle == "Air"){
-
+            cout << "\n1. " << fT1S1name << "\n2. " << fT1S2name << "\n3. " << fT1S3name << "\n4. " << fT1S4name << "\n5. " << fT1S5name << "\n";
+            cin >> userAnswer;
+            switch(userAnswer){
+                case 1:
+                    player.scrollName[i] = fT1S1name;
+                    player.scrollDescription[i] = fT1S1description;
+                    player.scrollDiceType[i] = fT1S1diceType;
+                    player.scrollDiceCount[i] = fT1S1diceCount;
+                    player.scrollTier[i] = fT1S1tier;
+                    data.open("Data/Scrolls/scrollNames.txt", std::fstream::app);
+                    data << player.scrollName[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDescriptions.txt", std::fstream::app);
+                    data << player.scrollDescription[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceTypes.txt", std::fstream::app);
+                    data << player.scrollDiceType[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceCounts.txt", std::fstream::app);
+                    data << player.scrollDiceCount[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollTiers.txt", std::fstream::app);
+                    data << player.scrollTier[i] << endl;
+                    data.close();
+                    break;
+                case 2:
+                    player.scrollName[i] = fT1S2name;
+                    player.scrollDescription[i] = fT1S2description;
+                    player.scrollDiceType[i] = fT1S2diceType;
+                    player.scrollDiceCount[i] = fT1S2diceCount;
+                    player.scrollTier[i] = fT1S2tier;
+                    data.open("Data/Scrolls/scrollNames.txt", std::fstream::app);
+                    data << player.scrollName[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDescriptions.txt", std::fstream::app);
+                    data << player.scrollDescription[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceTypes.txt", std::fstream::app);
+                    data << player.scrollDiceType[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceCounts.txt", std::fstream::app);
+                    data << player.scrollDiceCount[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollTiers.txt", std::fstream::app);
+                    data << player.scrollTier[i] << endl;
+                    data.close();
+                    break;
+                case 3:
+                    player.scrollName[i] = fT1S3name;
+                    player.scrollDescription[i] = fT1S3description;
+                    player.scrollDiceType[i] = fT1S3diceType;
+                    player.scrollDiceCount[i] = fT1S3diceCount;
+                    player.scrollTier[i] = fT1S3tier;
+                    data.open("Data/Scrolls/scrollNames.txt", std::fstream::app);
+                    data << player.scrollName[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDescriptions.txt", std::fstream::app);
+                    data << player.scrollDescription[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceTypes.txt", std::fstream::app);
+                    data << player.scrollDiceType[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceCounts.txt", std::fstream::app);
+                    data << player.scrollDiceCount[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollTiers.txt", std::fstream::app);
+                    data << player.scrollTier[i] << endl;
+                    data.close();
+                    break;
+                case 4:
+                    player.scrollName[i] = fT1S4name;
+                    player.scrollDescription[i] = fT1S4description;
+                    player.scrollDiceType[i] = fT1S4diceType;
+                    player.scrollDiceCount[i] = fT1S4diceCount;
+                    player.scrollTier[i] = fT1S4tier;
+                    data.open("Data/Scrolls/scrollNames.txt", std::fstream::app);
+                    data << player.scrollName[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDescriptions.txt", std::fstream::app);
+                    data << player.scrollDescription[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceTypes.txt", std::fstream::app);
+                    data << player.scrollDiceType[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceCounts.txt", std::fstream::app);
+                    data << player.scrollDiceCount[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollTiers.txt", std::fstream::app);
+                    data << player.scrollTier[i] << endl;
+                    data.close();
+                    break;
+                case 5:
+                    player.scrollName[i] = fT1S5name;
+                    player.scrollDescription[i] = fT1S5description;
+                    player.scrollDiceType[i] = fT1S5diceType;
+                    player.scrollDiceCount[i] = fT1S5diceCount;
+                    player.scrollTier[i] = fT1S5tier;
+                    data.open("Data/Scrolls/scrollNames.txt", std::fstream::app);
+                    data << player.scrollName[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDescriptions.txt", std::fstream::app);
+                    data << player.scrollDescription[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceTypes.txt", std::fstream::app);
+                    data << player.scrollDiceType[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceCounts.txt", std::fstream::app);
+                    data << player.scrollDiceCount[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollTiers.txt", std::fstream::app);
+                    data << player.scrollTier[i] << endl;
+                    data.close();
+                    break;
+                default:
+                    player.scrollName[i] = "";
+                    player.scrollDescription[i] = "";
+                    player.scrollDiceType[i] = 0;
+                    player.scrollDiceCount[i] = 0;
+                    player.scrollTier[i] = 0;
+                    data.open("Data/Scrolls/scrollNames.txt", std::fstream::app);
+                    data << player.scrollName[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDescriptions.txt", std::fstream::app);
+                    data << player.scrollDescription[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceTypes.txt", std::fstream::app);
+                    data << player.scrollDiceType[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollDiceCounts.txt", std::fstream::app);
+                    data << player.scrollDiceCount[i] << endl;
+                    data.close();
+                    data.open("Data/Scrolls/scrollTiers.txt", std::fstream::app);
+                    data << player.scrollTier[i] << endl;
+                    data.close();
+                    break;
+            }
         } else if(player.playerStyle == "Devoted"){
 
         }
@@ -1763,7 +2040,8 @@ characterInfo loadCharacter(){
     ifstream data;
 
     data.open("Data/Other/name.txt");
-    data >> player.playerName;
+    getline(data, player.playerName);    
+    //data >> player.playerName;
     data.close();
 
     data.open("Data/Other/style.txt");
@@ -1789,7 +2067,8 @@ characterInfo loadCharacter(){
     data.close();
 
     data.open("Data/Other/background.txt");
-    data >> player.playerBackground;
+    getline(data, player.playerBackground);
+    //data >> player.playerBackground;
     data.close();
 
     data.open("Data/Other/role.txt");
@@ -3046,97 +3325,97 @@ int characterSheet(characterInfo player){
                 cin >> userAnswer;
                 switch(userAnswer){
                     case 1:
-                       statRoll(player.powerMod);
+                       statRoll(player.powerMod, "Power");
                        break;
                     case 2:
-                       statRoll(player.powerSaveMod);
+                       statRoll(player.powerSaveMod, "Power Save");
                        break;
                     case 3:
-                       statRoll(player.finesseMod);
+                       statRoll(player.finesseMod, "Finesse");
                        break;
                     case 4:
-                       statRoll(player.finesseSaveMod);
+                       statRoll(player.finesseSaveMod, "Finesse Save");
                        break;
                     case 5:
-                       statRoll(player.vitalityMod);
+                       statRoll(player.vitalityMod, "Vitality");
                        break;
                     case 6:
-                       statRoll(player.vitalitySaveMod);
+                       statRoll(player.vitalitySaveMod, "Vitality Save");
                        break;
                     case 7:
-                       statRoll(player.knowledgeMod);
+                       statRoll(player.knowledgeMod, "Knowledge");
                        break;
                     case 8:
-                       statRoll(player.knowledgeSaveMod);
+                       statRoll(player.knowledgeSaveMod, "Knowledge Save");
                        break;
                     case 9:
-                       statRoll(player.reasonMod);
+                       statRoll(player.reasonMod, "Reason");
                        break;
                     case 10:
-                       statRoll(player.reasonSaveMod);
+                       statRoll(player.reasonSaveMod, "Reason Save");
                        break;
                     case 11:
-                       statRoll(player.characterMod);
+                       statRoll(player.characterMod, "Character");
                        break;
                     case 12:
-                       statRoll(player.characterSaveMod);
+                       statRoll(player.characterSaveMod, "Character Save");
                        break;
                     case 13:
-                       statRoll(player.athleticsMod);
+                       statRoll(player.athleticsMod, "Athletics");
                        break;
                     case 14:
-                       statRoll(player.acrobaticsMod);
+                       statRoll(player.acrobaticsMod, "Acrobatics");
                        break;
                     case 15:
-                       statRoll(player.escamotageMod);
+                       statRoll(player.escamotageMod, "Escamotage");
                        break;
                     case 16:
-                       statRoll(player.stealthMod);
+                       statRoll(player.stealthMod, "Stealth");
                        break;
                     case 17:
-                       statRoll(player.willpowerMod);
+                       statRoll(player.willpowerMod, "Willpower");
                        break;
                     case 18:
-                       statRoll(player.historyMod);
+                       statRoll(player.historyMod, "History");
                        break;
                     case 19:
-                       statRoll(player.investigationMod);
+                       statRoll(player.investigationMod, "Investigation");
                        break;
                     case 20:
-                       statRoll(player.natureMod);
+                       statRoll(player.natureMod, "Nature");
                        break;
                     case 21:
-                       statRoll(player.seafaringMod);
+                       statRoll(player.seafaringMod, "Seafaring");
                        break;
                     case 22:
-                       statRoll(player.spiritMod);
+                       statRoll(player.spiritMod, "Spirit");
                        break;
                     case 23:
-                       statRoll(player.tamingMod);
+                       statRoll(player.tamingMod, "Taming");
                        break;
                     case 24:
-                       statRoll(player.huntingMod);
+                       statRoll(player.huntingMod, "Hunting");
                        break;
                     case 25:
-                       statRoll(player.insightMod);
+                       statRoll(player.insightMod, "Insight");
                        break;
                     case 26:
-                       statRoll(player.medicineMod);
+                       statRoll(player.medicineMod, "Medicine");
                        break;
                     case 27:
-                       statRoll(player.perceptionMod);
+                       statRoll(player.perceptionMod, "Perception");
                        break;
                     case 28:
-                       statRoll(player.deceptionMod);
+                       statRoll(player.deceptionMod, "Deception");
                        break;
                     case 29:
-                       statRoll(player.intimidationMod);
+                       statRoll(player.intimidationMod, "Intimidation");
                        break;
                     case 30:
-                       statRoll(player.performanceMod);
+                       statRoll(player.performanceMod, "Performance");
                        break;
                     case 31:
-                       statRoll(player.persuasionMod);
+                       statRoll(player.persuasionMod, "Persuasion");
                        break;
                     default:
                         break;
@@ -3415,6 +3694,25 @@ int characterSheet(characterInfo player){
                         data.close();
                         break;
                     case 9:
+                        cout << "How many spirit bonds do you have? 0, 1, 2, or 3.\n";
+                        cin >> userAnswer;
+                        switch(userAnswer){
+                            case 1: 
+                                player.playerSpiritBond = 1;
+                                break;
+                            case 2:
+                                player.playerSpiritBond = 2;
+                                break;
+                            case 3:
+                                player.playerSpiritBond = 3;
+                                break;
+                            default:
+                                player.playerSpiritBond = 0;
+                                break;
+                        }
+                        data.open("Data/Other/spiritBond.txt", std::fstream::trunc);
+                        data << player.playerSpiritBond;    
+                        data.close();
                         break;
                     case 10:
                         break;
@@ -3485,13 +3783,14 @@ int diceRoll(int diceType, int diceCount, int diceMod){
     cout << "Sum of all roll without modifiers is " << rollSumNoMod << endl;
     return 0;
 };
-int statRoll(int statMod){
+int statRoll(int statMod, string stat){
     ifstream data;
     data.open("Data/Other/chat.txt", std::fstream::app);
     int roll1;
     int roll2;    
     roll1 = (rand()%20) + 1;
-    roll2 = (rand()%20) + 1;    
+    roll2 = (rand()%20) + 1;
+    cout << "\n" << stat << ":\n";
     if(statMod < 0){
         cout << "First roll: " << roll1 + statMod << " (" << roll1 << " -" << abs(statMod) << ")\n";
         //data >> "First roll: " << roll1 + statMod << " (" << roll1 << " -" << abs(statMod) << ")\n";
@@ -3508,6 +3807,10 @@ int statRoll(int statMod){
 int scrollRoll(int diceType, int diceCount, int diceMod, string description, string name){
     int roll;
     int rollSum = 0;
+    if(diceCount == 0){
+        cout << "\nThis is not an attacking move.\n";
+        return 0;
+    }
     cout << "(";
     for(int i = 0; i < diceCount; i++){
         roll = (rand()%diceType) + 1;
