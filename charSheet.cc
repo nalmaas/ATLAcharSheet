@@ -654,7 +654,7 @@ characterInfo createCharacter(){
     //cin >> userAnswer;        
     valid = false;
     while(!valid){
-        cout << "\nWhat is your character's outward personality?" << endl << "1. Benevolent\n2. Malevolent\n3. Ambivalent\n" << endl;
+        cout << "\nWhat is your character's outward personality?\n1. Benevolent\n2. Ambivalent\n3. Malevolent\n";
         valid = true;
         cin >> userAnswer;
         if(cin.fail()){
@@ -668,7 +668,7 @@ characterInfo createCharacter(){
         case 1:
             player.playerOutward = "Benevolent";
             break;
-        case 2:
+        case 3:
             player.playerOutward = "Malevolent";
             break;
        default:
@@ -686,7 +686,7 @@ characterInfo createCharacter(){
     //cin >> userAnswer;
     valid = false;
     while(!valid){
-        cout << "\nWhat is your character's inward personality?" << endl << "1. Benevolent\n2. Malevolent\n3. Ambivalent\n" << endl;
+        cout << "\nWhat is your character's inward personality?\n1. Benevolent\n2. Ambivalent\n3. Malevolent\n";
         valid = true;
         cin >> userAnswer;
         if(cin.fail()){
@@ -701,7 +701,7 @@ characterInfo createCharacter(){
             player.playerInward = "Benevolent";
             condition = 1;
             break;
-        case 2:
+        case 3:
             player.playerInward = "Malevolent";
             condition = 1;
             break;
@@ -1160,6 +1160,7 @@ characterInfo createCharacter(){
     data.close();
 
 //inventory support will come later
+    condition = 0;
     while( condition == 0 ) {
         cout << "\nHow many items do you have in your inventory?" << endl;
         cin >> userAnswer;
@@ -4108,13 +4109,13 @@ int characterSheet(characterInfo player){
                             }
                         break;
                     case 5:
-                        cout << "What is your character's new outward personality?" << endl << "1. Benevolent\n2. Malevolent\n3. Ambivalent\n";
+                        cout << "What is your character's new outward personality?" << endl << "1. Benevolent\n2. Ambivalent\n3. Malevolent\n";
                         cin >> userAnswer;        
                         switch(userAnswer){
                             case 1:
                                 player.playerOutward = "Benevolent";
                                 break;
-                            case 2:
+                            case 3:
                                 player.playerOutward = "Malevolent";
                                 break;
                             default:
@@ -4126,13 +4127,13 @@ int characterSheet(characterInfo player){
                         data.close();
                         break;
                     case 6:
-                        cout << "What is your character's new inward personality?" << endl << "1. Benevolent\n2. Malevolent\n3. Ambivalent\n";
+                        cout << "What is your character's new inward personality?" << endl << "1. Benevolent\2. Ambivalent\n3. Malevolent\n";
                         cin >> userAnswer;        
                         switch(userAnswer){
                             case 1:
                                 player.playerInward = "Benevolent";
                                 break;
-                            case 2:
+                            case 3:
                                 player.playerInward = "Malevolent";
                                 break;
                             default:
