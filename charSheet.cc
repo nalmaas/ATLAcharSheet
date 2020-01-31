@@ -413,6 +413,7 @@ characterInfo createCharacter(){
     data.close();
 
     //cout << "What is your character's style?" << endl;
+    valid = false;
     while( condition == 0 ) {
         //cin >> userAnswer;
         while(!valid){
@@ -801,8 +802,20 @@ characterInfo createCharacter(){
 
 
 
-    cout << "\nHow many spirit bonds does your character have? 0, 1, 2, or 3?" << endl;
-    cin >> userAnswer;        
+    //cout << "\nHow many spirit bonds does your character have? 0, 1, 2, or 3?" << endl;
+    //cin >> userAnswer;        
+    valid = false;
+    while(!valid){
+        cout << "\nHow many spirit bonds does your character have? 0, 1, 2, or 3?\n";
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
     switch(userAnswer){
         case 1:
             player.playerSpiritBond = 1;
@@ -822,14 +835,38 @@ characterInfo createCharacter(){
     data.close();
 
 
-    cout << "\nWhat is your character's power?" << endl;
-    cin >> player.playerPower;
+    //cout << "\nWhat is your character's power?" << endl;
+    //cin >> player.playerPower;
+    valid = false;
+    while(!valid){
+        cout << "\nWhat is your character's power?\n";
+        valid = true;
+        cin >> player.playerPower;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
     data.open("Data/Stats/power.txt", std::fstream::trunc);
     data << player.playerPower;
     data.close();
 
-    cout << "\nDoes your character have proficiency in power saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
-    cin >> userAnswer;        
+    //cout << "\nDoes your character have proficiency in power saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
+    //cin >> userAnswer;
+    valid = false;
+    while(!valid){
+        cout << "\nDoes your character have proficiency in power saving throws?\n1. Yes\n2. No\n";
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }        
     switch(userAnswer){
         case 1:
             player.powerSave = true;
@@ -843,14 +880,38 @@ characterInfo createCharacter(){
     data.close();
 
 
-    cout << "\nWhat is your character's finesse?" << endl;
-    cin >> player.playerFinesse;
+    //cout << "\nWhat is your character's finesse?" << endl;
+    //cin >> player.playerFinesse;
+    valid = false;
+    while(!valid){
+        cout << "\nWhat is your character's finesse?\n";
+        valid = true;
+        cin >> player.playerFinesse;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }    
     data.open("Data/Stats/finesse.txt", std::fstream::trunc);
     data << player.playerFinesse;
     data.close();
 
-    cout << "\nDoes your character have proficiency in finesse saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
-    cin >> userAnswer;        
+    //cout << "\nDoes your character have proficiency in finesse saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
+    //cin >> userAnswer;        
+    valid = false;
+    while(!valid){
+        cout << "\nDoes your character have proficiency in power finesse throws?\n1. Yes\n2. No\n";
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
     switch(userAnswer){
         case 1:
             player.finesseSave = true;
@@ -864,137 +925,236 @@ characterInfo createCharacter(){
     data.close();
 
 
-    cout << "\nWhat is your character's vitality?" << endl;
-    cin >> player.playerVitality;
+    //cout << "\nWhat is your character's vitality?" << endl;
+    //cin >> player.playerVitality;
+    valid = false;
+    while(!valid){
+        cout << "\nWhat is your character's vitality?\n";
+        valid = true;
+        cin >> player.playerVitality;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
     data.open("Data/Stats/vitality.txt", std::fstream::trunc);
     data << player.playerVitality;
     data.close();
 
-    while( condition == 0 ) {
-        cout << "\nDoes your character have proficiency in vitality saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.vitalitySave = true;
-                condition = 1;
-                break;
-            case 2:
-                player.vitalitySave = false;
-                condition = 1;
-                break;
-            default:
-                cout << "Not a valid response, please try again.\n";
-                break;
-        }    
+    //cout << "\nDoes your character have proficiency in vitality saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
+    //cin >> userAnswer;        
+    valid = false;
+    while(!valid){
+        cout << "\nDoes your character have proficiency in power vitality throws?\n1. Yes\n2. No\n";
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }    
+    switch(userAnswer){
+        case 1:
+            player.vitalitySave = true;
+            break;
+        default:
+            player.vitalitySave = false;
+            break;
     }
     data.open("Data/Stats/vitalitySave.txt", std::fstream::trunc);
     data << player.vitalitySave;
     data.close();
-    condition = 0;
 
 
-    cout << "\nWhat is your character's knowledge?" << endl;
-    cin >> player.playerKnowledge;
+    //cout << "\nWhat is your character's knowledge?" << endl;
+    //cin >> player.playerKnowledge;
+    valid = false;
+    while(!valid){
+        cout << "\nWhat is your character's knowledge?\n";
+        valid = true;
+        cin >> player.playerKnowledge;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
     data.open("Data/Stats/knowledge.txt", std::fstream::trunc);
     data << player.playerKnowledge;
     data.close();
 
-    while( condition == 0 ) {
-        cout << "\nDoes your character have proficiency in knowledge saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.knowledgeSave = true;
-                condition = 1;
-                break;
-            case 2:
-                player.knowledgeSave = false;
-                condition = 1;
-                break;
-            default:
-                cout << "Not a valid response, please try again.\n";
-                break;
-        }    
+    //cout << "\nDoes your character have proficiency in knowledge saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
+    //cin >> userAnswer;
+    valid = false;
+    while(!valid){
+        cout << "\nDoes your character have proficiency in knowledge saving throws?\n1. Yes\n2. No\n";
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
     }
+    switch(userAnswer){
+        case 1:
+            player.knowledgeSave = true;
+            break;
+        default:
+            player.knowledgeSave = false;
+            break;
+     }
     data.open("Data/Stats/knowledgeSave.txt", std::fstream::trunc);
     data << player.knowledgeSave;
     data.close();
-    condition = 0;
 
 
-    cout << "\nWhat is your character's reason?" << endl;
-    cin >> player.playerReason;
+    //cout << "\nWhat is your character's reason?" << endl;
+    //cin >> player.playerReason;
+    valid = false;
+    while(!valid){
+        cout << "\nWhat is your character's reason?\n";
+        valid = true;
+        cin >> player.playerReason;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
     data.open("Data/Stats/reason.txt", std::fstream::trunc);
     data << player.playerReason;
     data.close();
 
-    while( condition == 0 ) {
-        cout << "\nDoes your character have proficiency in reason saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.reasonSave = true;
-                condition = 1;
-                break;
-            case 2:
-                player.reasonSave = false;
-                condition = 1;
-                break;
-            default:
-                cout << "Not a valid response, please try again.\n";
-                break;
-        }    
+    //cout << "\nDoes your character have proficiency in reason saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
+    //cin >> userAnswer;        
+    valid = false;
+    while(!valid){
+        cout << "\nDoes your character have proficiency in reason saving throws?\n1. Yes\n2. No\n";
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
+    switch(userAnswer){
+        case 1:
+            player.reasonSave = true;
+            break;
+        default:
+            player.reasonSave = false;
+            break;
     }
     data.open("Data/Stats/reasonSave.txt", std::fstream::trunc);
     data << player.reasonSave;
     data.close();
-    condition = 0;
 
 
-    cout << "\nWhat is your character's character?" << endl;
-    cin >> player.playerCharacter;
+    //cout << "\nWhat is your character's character?" << endl;
+    //cin >> player.playerCharacter;
+    valid = false;
+    while(!valid){
+        cout << "\nWhat is your character's character?\n";
+        valid = true;
+        cin >> player.playerCharacter;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
     data.open("Data/Stats/character.txt", std::fstream::trunc);
     data << player.playerCharacter;
     data.close();
 
-    while( condition == 0 ) {
-        cout << "\nDoes your character have proficiency in character saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.characterSave = true;
-                condition = 1;
-                break;
-            case 2:
-                player.characterSave = false;
-                condition = 1;
-                break;
-            default:
-                cout << "Not a valid response, please try again.\n";
-                break;
-        }    
+    //cout << "\nDoes your character have proficiency in character saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
+    //cin >> userAnswer;        
+    valid = false;
+    while(!valid){
+        cout << "\nDoes your character have proficiency in character saving throws?\n1. Yes\n2. No\n";
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
+    switch(userAnswer){
+        case 1:
+            player.characterSave = true;
+            break;
+        default:
+            player.characterSave = false;
+            break;
     }
     data.open("Data/Stats/characterSave.txt", std::fstream::trunc);
     data << player.characterSave;
     data.close();
-    condition = 0;
 
 
-    cout << "\nHow much gold does your character have?" << endl;
-    cin >> player.playerGold;
+    //cout << "\nHow much gold does your character have?" << endl;
+    //cin >> player.playerGold;
+    valid = false;
+    while(!valid){
+        cout << "\nHow much gold does your character have?\n";
+        valid = true;
+        cin >> player.playerGold;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
     data.open("Data/Money/gold.txt", std::fstream::trunc);
     data << player.playerGold;
     data.close();
 
-
-    cout << "\nHow much silver does your character have?" << endl;
-    cin >> player.playerSilver;
+    //cout << "\nHow much silver does your character have?" << endl;
+    //cin >> player.playerSilver;
+    valid = false;
+    while(!valid){
+        cout << "\nHow much silver does your character have?\n";
+        valid = true;
+        cin >> player.playerSilver;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
     data.open("Data/Money/silver.txt", std::fstream::trunc);
     data << player.playerSilver;
     data.close();
 
-    cout << "\nHow much copper does your character have?" << endl;
-    cin >> player.playerCopper;
+    //cout << "\nHow much copper does your character have?" << endl;
+    //cin >> player.playerCopper;
+    valid = false;
+    while(!valid){
+        cout << "\nHow much copper does your character have?\n";
+        valid = true;
+        cin >> player.playerCopper;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
     data.open("Data/Money/copper.txt", std::fstream::trunc);
     data << player.playerCopper;
     data.close();
@@ -1091,7 +1251,7 @@ characterInfo createCharacter(){
     }
     data.close();
 
-//notes support will come later
+//notes support will come later (probably not)
 //features support will come later
 //scrolls support will come later
 
@@ -1840,423 +2000,501 @@ characterInfo createCharacter(){
     }
 
 
-    while( condition == 0 ) {
-        cout << "\nDoes your character have proficiency in athletics?" << endl << "1. Yes" << endl << "2. No" << endl;
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.athleticsProf = true;
-                condition = 1;
-                break;
-            case 2:
-                player.athleticsProf = false;
-                condition = 1;
-                break;
-            default:
-                cout << "\nNot a valid response, please try again.\n";
-                break;
-        }    
+    //cout << "\nDoes your character have proficiency in athletics?\n1. Yes\n2. No\n";
+    //cin >> userAnswer;
+    valid = false;
+    while(!valid){
+        cout << "\nDoes your character have proficiency in athletics?\n1. Yes\n2. No\n";
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
+    switch(userAnswer){
+        case 1:
+            player.athleticsProf = true;
+            break;
+        default:
+            player.athleticsProf = false;
+            break;
     }
     data.open("Data/Proficiencies/athletics.txt", std::fstream::trunc);
     data << player.athleticsProf;
     data.close();
-    condition = 0;
 
-    while( condition == 0 ) {
-        cout << "\nDoes your character have proficiency in acrobatics?" << endl << "1. Yes" << endl << "2. No" << endl;
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.acrobaticsProf = true;
-                condition = 1;
-                break;
-            case 2:
-                player.acrobaticsProf = false;
-                condition = 1;
-                break;
-            default:
-                cout << "\nNot a valid response, please try again.\n";
-                break;
-        }    
+    //cout << "\nDoes your character have proficiency in acrobatics?\n1. Yes\n2. No\n";
+    //cin >> userAnswer;
+    valid = false;
+    while(!valid){
+        cout << "\nDoes your character have proficiency in acrobatics?\n1. Yes\n2. No\n";
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
+    switch(userAnswer){
+        case 1:
+            player.acrobaticsProf = true;
+            break;
+        default:
+            player.acrobaticsProf = false;
+            break;
     }
     data.open("Data/Proficiencies/acrobatics.txt", std::fstream::trunc);
     data << player.acrobaticsProf;
     data.close();
-    condition = 0;
 
-    while( condition == 0 ) {
-        cout << "\nDoes your character have proficiency in escamotage?" << endl << "1. Yes" << endl << "2. No" << endl;
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.escamotageProf = true;
-                condition = 1;
-                break;
-            case 2:
-                player.escamotageProf = false;
-                condition = 1;
-                break;
-            default:
-                cout << "\nNot a valid response, please try again.\n";
-                break;
-        }    
+    //cout << "\nDoes your character have proficiency in escamotage?\n1. Yes\n2. No\n";
+    //cin >> userAnswer;
+    valid = false;
+    while(!valid){
+        cout << "\nDoes your character have proficiency in escamotage?\n1. Yes\n2. No\n";
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
+    switch(userAnswer){
+        case 1:
+            player.escamotageProf = true;
+            break;
+        default:
+            player.escamotageProf = false;
+            break;
     }
     data.open("Data/Proficiencies/escamotage.txt", std::fstream::trunc);
     data << player.escamotageProf;
     data.close();
-    condition = 0;
 
-    while( condition == 0 ) {
-        cout << "\nDoes your character have proficiency in stealth?" << endl << "1. Yes" << endl << "2. No" << endl;
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.stealthProf = true;
-                condition = 1;
-                break;
-            case 2:
-                player.stealthProf = false;
-                condition = 1;
-                break;
-            default:
-                cout << "\nNot a valid response, please try again.\n";
-                break;
-        }    
+    //cout << "\nDoes your character have proficiency in stealth?\n1. Yes\n2. No\n";
+    //cin >> userAnswer;
+    valid = false;
+    while(!valid){
+        cout << "\nDoes your character have proficiency in stealth?\n1. Yes\n2. No\n";
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
     }
+    switch(userAnswer){
+        case 1:
+            player.stealthProf = true;
+            break;
+        default:
+            player.stealthProf = false;
+            break;
+    }    
     data.open("Data/Proficiencies/stealth.txt", std::fstream::trunc);
     data << player.stealthProf;
     data.close();
     condition = 0;
 
-    while( condition == 0 ) {
-        cout << "\nDoes your character have proficiency in willpower?" << endl << "1. Yes" << endl << "2. No" << endl;
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.willpowerProf = true;
-                condition = 1;
-                break;
-            case 2:
-                player.willpowerProf = false;
-                condition = 1;
-                break;
-            default:
-                cout << "\nNot a valid response, please try again.\n";
-                break;
-        }    
+    //cout << "\nDoes your character have proficiency in willpower?" << endl << "1. Yes" << endl << "2. No" << endl;
+    //cin >> userAnswer;
+    valid = false;
+    while(!valid){
+        cout << "\nDoes your character have proficiency in willpower?\n1. Yes\n2. No\n";
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
+    switch(userAnswer){
+        case 1:
+            player.willpowerProf = true;
+            break;
+        default:
+            player.willpowerProf = false;
+            break;
     }
     data.open("Data/Proficiencies/willpower.txt", std::fstream::trunc);
     data << player.willpowerProf;
     data.close();
-    condition = 0;
 
-    while( condition == 0 ) {
-        cout << "\nDoes your character have proficiency in history?" << endl << "1. Yes" << endl << "2. No" << endl;
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.historyProf = true;
-                condition = 1;
-                break;
-            case 2:
-                player.historyProf = false;
-                condition = 1;
-                break;
-            default:
-                cout << "\nNot a valid response, please try again.\n";
-                break;
-        }    
+    //cout << "\nDoes your character have proficiency in history?" << endl << "1. Yes" << endl << "2. No" << endl;
+    //cin >> userAnswer;
+    valid = false;
+    while(!valid){
+        cout << "\nDoes your character have proficiency in history?\n1. Yes\n2. No\n";
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
+    switch(userAnswer){
+        case 1:
+            player.historyProf = true;
+            break;
+        case 2:
+            player.historyProf = false;
+            break;
     }
     data.open("Data/Proficiencies/history.txt", std::fstream::trunc);
     data << player.historyProf;
     data.close();
-    condition = 0;
 
-    while( condition == 0 ) {
-        cout << "\nDoes your character have proficiency in investigation?" << endl << "1. Yes" << endl << "2. No" << endl;
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.investigationProf = true;
-                condition = 1;
-                break;
-            case 2:
-                player.investigationProf = false;
-                condition = 1;
-                break;
-            default:
-                cout << "\nNot a valid response, please try again.\n";
-                break;
-        }    
+    //cout << "\nDoes your character have proficiency in investigation?" << endl << "1. Yes" << endl << "2. No" << endl;
+    //cin >> userAnswer;
+    valid = false;
+    while(!valid){
+        cout << "\nDoes your character have proficiency in investigation?\n1. Yes\n2. No\n";
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }   
+    switch(userAnswer){
+        case 1:
+            player.investigationProf = true;
+            break;
+        case 2:
+            player.investigationProf = false;
+            break;
     }
     data.open("Data/Proficiencies/investigation.txt", std::fstream::trunc);
     data << player.investigationProf;
     data.close();
-    condition = 0;
 
-    while( condition == 0 ) {
-        cout << "\nDoes your character have proficiency in nature?" << endl << "1. Yes" << endl << "2. No" << endl;
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.natureProf = true;
-                condition = 1;
-                break;
-            case 2:
-                player.natureProf = false;
-                condition = 1;
-                break;
-            default:
-                cout << "\nNot a valid response, please try again.\n";
-                break;
-        }    
+    //cout << "\nDoes your character have proficiency in nature?" << endl << "1. Yes" << endl << "2. No" << endl;
+    //cin >> userAnswer;
+    valid = false;
+    while(!valid){
+        cout << "\nDoes your character have proficiency in nature?\n1. Yes\n2. No\n";
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
     }
+    switch(userAnswer){
+        case 1:
+            player.natureProf = true;
+            break;
+        case 2:
+            player.natureProf = false;
+            break;
+    }    
     data.open("Data/Proficiencies/nature.txt", std::fstream::trunc);
     data << player.natureProf;
     data.close();
-    condition = 0;
 
-    while( condition == 0 ) {
-        cout << "\nDoes your character have proficiency in seafaring?" << endl << "1. Yes" << endl << "2. No" << endl;
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.seafaringProf = true;
-                condition = 1;
-                break;
-            case 2:
-                player.seafaringProf = false;
-                condition = 1;
-                break;
-            default:
-                cout << "\nNot a valid response, please try again.\n";
-                break;
-        }    
+    //cout << "\nDoes your character have proficiency in seafaring?" << endl << "1. Yes" << endl << "2. No" << endl;
+    //cin >> userAnswer;
+    valid = false;
+    while(!valid){
+        cout << "\nDoes your character have proficiency in seafaring?\n1. Yes\n2. No\n";
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
+    switch(userAnswer){
+        case 1:
+            player.seafaringProf = true;
+            break;
+        default:
+            player.seafaringProf = false;
+            break;
     }
     data.open("Data/Proficiencies/seafaring.txt", std::fstream::trunc);
     data << player.seafaringProf;
     data.close();
-    condition = 0;
 
-    while( condition == 0 ) {
-        cout << "\nDoes your character have proficiency in spirit?" << endl << "1. Yes" << endl << "2. No" << endl;
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.spiritProf = true;
-                condition = 1;
-                break;
-            case 2:
-                player.spiritProf = false;
-                condition = 1;
-                break;
-            default:
-                cout << "\nNot a valid response, please try again.\n";
-                break;
-        }    
+    //cout << "\nDoes your character have proficiency in spirit?" << endl << "1. Yes" << endl << "2. No" << endl;
+    //cin >> userAnswer;
+    valid = false;
+    while(!valid){
+        cout << "\nDoes your character have proficiency in spirit?\n1. Yes\n2. No\n";
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
+    switch(userAnswer){
+        case 1:
+            player.spiritProf = true;
+            break;
+        default:
+            player.spiritProf = false;
+            break;
     }
     data.open("Data/Proficiencies/spirit.txt", std::fstream::trunc);
     data << player.spiritProf;
     data.close();
-    condition = 0;
 
-    while( condition == 0 ) {
-        cout << "\nDoes your character have proficiency in taming?" << endl << "1. Yes" << endl << "2. No" << endl;
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.tamingProf = true;
-                condition = 1;
-                break;
-            case 2:
-                player.tamingProf = false;
-                condition = 1;
-                break;
-            default:
-                cout << "\nNot a valid response, please try again.\n";
-                break;
-        }    
+    //cout << "\nDoes your character have proficiency in taming?" << endl << "1. Yes" << endl << "2. No" << endl;
+    //cin >> userAnswer;
+    valid = false;
+    while(!valid){
+        cout << "\nDoes your character have proficiency in taming?\n1. Yes\n2. No\n";
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
+    switch(userAnswer){
+        case 1:
+            player.tamingProf = true;
+            break;
+        default:
+            player.tamingProf = false;
+            break;
     }
     data.open("Data/Proficiencies/taming.txt", std::fstream::trunc);
     data << player.tamingProf;
     data.close();
-    condition = 0;
 
-    while( condition == 0 ) {
-        cout << "\nDoes your character have proficiency in hunting?" << endl << "1. Yes" << endl << "2. No" << endl;
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.huntingProf = true;
-                condition = 1;
-                break;
-            case 2:
-                player.huntingProf = false;
-                condition = 1;
-                break;
-            default:
-                cout << "\nNot a valid response, please try again.\n";
-                break;
-        }    
+    //cout << "\nDoes your character have proficiency in hunting?" << endl << "1. Yes" << endl << "2. No" << endl;
+    //cin >> userAnswer;
+    valid = false;
+    while(!valid){
+        cout << "\nDoes your character have proficiency in hunting?\n1. Yes\n2. No\n";
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
+    switch(userAnswer){
+        case 1:
+            player.huntingProf = true;
+            break;
+        default:
+            player.huntingProf = false;
+            break;
     }
     data.open("Data/Proficiencies/hunting.txt", std::fstream::trunc);
     data << player.huntingProf;
     data.close();
-    condition = 0;
 
-    while( condition == 0 ) {
-        cout << "\nDoes your character have proficiency in insight?" << endl << "1. Yes" << endl << "2. No" << endl;
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.insightProf = true;
-                condition = 1;
-                break;
-            case 2:
-                player.insightProf = false;
-                condition = 1;
-                break;
-            default:
-                cout << "\nNot a valid response, please try again.\n";
-                break;
-        }    
+    //cout << "\nDoes your character have proficiency in insight?" << endl << "1. Yes" << endl << "2. No" << endl;
+    //cin >> userAnswer;
+    valid = false;
+    while(!valid){
+        cout << "\nDoes your character have proficiency in insight?\n1. Yes\n2. No\n";
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
+    switch(userAnswer){
+        case 1:
+            player.insightProf = true;
+            break;
+        default:
+            player.insightProf = false;
+            break;
     }
     data.open("Data/Proficiencies/insight.txt", std::fstream::trunc);
     data << player.insightProf;
     data.close();
-    condition = 0;
 
-    while( condition == 0 ) {
-        cout << "\nDoes your character have proficiency in medicine?" << endl << "1. Yes" << endl << "2. No" << endl;
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.medicineProf = true;
-                condition = 1;
-                break;
-            case 2:
-                player.medicineProf = false;
-                condition = 1;
-                break;
-            default:
-                cout << "\nNot a valid response, please try again.\n";
-                break;
-        }    
+    //cout << "\nDoes your character have proficiency in medicine?" << endl << "1. Yes" << endl << "2. No" << endl;
+    //cin >> userAnswer;
+    valid = false;
+    while(!valid){
+        cout << "\nDoes your character have proficiency in medicine?\n1. Yes\n2. No\n";
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
+    switch(userAnswer){
+        case 1:
+            player.medicineProf = true;
+            break;
+        default:
+            player.medicineProf = false;
+            break;
     }
     data.open("Data/Proficiencies/medicine.txt", std::fstream::trunc);
     data << player.medicineProf;
     data.close();
-    condition = 0;
 
-    while( condition == 0 ) {
-        cout << "\nDoes your character have proficiency in perception?" << endl << "1. Yes" << endl << "2. No" << endl;
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.perceptionProf = true;
-                condition = 1;
-                break;
-            case 2:
-                player.perceptionProf = false;
-                condition = 1;
-                break;
-            default:
-                cout << "\nNot a valid response, please try again.\n";
-                break;
-        }    
+    //cout << "\nDoes your character have proficiency in perception?" << endl << "1. Yes" << endl << "2. No" << endl;
+    //cin >> userAnswer;
+    valid = false;
+    while(!valid){
+        cout << "\nDoes your character have proficiency in perception?\n1. Yes\n2. No\n";
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
+    switch(userAnswer){
+        case 1:
+           player.perceptionProf = true;
+            break;
+        default:
+            player.perceptionProf = false;
+            break;
     }
     data.open("Data/Proficiencies/perception.txt", std::fstream::trunc);
     data << player.perceptionProf;
     data.close();
-    condition = 0;
 
-    while( condition == 0 ) {
-        cout << "\nDoes your character have proficiency in deception?" << endl << "1. Yes" << endl << "2. No" << endl;
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.deceptionProf = true;
-                condition = 1;
-                break;
-            case 2:
-                player.deceptionProf = false;
-                condition = 1;
-                break;
-            default:
-                cout << "\nNot a valid response, please try again.\n";
-                break;
-        }    
+    //cout << "\nDoes your character have proficiency in deception?" << endl << "1. Yes" << endl << "2. No" << endl;
+    //cin >> userAnswer;
+    valid = false;
+    while(!valid){
+        cout << "\nDoes your character have proficiency in deception?\n1. Yes\n2. No\n";
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
+    switch(userAnswer){
+        case 1:
+            player.deceptionProf = true;
+            break;
+        default:
+            player.deceptionProf = false;
+            break;
     }
     data.open("Data/Proficiencies/deception.txt", std::fstream::trunc);
     data << player.deceptionProf;
     data.close();
-    condition = 0;
 
-    while( condition == 0 ) {
-        cout << "\nDoes your character have proficiency in intimidation?" << endl << "1. Yes" << endl << "2. No" << endl;
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.intimidationProf = true;
-                condition = 1;
-                break;
-            case 2:
-                player.intimidationProf = false;
-                condition = 1;
-                break;
-            default:
-                cout << "\nNot a valid response, please try again.\n";
-                break;
-        }    
+    //cout << "\nDoes your character have proficiency in intimidation?" << endl << "1. Yes" << endl << "2. No" << endl;
+    //cin >> userAnswer;
+    valid = false;
+    while(!valid){
+        cout << "\nDoes your character have proficiency in intimidation?\n1. Yes\n2. No\n";
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
+    switch(userAnswer){
+        case 1:
+            player.intimidationProf = true;
+            break;
+        default:
+            player.intimidationProf = false;
+            break;
     }
     data.open("Data/Proficiencies/intimidation.txt", std::fstream::trunc);
     data << player.intimidationProf;
     data.close();
-    condition = 0;
 
-    while( condition == 0 ) {
-        cout << "\nDoes your character have proficiency in performance?" << endl << "1. Yes" << endl << "2. No" << endl;
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.performanceProf = true;
-                condition = 1;
-                break;
-            case 2:
-                player.performanceProf = false;
-                condition = 1;
-                break;
-            default:
-                cout << "\nNot a valid response, please try again.\n";
-                break;
-        }    
+    //cout << "\nDoes your character have proficiency in performance?" << endl << "1. Yes" << endl << "2. No" << endl;
+    //cin >> userAnswer;
+    valid = false;
+    while(!valid){
+        cout << "\nDoes your character have proficiency in performance?\n1. Yes\n2. No\n";
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
+    switch(userAnswer){
+        case 1:
+            player.performanceProf = true;
+            break;
+        default:
+            player.performanceProf = false;
+            break;
     }
     data.open("Data/Proficiencies/performance.txt", std::fstream::trunc);
     data << player.performanceProf;
     data.close();
-    condition = 0;
 
-    while( condition == 0 ) {
-        cout << "\nDoes your character have proficiency in persuasion?" << endl << "1. Yes" << endl << "2. No" << endl;
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.persuasionProf = true;
-                condition = 1;
-                break;
-            case 2:
-                player.persuasionProf = false;
-                condition = 1;
-                break;
-            default:
-                cout << "\nNot a valid response, please try again.\n";
-                break;
-        }    
+    //cout << "\nDoes your character have proficiency in persuasion?" << endl << "1. Yes" << endl << "2. No" << endl;
+    //cin >> userAnswer;
+    valid = false;
+    while(!valid){
+        cout << "\nDoes your character have proficiency in persuasion?\n1. Yes\n2. No\n";
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
+    switch(userAnswer){
+        case 1:
+            player.persuasionProf = true;
+            break;
+        default:
+            player.persuasionProf = false;
+            break;
     }
     data.open("Data/Proficiencies/persuasion.txt", std::fstream::trunc);
     data << player.persuasionProf;
     data.close();
-    condition = 0;
+
     return player;
 };
 
