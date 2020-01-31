@@ -14,6 +14,7 @@ using namespace std;
 
 int userAnswer;
 string inputWait;
+bool valid = false;
 int condition;
 int partyMax = 100;
 int alliesMax = 100;
@@ -358,8 +359,20 @@ int main(){
     //diceRoll(20, 1, -20);
     characterInfo characterData;
     while( condition == 0 ) {
-        cout << "What would you like to do?" << endl << "1. Create a new character\n2. Use the currently existing character\n3. Quit" << endl;
-        cin >> userAnswer;        
+        //cout << "What would you like to do?\n1. Create a new character\n2. Use the currently existing character\n3. Quit\n";
+        //cin >> userAnswer;
+        valid = false;
+        while(!valid){
+            cout << "What would you like to do?\n1. Create a new character\n2. Use the currently existing character\n3. Quit\n";
+            valid = true;
+            cin >> userAnswer;
+            if(cin.fail()){
+                cin.clear();
+                cin.ignore();
+                cout << "Please enter a number (especially you, Michael)\n";
+                valid = false;
+            }
+        }
         switch(userAnswer){
             case 1:
                 createCharacter();
@@ -401,8 +414,18 @@ characterInfo createCharacter(){
 
     //cout << "What is your character's style?" << endl;
     while( condition == 0 ) {
-        cout << "\nWhat is your character's style?\n1. Water\n2. Earth\n3. Fire\n4. Air\n5. Devoted" << endl;
-        cin >> userAnswer;        
+        //cin >> userAnswer;
+        while(!valid){
+            cout << "\nWhat is your character's style?\n1. Water\n2. Earth\n3. Fire\n4. Air\n5. Devoted" << endl;
+            valid = true;
+            cin >> userAnswer;
+            if(cin.fail()){
+                cin.clear();
+                cin.ignore();
+                cout << "Please enter a number (especially you, Michael)\n";
+                valid = false;
+            }
+        }
         switch(userAnswer){
             case 1:
                 player.playerStyle = "Water";
@@ -438,124 +461,151 @@ characterInfo createCharacter(){
 
 
     if( player.playerStyle == "Water" ){
-        while( condition == 0 ) {
+        //cout << "\nWhat is your character's path?\n1. Path of Restoration\n2. Path of the Stoic\n3. Path of Subjugation\n4. None" << endl;
+        //cin >> userAnswer;
+        valid = false;
+        while(!valid){
             cout << "\nWhat is your character's path?\n1. Path of Restoration\n2. Path of the Stoic\n3. Path of Subjugation\n4. None" << endl;
-            cin >> userAnswer;        
-            switch(userAnswer){
-                case 1:
-                    player.playerPath = "Path of Restoration";
-                    condition = 1;
-                    break;
-                case 2:
-                    player.playerPath = "Path of the Stoic";
-                    condition = 1;
-                    break;
-                case 3:
-                    player.playerPath = "Path of Subjugation";
-                    condition = 1;
-                    break;
-                default:
-                    player.playerPath = "None";
-                    condition = 1;
-                    break;} 
+            valid = true;
+            cin >> userAnswer;
+            if(cin.fail()){
+                cin.clear();
+                cin.ignore();
+                cout << "Please enter a number (especially you, Michael)\n";
+                valid = false;
+            }
         }
-        condition = 0;
+        switch(userAnswer){
+            case 1:
+                player.playerPath = "Path of Restoration";
+                break;
+            case 2:
+                player.playerPath = "Path of the Stoic";
+                break;
+            case 3:
+                player.playerPath = "Path of Subjugation";
+                break;
+            default:
+                player.playerPath = "None";
+                break;
+        }
     } else if( player.playerStyle == "Earth" ){
-        while( condition == 0 ) {
+        //cout << "\nWhat is your character's path?\n1. Path of the Peacekeeper\n2. Path of the Purist\n3. Path of the Ravager\n4. None" << endl;
+        //cin >> userAnswer;
+        valid = false;
+        while(!valid){
             cout << "\nWhat is your character's path?\n1. Path of the Peacekeeper\n2. Path of the Purist\n3. Path of the Ravager\n4. None" << endl;
-            cin >> userAnswer;        
-            switch(userAnswer){
-                case 1:
-                    player.playerPath = "Path of the Peacekeeper";
-                    condition = 1;
-                    break;
-                case 2:
-                    player.playerPath = "Path of the Purist";
-                    condition = 1;
-                    break;
-                case 3:
-                    player.playerPath = "Path of the Ravager";
-                    condition = 1;
-                    break;
-                default:
-                    player.playerPath = "None";
-                    condition = 1;
-                    break;}
+            valid = true;
+            cin >> userAnswer;
+            if(cin.fail()){
+                cin.clear();
+                cin.ignore();
+                cout << "Please enter a number (especially you, Michael)\n";
+                valid = false;
+            }
         }
-        condition = 0;
+        switch(userAnswer){
+            case 1:
+                player.playerPath = "Path of the Peacekeeper";
+                break;
+            case 2:
+                player.playerPath = "Path of the Purist";
+                break;
+            case 3:
+                player.playerPath = "Path of the Ravager";
+                break;
+            default:
+                player.playerPath = "None";
+                break;
+        }
     } else if( player.playerStyle == "Fire" ){
-        while( condition == 0 ) {
+        //cout << "\nWhat is your character's path?\n1. Path of the Elevated\n2. Path of the Zelous\n3. Path of the Fanatic\n4. None" << endl;
+        //cin >> userAnswer;
+        valid = false;
+        while(!valid){
             cout << "\nWhat is your character's path?\n1. Path of the Elevated\n2. Path of the Zelous\n3. Path of the Fanatic\n4. None" << endl;
-            cin >> userAnswer;        
-            switch(userAnswer){
-                case 1:
-                    player.playerPath = "Path of the Elevated";
-                    condition = 1;
-                    break;
-                case 2:
-                    player.playerPath = "Path of the Zelous";
-                    condition = 1;
-                    break;
-                case 3:
-                    player.playerPath = "Path of the Fanatic";
-                    condition = 1;
-                    break;
-                default:
-                    player.playerPath = "None";
-                    condition = 1;
-                    break;}
+            valid = true;
+            cin >> userAnswer;
+            if(cin.fail()){
+                cin.clear();
+                cin.ignore();
+                cout << "Please enter a number (especially you, Michael)\n";
+                valid = false;
+            }
         }
-        condition = 0;
+        switch(userAnswer){
+            case 1:
+                player.playerPath = "Path of the Elevated";
+                break;
+            case 2:
+                player.playerPath = "Path of the Zelous";
+                break;
+            case 3:
+                player.playerPath = "Path of the Fanatic";
+                break;
+            default:
+                player.playerPath = "None";
+                break;
+        }
     } else if( player.playerStyle == "Air" ){
-        while( condition == 0 ) {
+        //cout << "\nWhat is your character's path?\n1. Path of Peace\n2. Path of Indifference\n3. Path of Conflict\n4. None" << endl;
+        //cin >> userAnswer;
+        valid = false;
+        while(!valid){
             cout << "\nWhat is your character's path?\n1. Path of Peace\n2. Path of Indifference\n3. Path of Conflict\n4. None" << endl;
-            cin >> userAnswer;        
-            switch(userAnswer){
-                case 1:
-                    player.playerPath = "Path of Peace";
-                    condition = 1;
-                    break;
-                case 2:
-                    player.playerPath = "Path of Indifference";
-                    condition = 1;
-                    break;
-                case 3:
-                    player.playerPath = "Path of Conflict";
-                    condition = 1;
-                    break;
-                default:
-                    player.playerPath = "None";
-                    condition = 1;
-                    break;}
+            valid = true;
+            cin >> userAnswer;
+            if(cin.fail()){
+                cin.clear();
+                cin.ignore();
+                cout << "Please enter a number (especially you, Michael)\n";
+                valid = false;
+            }
         }
-        condition = 0;
+        switch(userAnswer){
+            case 1:
+                player.playerPath = "Path of Peace";
+                break;
+            case 2:
+                player.playerPath = "Path of Indifference";
+                break;
+            case 3:
+                player.playerPath = "Path of Conflict";
+                break;
+            default:
+                player.playerPath = "None";
+                break;
+        }
     } else if( player.playerStyle == "Devoted" ){
-        while( condition == 0 ) {
+        //cout << "\nWhat is your character's path?\n1. Chi Blocker\n2. The Duelist\n3. The Assassin\n4. None" << endl;
+        //cin >> userAnswer;
+        valid = false;
+        while(!valid){
             cout << "\nWhat is your character's path?\n1. Chi Blocker\n2. The Duelist\n3. The Assassin\n4. None" << endl;
-            cin >> userAnswer;        
-            switch(userAnswer){
-                case 1:
-                    player.playerPath = "Chi Blocker";
-                    condition = 1;
-                    break;
-                case 2:
-                    player.playerPath = "The Duelist";
-                    condition = 1;
-                    break;
-                case 3:
-                    player.playerPath = "The Assassin";
-                    condition = 1;
-                    break;
-                default:
-                    player.playerPath = "None";
-                    condition = 1;
-                    break;}
+            valid = true;
+            cin >> userAnswer;
+            if(cin.fail()){
+                cin.clear();
+                cin.ignore();
+                cout << "Please enter a number (especially you, Michael)\n";
+                valid = false;
+            }
         }
-        condition = 0;
-}
-
-
-
+        switch(userAnswer){
+            case 1:
+                player.playerPath = "Chi Blocker";
+                break;
+            case 2:
+                player.playerPath = "The Duelist";
+                break;
+            case 3:
+                player.playerPath = "The Assassin";
+                break;
+            default:
+                player.playerPath = "None";
+                break;
+        }
+    }
     //cin >> player.playerPath;
     data.open("Data/Other/path.txt", std::fstream::trunc);
     data << player.playerPath;
@@ -564,91 +614,99 @@ characterInfo createCharacter(){
 
 
     //cout << "What is your character's tier?" << endl;
-    while( condition == 0 ) {
+    //cout << "\nWhat is your character's tier? 1, 2, 3, or 4?" << endl;
+    //cin >> userAnswer;
+    valid = false;
+    while(!valid){
         cout << "\nWhat is your character's tier? 1, 2, 3, or 4?" << endl;
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.playerTier = 1;
-                condition = 1;
-                break;
-            case 2:
-                player.playerTier = 2;
-                condition = 1;
-                break;
-            case 3:
-                player.playerTier = 3;
-                condition = 1;
-                break;
-            case 4:
-                player.playerTier = 4;
-                condition = 1;
-                break;
-            default:
-                cout << "Not a valid response, please try again.\n";
-                break;
-        }    
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
     }
-    condition = 0;
-
-
+    switch(userAnswer){
+        case 2:
+            player.playerTier = 2;
+            break;
+        case 3:
+            player.playerTier = 3;
+            break;
+        case 4:
+            player.playerTier = 4;
+            break;
+        default:
+            player.playerTier = 1;
+            break;
+    }
     //cin >> player.playerTier;
     data.open("Data/Other/tier.txt", std::fstream::trunc);
     data << player.playerTier;
     data.close();
 
+
     //cout << "What is your character's outward personality?" << endl;
-    while( condition == 0 ) {
-        cout << "\nWhat is your character's outward personality?" << endl << "1. Benevolent\n2. Malevolent\n3. Ambivalent\n";
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.playerOutward = "Benevolent";
-                condition = 1;
-                break;
-            case 2:
-                player.playerOutward = "Malevolent";
-                condition = 1;
-                break;
-            case 3:
-                player.playerOutward = "Ambivalent";
-                condition = 1;
-                break;
-            default:
-                cout << "Not a valid response, please try again.\n";
-                break;
-        }    
+    //cout << "\nWhat is your character's outward personality?" << endl << "1. Benevolent\n2. Malevolent\n3. Ambivalent\n";
+    //cin >> userAnswer;        
+    valid = false;
+    while(!valid){
+        cout << "\nWhat is your character's outward personality?" << endl << "1. Benevolent\n2. Malevolent\n3. Ambivalent\n" << endl;
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
+    switch(userAnswer){
+        case 1:
+            player.playerOutward = "Benevolent";
+            break;
+        case 2:
+            player.playerOutward = "Malevolent";
+            break;
+       default:
+            player.playerOutward = "Ambivalent";
+            break;
     }
     //cin >> player.playerOutward;
     data.open("Data/Other/outward.txt", std::fstream::trunc);
     data << player.playerOutward;
     data.close();
-    condition = 0;
 
 
 
-
-
-    while( condition == 0 ) {
-        cout << "\nWhat is your character's inward personality?" << endl << "1. Benevolent\n2. Malevolent\n3. Ambivalent\n";
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.playerInward = "Benevolent";
-                condition = 1;
-                break;
-            case 2:
-                player.playerInward = "Malevolent";
-                condition = 1;
-                break;
-            case 3:
-                player.playerInward = "Ambivalent";
-                condition = 1;
-                break;
-            default:
-                cout << "Not a valid response, please try again.\n";
-                break;
-        }    
+    //cout << "\nWhat is your character's inward personality?" << endl << "1. Benevolent\n2. Malevolent\n3. Ambivalent\n";
+    //cin >> userAnswer;
+    valid = false;
+    while(!valid){
+        cout << "\nWhat is your character's inward personality?" << endl << "1. Benevolent\n2. Malevolent\n3. Ambivalent\n" << endl;
+        valid = true;
+        cin >> userAnswer;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
+    switch(userAnswer){
+        case 1:
+            player.playerInward = "Benevolent";
+            condition = 1;
+            break;
+        case 2:
+            player.playerInward = "Malevolent";
+            condition = 1;
+            break;
+        default:
+            player.playerInward = "Ambivalent";
+            break;
     }
     //cout << "What is your character's inward personality?" << endl;
     //cin >> player.playerInward;
@@ -660,7 +718,6 @@ characterInfo createCharacter(){
     cin.clear();
     cin.ignore();
     getline(cin, player.playerBackground);
-    //cin >> player.playerBackground;
     data.open("Data/Other/background.txt", std::fstream::trunc);
     data << player.playerBackground;
     data.close();
@@ -674,8 +731,20 @@ characterInfo createCharacter(){
     data << player.playerRole;
     data.close();
 
-    cout << "\nWhat is your character's maximum stamina?" << endl;
-    cin >> player.playerStaminaMax;
+    //cout << "\nWhat is your character's maximum stamina?" << endl;
+    //cin >> player.playerStaminaMax;
+    valid = false;
+    while(!valid){
+        cout << "\nWhat is your character's maximum stamina?" << endl;
+        valid = true;
+        cin >> player.playerStaminaMax;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
     player.playerStamina = player.playerStaminaMax;
     data.open("Data/Stats/staminaMax.txt", std::fstream::trunc);
     data << player.playerStaminaMax;
@@ -684,8 +753,21 @@ characterInfo createCharacter(){
     data << player.playerStamina;
     data.close();
 
-    cout << "\nWhat is your character's maximum health?" << endl;
-    cin >> player.playerHealthMax;
+
+    //cout << "\nWhat is your character's maximum health?" << endl;
+    //cin >> player.playerHealthMax;
+    valid = false;
+    while(!valid){
+        cout << "\nWhat is your character's maximum health?" << endl;
+        valid = true;
+        cin >> player.playerHealthMax;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
     player.playerHealth = player.playerHealthMax;
     data.open("Data/Stats/healthMax.txt", std::fstream::trunc);
     data << player.playerHealthMax;
@@ -694,8 +776,21 @@ characterInfo createCharacter(){
     data << player.playerHealth;
     data.close();
 
-    cout << "\nWhat is your character's maximum fortitude?" << endl;
-    cin >> player.playerFortitudeMax;
+
+    //cout << "\nWhat is your character's maximum fortitude?" << endl;
+    //cin >> player.playerFortitudeMax;
+    valid = false;
+    while(!valid){
+        cout << "\nWhat is your character's maximum fortitude?" << endl;
+        valid = true;
+        cin >> player.playerFortitudeMax;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a number (especially you, Michael)\n";
+            valid = false;
+        }
+    }
     player.playerFortitude = player.playerFortitudeMax;
     data.open("Data/Stats/fortitudeMax.txt", std::fstream::trunc);
     data << player.playerFortitudeMax;
@@ -704,41 +799,28 @@ characterInfo createCharacter(){
     data << player.playerFortitude;
     data.close();
 
-    condition = 0;
-    while( condition == 0 ) {
-        cout << "\nHow many spirit bonds does your character have? 0, 1, 2, or 3?" << endl;
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 0:
-                player.playerSpiritBond = 0;
-                condition = 1;
-                break;
-            case 1:
-                player.playerSpiritBond = 1;
-                condition = 1;
-                break;
-            case 2:
-                player.playerSpiritBond = 2;
-                condition = 1;
-                break;
-            case 3:
-                player.playerSpiritBond = 3;
-                condition = 1;
-                break;
-            default:
-                cout << "Not a valid response, please try again.\n";
-                break;
-        }    
+
+
+    cout << "\nHow many spirit bonds does your character have? 0, 1, 2, or 3?" << endl;
+    cin >> userAnswer;        
+    switch(userAnswer){
+        case 1:
+            player.playerSpiritBond = 1;
+            break;
+        case 2:
+            player.playerSpiritBond = 2;
+            break;
+        case 3:
+            player.playerSpiritBond = 3;
+            break;
+        default:
+            player.playerSpiritBond = 0;
+            break;
     }
     data.open("Data/Other/spiritBond.txt", std::fstream::trunc);
     data << player.playerSpiritBond;
     data.close();
-    condition = 0;
 
-    /*playerSpiritBond = true;
-    data.open("Data/Other/spiritBond.txt", std::fstream::trunc);
-    data << playerSpiritBond;
-    data.close();*/
 
     cout << "\nWhat is your character's power?" << endl;
     cin >> player.playerPower;
@@ -746,28 +828,19 @@ characterInfo createCharacter(){
     data << player.playerPower;
     data.close();
 
-    condition = 0;
-    while( condition == 0 ) {
-        cout << "\nDoes your character have proficiency in power saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.powerSave = true;
-                condition = 1;
-                break;
-            case 2:
-                player.powerSave = false;
-                condition = 1;
-                break;
-            default:
-                cout << "Not a valid response, please try again.\n";
-                break;
-        }    
-    }
+    cout << "\nDoes your character have proficiency in power saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
+    cin >> userAnswer;        
+    switch(userAnswer){
+        case 1:
+            player.powerSave = true;
+            break;
+        default:
+            player.powerSave = false;
+            break;
+    }    
     data.open("Data/Stats/powerSave.txt", std::fstream::trunc);
     data << player.powerSave;
     data.close();
-    condition = 0;
 
 
     cout << "\nWhat is your character's finesse?" << endl;
@@ -776,27 +849,19 @@ characterInfo createCharacter(){
     data << player.playerFinesse;
     data.close();
 
-    while( condition == 0 ) {
-        cout << "\nDoes your character have proficiency in finesse saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
-        cin >> userAnswer;        
-        switch(userAnswer){
-            case 1:
-                player.finesseSave = true;
-                condition = 1;
-                break;
-            case 2:
-                player.finesseSave = false;
-                condition = 1;
-                break;
-            default:
-                cout << "Not a valid response, please try again.\n";
-                break;
-        }    
+    cout << "\nDoes your character have proficiency in finesse saving throws?" << endl << "1. Yes" << endl << "2. No" << endl;
+    cin >> userAnswer;        
+    switch(userAnswer){
+        case 1:
+            player.finesseSave = true;
+            break;
+        default:
+            player.finesseSave = false;
+            break;
     }
     data.open("Data/Stats/finesseSave.txt", std::fstream::trunc);
     data << player.finesseSave;
     data.close();
-    condition = 0;
 
 
     cout << "\nWhat is your character's vitality?" << endl;
