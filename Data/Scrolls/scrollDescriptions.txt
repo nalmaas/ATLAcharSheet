@@ -1,3 +1,3 @@
-With a powerful stance, you strike at an opponent, releasing a blast of flame that deals 5d4 fire damage within 15/30 feet.
-Placeholder
+Unleashing a broad, unfocused blast of air, you deal 3d4 air damage within 20/40 feet.
+Using a powerful, precise burst of air, anyone within a 15 foot line must make a DC 13 Willpower saving throw, being knocked back 10 feet and falling prone on a failed save. If a target hits a solid object, including another person, they take 3d4 strike damage.
 Placeholder

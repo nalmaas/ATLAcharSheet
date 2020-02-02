@@ -1,3 +1,3 @@
-Fire Blast
-fT4S3
-fT2S4
+Air Blast
+Forceful Gale
+aT4S3
