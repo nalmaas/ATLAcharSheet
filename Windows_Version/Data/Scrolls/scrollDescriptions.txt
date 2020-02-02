@@ -1,3 +1,2 @@
-Using a focused torrent of water, you blast an enemy from 20/40 feet, dealing 6d4 water damage.
-As a reaction, you pull up a water shield that can deflect or stop an incoming attack.
-Lashing out at nearby objects or people, the water whip deals 6d4 water damage.  If the target’s fortitude is at or below 13, you may instead have the whip pull the target 10 feet closer.
+With a powerful stance, you strike at an opponent, releasing a blast of flame that deals 5d4 fire damage within 15/30 feet.
+Dropping from a height of 10 or more feet, you stop the force of your fall with a concentrated blast of fire. Anyone within 5 feet in front of you takes 3d4 fire damage.
