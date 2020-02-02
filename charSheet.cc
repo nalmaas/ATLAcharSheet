@@ -4007,8 +4007,136 @@ int characterSheet(characterInfo player){
                         }
                         break;
                     case 19:
+                        cout << "What would you like to do?\n1. Add Ally\n2. Remove Ally\n3. Edit Ally\n";
+                        cin >> userAnswer;
+                        switch(userAnswer){
+                            case 1:
+                                cout << "Who is the new ally?\n";
+                                player.alliesCount++;
+                                cin.clear();
+                                cin.ignore();
+                                getline(cin, player.playerAllies[player.alliesCount]);
+                                data.open("Data/Other/alliesCount.txt", std::fstream::trunc);
+                                data << player.alliesCount;
+                                data.close();
+                                data.open("Data/Other/allies.txt", std::fstream::app);
+                                data << player.playerAllies[player.alliesCount] << endl;
+                                data.close();
+                                break;
+                            case 2:
+                                if(player.alliesCount == 0){
+                                    break;
+                                }
+                                cout << "Which would you like to remove?\n";
+                                player.alliesCount = player.alliesCount - 1;
+                                cin >> userAnswer;
+                                for(int i = 0; i < player.alliesCount; i++){
+                                    if(i >= userAnswer - 1){
+                                        player.playerAllies[i] = player.playerAllies[i + 1];
+                                    }
+                                }
+                                data.open("Data/Other/alliesCount.txt", std::fstream::trunc);
+                                data << player.alliesCount;
+                                data.close();
+                                data.open("Data/Other/allies.txt", std::fstream::trunc);
+                                data << "";
+                                data.close();
+                                data.open("Data/Other/allies.txt", std::fstream::app);
+                                for(int i = 0; i < player.alliesCount; i++){
+                                    data << player.playerAllies[i] << endl;
+                                }
+                                data.close();
+                                break;
+                            case 3:
+                                if(player.alliesCount == 0){
+                                    break;
+                                }
+                                cout << "Which would you like to edit?\n";
+                                cin >> userAnswer;
+                                if(userAnswer < player.alliesCount){
+                                    cin.clear();
+                                    cin.ignore();
+                                    cout << "Who is the ally?\n";
+                                    getline(cin, player.playerAllies[userAnswer - 1]);
+                                    data.open("Data/Other/allies.txt", std::fstream::trunc);
+                                    data << "";
+                                    data.close();
+                                    data.open("Data/Other/allies.txt", std::fstream::app);
+                                    for(int i = 0; i < player.alliesCount; i++){
+                                        data << player.playerAllies[i] << endl;
+                                    }
+                                    data.close();
+                                }
+                                break;
+                            default:
+                                break;
+                        }
                         break;
                     case 20:
+                        cout << "What would you like to do?\n1. Add Inventory Item\n2. Remove Inventory Item\n3. Edit Inventory Item\n";
+                        cin >> userAnswer;
+                        switch(userAnswer){
+                            case 1:
+                                cout << "What is the new inventory item?\n";
+                                player.inventoryCount++;
+                                cin.clear();
+                                cin.ignore();
+                                getline(cin, player.playerInventory[player.inventoryCount]);
+                                data.open("Data/Other/inventoryCount.txt", std::fstream::trunc);
+                                data << player.inventoryCount;
+                                data.close();
+                                data.open("Data/Other/inventory.txt", std::fstream::app);
+                                data << player.playerInventory[player.inventoryCount] << endl;
+                                data.close();
+                                break;
+                            case 2:
+                                if(player.inventoryCount == 0){
+                                    break;
+                                }
+                                cout << "Which item would you like to remove?\n";
+                                player.inventoryCount = player.inventoryCount - 1;
+                                cin >> userAnswer;
+                                for(int i = 0; i < player.inventoryCount; i++){
+                                    if(i >= userAnswer - 1){
+                                        player.playerInventory[i] = player.playerInventory[i + 1];
+                                    }
+                                }
+                                data.open("Data/Other/inventoryCount.txt", std::fstream::trunc);
+                                data << player.inventoryCount;
+                                data.close();
+                                data.open("Data/Other/inventory.txt", std::fstream::trunc);
+                                data << "";
+                                data.close();
+                                data.open("Data/Other/inventory.txt", std::fstream::app);
+                                for(int i = 0; i < player.inventoryCount; i++){
+                                    data << player.playerInventory[i] << endl;
+                                }
+                                data.close();
+                                break;
+                            case 3:
+                                if(player.inventoryCount == 0){
+                                    break;
+                                }
+                                cout << "Which would you like to edit?\n";
+                                cin >> userAnswer;
+                                if(userAnswer < player.inventoryCount){
+                                    cin.clear();
+                                    cin.ignore();
+                                    cout << "Who is the inventory member?\n";
+                                    getline(cin, player.playerInventory[userAnswer - 1]);
+                                    data.open("Data/Other/inventory.txt", std::fstream::trunc);
+                                    data << "";
+                                    data.close();
+                                    data.open("Data/Other/inventory.txt", std::fstream::app);
+                                    for(int i = 0; i < player.inventoryCount; i++){
+                                        data << player.playerInventory[i] << endl;
+                                    }
+                                    data.close();
+                                }
+                                break;
+                            default:
+                                break;
+                        }
                         break;
                     case 21:
                         cout << "Which would you like to change?\n1. Gold\n2. Silver\n3. Copper\n";
@@ -4044,8 +4172,306 @@ int characterSheet(characterInfo player){
                         cin >> userAnswer;
                         switch(userAnswer){
                             case 1:
+                                if(player.scrollCount >= scrollMax){
+                                    break;
+                                }
+                                cout << "Which scroll are you adding?\n";
+                                for(int i = 0; i < allScrollNumber; i++){   
+                                    cout << i + 1 << ". " << allScrollNames[i] << endl;
+                                }
+                                cin >> userAnswer;
+                                if(userAnswer <= 98 && userAnswer >=1){
+                                    player.scrollName[player.scrollCount] = allScrollNames[userAnswer - 1];
+                                    cout << player.scrollName[player.scrollCount] << endl;
+//descriptions
+                                    extracting.open("Scrolls/description.txt", std::ifstream::in);
+                                    count = 0;
+                                    while(!extracting.eof()){
+                                        if(count != userAnswer - 1){
+                                            getline(extracting, tempString);
+                                            //cout << tempString << endl;
+                                        } else{
+                                            getline(extracting, player.scrollDescription[player.scrollCount]);
+                                        }
+                                        count++;
+                                    }
+//dice types
+                                    extracting.open("Scrolls/diceType.txt", std::ifstream::in);
+                                    count = 0;
+                                    while(!extracting.eof()){
+                                        if(count != userAnswer - 1){
+                                            getline(extracting, tempString);
+                                            //cout << tempString << endl;
+                                        } else{
+                                            extracting >> player.scrollDiceType[player.scrollCount];
+                                        }
+                                        count++;
+                                    }
+//dice counts
+                                    extracting.open("Scrolls/diceCount.txt", std::ifstream::in);
+                                    count = 0;
+                                    while(!extracting.eof()){
+                                        if(count != userAnswer - 1){
+                                            getline(extracting, tempString);
+                                            //cout << tempString << endl;
+                                        } else{
+                                            extracting >> player.scrollDiceCount[player.scrollCount];
+                                        }
+                                        count++;
+                                    }
+//tiers
+                                    extracting.open("Scrolls/tier.txt", std::ifstream::in);
+                                    count = 0;
+                                    while(!extracting.eof()){
+                                        if(count != userAnswer - 1){
+                                            getline(extracting, tempString);
+                                            //cout << tempString << endl;
+                                        } else{
+                                            extracting >> player.scrollTier[player.scrollCount];
+                                        }
+                                        count++;
+                                    }
+//ranges
+                                    extracting.open("Scrolls/range.txt", std::ifstream::in);
+                                    count = 0;
+                                    while(!extracting.eof()){
+                                        if(count != userAnswer - 1){
+                                            getline(extracting, tempString);
+                                            //cout << tempString << endl;
+                                        } else{
+                                            getline(extracting, player.scrollRange[player.scrollCount]);
+                                        }
+                                        count++;
+                                    }
+//actions
+                                    extracting.open("Scrolls/action.txt", std::ifstream::in);
+                                    count = 0;
+                                    while(!extracting.eof()){
+                                        if(count != userAnswer - 1){
+                                            getline(extracting, tempString);
+                                            //cout << tempString << endl;
+                                        } else{
+                                            getline(extracting, player.scrollAction[player.scrollCount]);
+                                        }
+                                        count++;
+                                    }
+//types
+                                    extracting.open("Scrolls/type.txt", std::ifstream::in);
+                                    count = 0;
+                                    while(!extracting.eof()){
+                                        if(count != userAnswer - 1){
+                                            getline(extracting, tempString);
+                                            //cout << tempString << endl;
+                                        } else{
+                                            getline(extracting, player.scrollType[player.scrollCount]);
+                                        }
+                                        count++;
+                                    }
+//practices
+                                    extracting.open("Scrolls/practice.txt", std::ifstream::in);
+                                    count = 0;
+                                    while(!extracting.eof()){
+                                        if(count != userAnswer - 1){
+                                            getline(extracting, tempString);
+                                            //cout << tempString << endl;
+                                        } else{
+                                            extracting >> player.scrollPractice[player.scrollCount];
+                                        }
+                                        count++;
+                                    }
+//have practices
+                                    extracting.open("Scrolls/havePractice.txt", std::ifstream::in);
+                                    count = 0;
+                                    while(!extracting.eof()){
+                                        if(count != userAnswer - 1){
+                                            getline(extracting, tempString);
+                                            //cout << tempString << endl;
+                                        } else{
+                                            extracting >> player.scrollHavePractice[player.scrollCount];
+                                        }
+                                        count++;
+                                    }
+
+                                    data.open("Data/Scrolls/scrollNames.txt", std::fstream::app);
+                                    data << player.scrollName[player.scrollCount] << endl;
+                                    data.close();
+                                    data.open("Data/Scrolls/scrollDescriptions.txt", std::fstream::app);
+                                    data << player.scrollDescription[player.scrollCount] << endl;
+                                    data.close();
+                                    data.open("Data/Scrolls/scrollDiceTypes.txt", std::fstream::app);
+                                    data << player.scrollDiceType[player.scrollCount] << endl;
+                                    data.close();
+                                    data.open("Data/Scrolls/scrollDiceCounts.txt", std::fstream::app);
+                                    data << player.scrollDiceCount[player.scrollCount] << endl;
+                                    data.close();
+                                    data.open("Data/Scrolls/scrollRanges.txt", std::fstream::app);
+                                    data << player.scrollRange[player.scrollCount] << endl;
+                                    data.close();
+                                    data.open("Data/Scrolls/scrollActions.txt", std::fstream::app);
+                                    data << player.scrollAction[player.scrollCount] << endl;
+                                    data.close();
+                                    data.open("Data/Scrolls/scrollTypes.txt", std::fstream::app);
+                                    data << player.scrollType[player.scrollCount] << endl;
+                                    data.close();
+                                    data.open("Data/Scrolls/scrollTiers.txt", std::fstream::app);
+                                    data << player.scrollTier[player.scrollCount] << endl;
+                                    data.close();
+                                    data.open("Data/Scrolls/scrollPractices.txt", std::fstream::app);
+                                    data << player.scrollPractice[player.scrollCount] << endl;
+                                    data.close();
+                                    data.open("Data/Scrolls/scrollHavePractices.txt", std::fstream::app);
+                                    data << player.scrollHavePractice[player.scrollCount] << endl;
+                                    data.close();
+                                    player.scrollCount++;
+                                    data.open("Data/Scrolls/scrollCount.txt", std::fstream::trunc);
+                                    data << player.scrollCount;
+                                    data.close();
+
+
+
+                                }
                                 break;
                             case 2:
+                                if(player.scrollCount == 0){
+                                    break;
+                                }
+                                cout << "Which scroll would you like to remove?\n";
+                                player.scrollCount = player.scrollCount - 1;
+                                cin >> userAnswer;
+                                for(int i = 0; i < player.scrollCount; i++){
+                                    if(i >= userAnswer - 1){
+                                        player.scrollName[i] = player.scrollName[i + 1];
+                                    }
+                                }
+                                for(int i = 0; i < player.scrollCount; i++){
+                                    if(i >= userAnswer - 1){
+                                        player.scrollDescription[i] = player.scrollDescription[i + 1];
+                                    }
+                                }
+                                for(int i = 0; i < player.scrollCount; i++){
+                                    if(i >= userAnswer - 1){
+                                        player.scrollDiceType[i] = player.scrollDiceType[i + 1];
+                                    }
+                                }
+                                for(int i = 0; i < player.scrollCount; i++){
+                                    if(i >= userAnswer - 1){
+                                        player.scrollDiceCount[i] = player.scrollDiceCount[i + 1];
+                                    }
+                                }
+                                for(int i = 0; i < player.scrollCount; i++){
+                                    if(i >= userAnswer - 1){
+                                        player.scrollRange[i] = player.scrollRange[i + 1];
+                                    }
+                                }
+                                for(int i = 0; i < player.scrollCount; i++){
+                                    if(i >= userAnswer - 1){
+                                        player.scrollAction[i] = player.scrollAction[i + 1];
+                                    }
+                                }
+                                for(int i = 0; i < player.scrollCount; i++){
+                                    if(i >= userAnswer - 1){
+                                        player.scrollType[i] = player.scrollType[i + 1];
+                                    }
+                                }
+                                for(int i = 0; i < player.scrollCount; i++){
+                                    if(i >= userAnswer - 1){
+                                        player.scrollTier[i] = player.scrollTier[i + 1];
+                                    }
+                                }
+                                for(int i = 0; i < player.scrollCount; i++){
+                                    if(i >= userAnswer - 1){
+                                        player.scrollPractice[i] = player.scrollPractice[i + 1];
+                                    }
+                                }
+                                for(int i = 0; i < player.scrollCount; i++){
+                                    if(i >= userAnswer - 1){
+                                        player.scrollHavePractice[i] = player.scrollHavePractice[i + 1];
+                                    }
+                                }
+                                data.open("Data/Scrolls/scrollCount.txt", std::fstream::trunc);
+                                data << player.scrollCount;
+                                data.close();
+                                data.open("Data/Scrolls/scrollNames.txt", std::fstream::trunc);
+                                data << "";
+                                data.close();
+                                data.open("Data/Scrolls/scrollDescriptions.txt", std::fstream::trunc);
+                                data << "";
+                                data.close();
+                                data.open("Data/Scrolls/scrollDiceTypes.txt", std::fstream::trunc);
+                                data << "";
+                                data.close();
+                                data.open("Data/Scrolls/scrollDiceCounts.txt", std::fstream::trunc);
+                                data << "";
+                                data.close();
+                                data.open("Data/Scrolls/scrollTiers.txt", std::fstream::trunc);
+                                data << "";
+                                data.close();
+                                data.open("Data/Scrolls/scrollRanges.txt", std::fstream::trunc);
+                                data << "";
+                                data.close();
+                                data.open("Data/Scrolls/scrollActions.txt", std::fstream::trunc);
+                                data << "";
+                                data.close();
+                                data.open("Data/Scrolls/scrollTypes.txt", std::fstream::trunc);
+                                data << "";
+                                data.close();
+                                data.open("Data/Scrolls/scrollPractices.txt", std::fstream::trunc);
+                                data << "";
+                                data.close();
+                                data.open("Data/Scrolls/scrollHavePractices.txt", std::fstream::trunc);
+                                data << "";
+                                data.close();
+
+                                data.open("Data/Scrolls/scrollNames.txt", std::fstream::app);
+                                for(int i = 0; i < player.scrollCount; i++){
+                                    data << player.scrollName[i] << endl;
+                                }
+                                data.close();
+                                data.open("Data/Scrolls/scrollDescriptions.txt", std::fstream::app);
+                                for(int i = 0; i < player.scrollCount; i++){
+                                    data << player.scrollDescription[i] << endl;
+                                }
+                                data.close();
+                                data.open("Data/Scrolls/scrollDiceTypes.txt", std::fstream::app);
+                                for(int i = 0; i < player.scrollCount; i++){
+                                    data << player.scrollDiceType[i] << endl;
+                                }
+                                data.close();
+                                data.open("Data/Scrolls/scrollDiceCounts.txt", std::fstream::app);
+                                for(int i = 0; i < player.scrollCount; i++){
+                                    data << player.scrollDiceCount[i] << endl;
+                                }
+                                data.close();
+                                data.open("Data/Scrolls/scrollTiers.txt", std::fstream::app);
+                                for(int i = 0; i < player.scrollCount; i++){
+                                    data << player.scrollTier[i] << endl;
+                                }
+                                data.close();
+                                data.open("Data/Scrolls/scrollRanges.txt", std::fstream::app);
+                                for(int i = 0; i < player.scrollCount; i++){
+                                    data << player.scrollRange[i] << endl;
+                                }
+                                data.close();
+                                data.open("Data/Scrolls/scrollActions.txt", std::fstream::app);
+                                for(int i = 0; i < player.scrollCount; i++){
+                                    data << player.scrollAction[i] << endl;
+                                }
+                                data.close();
+                                data.open("Data/Scrolls/scrollTypes.txt", std::fstream::app);
+                                for(int i = 0; i < player.scrollCount; i++){
+                                    data << player.scrollType[i] << endl;
+                                }
+                                data.close();
+                                data.open("Data/Scrolls/scrollPractices.txt", std::fstream::app);
+                                for(int i = 0; i < player.scrollCount; i++){
+                                    data << player.scrollPractice[i] << endl;
+                                }
+                                data.close();
+                                data.open("Data/Scrolls/scrollHavePractices.txt", std::fstream::app);
+                                for(int i = 0; i < player.scrollCount; i++){
+                                    data << player.scrollHavePractice[i] << endl;
+                                }
+                                data.close();
                                 break;
                             default:
                                 break;
@@ -4091,11 +4517,6 @@ int characterSheet(characterInfo player){
             default:
                 return 0;
         }
-
-
-
-    //get rid of this return statement in final version
-        //return 0;
 
     }
     return 0;

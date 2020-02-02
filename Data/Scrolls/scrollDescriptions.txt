@@ -1,3 +1,2 @@
-Unleashing a broad, unfocused blast of air, you deal 3d4 air damage within 20/40 feet.
-Using a powerful, precise burst of air, anyone within a 15 foot line must make a DC 13 Willpower saving throw, being knocked back 10 feet and falling prone on a failed save. If a target hits a solid object, including another person, they take 3d4 strike damage.
-Placeholder
+Using a focused torrent of water, you blast an enemy from 20/40 feet, dealing 3d4 water damage.
+Lashing out at nearby objects or people, the water whip deals 6d4 water damage. If the target’s fortitude is at or below 13, you may instead have the whip pull the target 10 feet closer.
