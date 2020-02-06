@@ -1,0 +1,98 @@
+Using a focused torrent of water, you blast an enemy from 20/40 feet, dealing 3d4 water damage.
+As a reaction, you pull up a water shield that can deflect or stop an incoming attack.
+Lashing out at nearby objects or people, the water whip deals 6d4 water damage. If the target’s fortitude is at or below 13, you may instead have the whip pull the target 10 feet closer.
+Using quick, creeping tendrils of water, you wet the ground and freeze it in a 20 foot cone. Anyone attempting to cross this area will have to pass a DC 13 Finesse saving throw.
+Using a small amount of water, you slash at an enemy in range, dealing 5d4 water damage in a 10 foot line in any orientation.
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Picking up a small, dense boulder, you launch it at a foe 15/30 feet away and deal 5d4 earth damage.
+Using short, controlled stomp, you create unstable ground underneath the target up to 30 feet away if their fortitude is equal to or below 13. If successful, this will give the target disadvantage on their next attack.
+Using short, controlled stomp, you create unstable ground underneath the target up to 30 feet away if their fortitude is equal to or below 13. If successful, this will give the target disadvantage on their next attack.
+With a swift movement, you send a line of earth towards a target 20/40 feet away. Once this creeping mound reaches its target, a solid column of earth rises out of the ground and hits the target. Failing a Finesse save of 13 causes the target to fall prone and take 3d4 earth damage. Succeeding the save, the target takes half damage and stays upright. Using this move on a friendly target lets you be able to aid their movement. Adds a 5 foot boost vertically or horizontally in combat.
+Breaking up the surrounding rock and dirt anywhere within a 20 foot circle centered on you, you create a 20 foot cube of dust that obscures all sight. Any attacks made in or through this cloud have disadvantage.
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+With a powerful stance, you strike at an opponent, releasing a blast of flame that deals 5d4 fire damage within 15/30 feet.
+Using constant, concentrated fire daggers, you attack one target within 5 feet twice and deal 2d4 fire damage per attack.
+Dropping from a height of 10 or more feet, you stop the force of your fall with a concentrated blast of fire. Anyone within 5 feet in front of you takes 3d4 fire damage.
+Shooting three blasts of flame in quick succession, you strike at up to three targets within 5 feet of each other, dealing 1d4 fire damage per hit.
+Spinning your leg underneath you, you release a wave of flame in a 5 foot circle centered on you, dealing 2d4 fire damage. Anyone within that circle must make a DC 13 Finesse saving throw or be knocked prone.
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Unleashing a broad, unfocused blast of air, you deal 3d4 air damage within 20/40 feet.
+Using a powerful, precise burst of air, anyone within a 15 foot line must make a DC 13 Willpower saving throw, being knocked back 10 feet and falling prone on a failed save. If a target hits a solid object, including another person, they take 3d4 strike damage.
+Spinning both hands, you create a funnel that can be used to launch up to 4 small objects per turn at foes within a 40 foot long and 20 foot wide cone. Each object deals 1d4 strike damage.
+With cyclical movements, you can deflect incoming projectile attacks and move them to the right or left of you by 5 feet. If the projectile would hit someone on the left or right of you, the attacker rolls damage for the new target.
+As a reaction, you shift the air currents around you and move yourself 5 to 10 feet in one direction, causing any incoming attacks to miss. If the attack is a projectile, the projectile continues in its movement until hitting a new target or completing range.
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Using your fists, you may attack up to two times, targeting one enemy, or two enemies if both are within 5 feet of each other. Each jab does 3d4 strike damage.
+The next time you would be attacked, you dodge instead. If you use this move during your turn, you may still use it as a reaction before your next turn.
+Using your weapon, you lash out at an enemy, dealing 3d4 strike damage.
+The next time you would take damage and are within 5 feet of an enemy, you may choose to attack that enemy without spending Stamina. If you use this move during your turn, you may still use it as a reaction before your next turn.
+Using three small throwing knives, you can throw them at up to three enemies within 20/40 feet. Each blade does 2d4 strike damage.
+Until your next turn, a 10 foot sphere of thick smoke appears centered on a point within 20 feet. As a reaction, the sphere is centered on yourself. If you use this move during your turn, you may use it as a reaction before your next turn.
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder
+Placeholder

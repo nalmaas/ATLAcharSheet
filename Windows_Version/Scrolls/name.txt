@@ -1,0 +1,98 @@
+Water Blast
+Rising Shield
+Water Whip
+Frozen Ground
+Water Slash
+wT2S1
+wT2S2
+wT2S3
+wT2S4
+wT2S5
+wT2S6
+wT3S1
+wT3S2
+wT3S3
+wT3S4
+wT3S5
+wT3S6
+wT4S1
+wT4S2
+wT4S3
+Earth Blast
+Unstable Footing
+Rock Wall
+Jolting Column
+Dust Cloud
+eT2S1
+eT2S2
+eT2S3
+eT2S4
+eT2S5
+eT2S6
+eT3S1
+eT3S2
+eT3S3
+eT3S4
+eT3S5
+eT3S6
+eT4S1
+eT4S2
+eT4S3
+Fire Blast
+Flame Daggers
+Fire Fall
+Blazing Punches
+Fire Sweep
+fT2S1
+fT2S2
+fT2S3
+fT2S4
+fT2S5
+fT2S6
+fT3S1
+fT3S2
+fT3S3
+fT3S4
+fT3S5
+fT3S6
+fT4S1
+fT4S2
+fT4S3
+Air Blast
+Forceful Gale
+Air Funnel
+Deflecting Flow
+Air Shift
+aT2S1
+aT2S2
+aT2S3
+aT2S4
+aT2S5
+aT2S6
+aT3S1
+aT3S2
+aT3S3
+aT3S4
+aT3S5
+aT3S6
+aT4S1
+aT4S2
+aT4S3
+Quick Jabs
+Dodge
+Slice
+Riposte
+Throwing Knives
+Smoke Bomb
+dsbT2S1
+ddT2S1
+daT2S1
+dsbT3S1
+dsbT3S2
+ddT3S1
+ddT3S2
+daT3S1
+daT3S2
+dsbT4S1
+ddT4S1
+daT4S1
