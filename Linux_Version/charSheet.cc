@@ -5441,7 +5441,18 @@ int characterSheet(characterInfo player){
                                     break;
                                 }
                                 cout << "Which scroll are you adding?\n";
-                                for(int i = 0; i < allScrollNumber; i++){   
+                                for(int i = 0; i < allScrollNumber; i++){
+                                    if(i == 0){
+                                        cout << "\nWater Scrolls\n";
+                                    }else if(i == 20){
+                                        cout << "\nEarth Scrolls\n";
+                                    }else if(i == 40){
+                                        cout << "\nFire Scrolls\n";
+                                    }else if(i == 60){
+                                        cout << "\nAir Scrolls\n";
+                                    }else if(i == 80){
+                                        cout << "\nDevoted Scrolls\n";
+                                    }
                                     cout << i + 1 << ". " << allScrollNames[i] << endl;
                                 }
                                 cin >> userAnswer;
@@ -5753,16 +5764,16 @@ int characterSheet(characterInfo player){
                                 }
                                 break;
                             case 2:
+                                cout << "\nYour scrolls:\n";
                                 for(int i = 0; i < player.scrollCount; i++){
-                                    cout << player.scrollName[i] << endl << player.scrollDescriptionActive[i] << endl << endl;
+                                    cout << i + 1 << ". " << player.scrollName[i] << "\n" << player.scrollDescriptionActive[i] << "\n\n";
                                 }
                                 if(player.scrollCount == 0){
                                     break;
                                 }
                                 cout << "Which scroll would you like to remove?\n";
-                                player.scrollCount = player.scrollCount - 1;
                                 cin >> userAnswer;
-                                for(int i = 0; i < player.scrollCount; i++){
+                                for(int i = 0; i < player.scrollCount - 1; i++){
                                     if(i >= userAnswer - 1){
                                         player.scrollName[i] = player.scrollName[i + 1];
                                         player.scrollDescriptionDamage[i] = player.scrollDescriptionDamage[i + 1];
@@ -5785,6 +5796,7 @@ int characterSheet(characterInfo player){
                                         player.scrollHaveHigherSave[i] = player.scrollHaveHigherSave[i + 1];
                                     }
                                 }
+                                player.scrollCount = player.scrollCount - 1;
                                 data.open("Data/Scrolls/scrollCount.txt", std::fstream::trunc);
                                 data << player.scrollCount;
                                 data.close();
