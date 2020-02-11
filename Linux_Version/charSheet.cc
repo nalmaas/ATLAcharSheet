@@ -1113,12 +1113,22 @@ cout << player.reasonSave << endl;
     data.open("Data/Money/copper.txt", std::fstream::trunc);
     data << player.playerCopper;
     data.close();
-
+/*
 //inventory support will come later
     condition = 0;
     while( condition == 0 ) {
-        cout << "\nHow many items do you have in your inventory?" << endl;
-        cin >> userAnswer;
+        valid = false;
+        while(!valid){
+            cout << "\nHow many items do you have in your inventory?\n";
+            valid = true;
+            cin >> userAnswer;
+            if(cin.fail()){
+                cin.clear();
+                cin.ignore();
+                cout << "Please enter a number (especially you, Michael)\n";
+                valid = false;
+            }
+        }
         player.inventoryCount = userAnswer;    
         data.open("Data/Other/inventoryCount.txt", std::fstream::trunc);
         data << userAnswer;
@@ -1206,14 +1216,25 @@ cout << player.reasonSave << endl;
         data << player.playerAllies[n] << endl;
     }
     data.close();
-
+*/
 //notes support will come later (probably not)
 //features support will come later
-//scrolls support will come later
 
-    cout << "\nHow many scrolls do you have? There is a maximum of 14.\n";
+//scrolls support will come later
+    int condition = 0;
     while( condition == 0 ) {
-        cin >> userAnswer;
+        valid = false;
+        while(!valid){
+            cout << "\nHow many scrolls do you have? There is a maximum of 14.\n";
+            valid = true;
+            cin >> userAnswer;
+            if(cin.fail()){
+                cin.clear();
+                cin.ignore();
+                cout << "Please enter a number (especially you, Michael)\n";
+                valid = false;
+            }
+        }
         if (userAnswer > scrollMax){
             cout << "\nThe maximum number of scrolls is 14.";
         } else{
@@ -1231,8 +1252,18 @@ cout << player.reasonSave << endl;
     ifstream extracting;
     for(int i = 0; i < player.scrollCount; i++){
         if(player.playerStyle == "Water"){
-            cout << "\n1. " << allScrollNames[0] << "\n2. " << allScrollNames[1] << "\n3. " << allScrollNames[2] << "\n4. " << allScrollNames[3] << "\n5. " << allScrollNames[4] << "\n6." << allScrollNames[5] << "\n7." << allScrollNames[6] << "\n8." << allScrollNames[7] << "\n9." << allScrollNames[8] << "\n10." << allScrollNames[9] << "\n11." << allScrollNames[10] << "\n12." << allScrollNames[11] << "\n13." << allScrollNames[12] << "\n14." << allScrollNames[13] << "\n15." << allScrollNames[14] << "\n16." << allScrollNames[15] << "\n17." << allScrollNames[16] << "\n18." << allScrollNames[17] << "\n19." << allScrollNames[18] << "\n20. " << allScrollNames[19] << "\n";
-            cin >> userAnswer;
+            valid = false;
+            while(!valid){
+                cout << "\n1. " << allScrollNames[0] << "\n2. " << allScrollNames[1] << "\n3. " << allScrollNames[2] << "\n4. " << allScrollNames[3] << "\n5. " << allScrollNames[4] << "\n6." << allScrollNames[5] << "\n7." << allScrollNames[6] << "\n8." << allScrollNames[7] << "\n9." << allScrollNames[8] << "\n10." << allScrollNames[9] << "\n11." << allScrollNames[10] << "\n12." << allScrollNames[11] << "\n13." << allScrollNames[12] << "\n14." << allScrollNames[13] << "\n15." << allScrollNames[14] << "\n16." << allScrollNames[15] << "\n17." << allScrollNames[16] << "\n18." << allScrollNames[17] << "\n19." << allScrollNames[18] << "\n20. " << allScrollNames[19] << "\n";
+                valid = true;
+                cin >> userAnswer;
+                if(cin.fail()){
+                    cin.clear();
+                    cin.ignore();
+                    cout << "Please enter a number (especially you, Michael)\n";
+                    valid = false;
+                }
+            }
             if(userAnswer <= 20 && userAnswer >= 1){
                 player.scrollName[i] = allScrollNames[userAnswer - 1];
 //description damages
@@ -1553,8 +1584,18 @@ cout << player.reasonSave << endl;
             data << player.scrollHaveHigherSave[i] << endl;
             data.close();
         } else if(player.playerStyle == "Earth"){
-            cout << "\n1. " << allScrollNames[20] << "\n2. " << allScrollNames[21] << "\n3. " << allScrollNames[22] << "\n4. " << allScrollNames[23] << "\n5. " << allScrollNames[24] << "\n6." << allScrollNames[25] << "\n7." << allScrollNames[26] << "\n8." << allScrollNames[27] << "\n9." << allScrollNames[28] << "\n10." << allScrollNames[29] << "\n11." << allScrollNames[30] << "\n12." << allScrollNames[31] << "\n13." << allScrollNames[32] << "\n14." << allScrollNames[33] << "\n15." << allScrollNames[34] << "\n16." << allScrollNames[35] << "\n17." << allScrollNames[36] << "\n18." << allScrollNames[37] << "\n19." << allScrollNames[38] << "\n20. " << allScrollNames[39] << "\n";
-            cin >> userAnswer;
+            valid = false;
+            while(!valid){
+                cout << "\n1. " << allScrollNames[20] << "\n2. " << allScrollNames[21] << "\n3. " << allScrollNames[22] << "\n4. " << allScrollNames[23] << "\n5. " << allScrollNames[24] << "\n6." << allScrollNames[25] << "\n7." << allScrollNames[26] << "\n8." << allScrollNames[27] << "\n9." << allScrollNames[28] << "\n10." << allScrollNames[29] << "\n11." << allScrollNames[30] << "\n12." << allScrollNames[31] << "\n13." << allScrollNames[32] << "\n14." << allScrollNames[33] << "\n15." << allScrollNames[34] << "\n16." << allScrollNames[35] << "\n17." << allScrollNames[36] << "\n18." << allScrollNames[37] << "\n19." << allScrollNames[38] << "\n20. " << allScrollNames[39] << "\n";
+                valid = true;
+                cin >> userAnswer;
+                if(cin.fail()){
+                    cin.clear();
+                    cin.ignore();
+                    cout << "Please enter a number (especially you, Michael)\n";
+                    valid = false;
+                }
+            }
             if(userAnswer <= 20 && userAnswer >= 1){
                 player.scrollName[i] = allScrollNames[userAnswer + 19];
 //description damages
@@ -1870,8 +1911,18 @@ cout << player.reasonSave << endl;
             data << player.scrollHaveHigherSave[i] << endl;
             data.close();
         } else if(player.playerStyle == "Fire"){
+            valid = false;
+            while(!valid){
             cout << "\n1. " << allScrollNames[40] << "\n2. " << allScrollNames[41] << "\n3. " << allScrollNames[42] << "\n4. " << allScrollNames[43] << "\n5. " << allScrollNames[44] << "\n6." << allScrollNames[45] << "\n7." << allScrollNames[46] << "\n8." << allScrollNames[47] << "\n9." << allScrollNames[48] << "\n10." << allScrollNames[49] << "\n11." << allScrollNames[50] << "\n12." << allScrollNames[51] << "\n13." << allScrollNames[52] << "\n14." << allScrollNames[53] << "\n15." << allScrollNames[54] << "\n16." << allScrollNames[55] << "\n17." << allScrollNames[56] << "\n18." << allScrollNames[57] << "\n19." << allScrollNames[58] << "\n20. " << allScrollNames[59] << "\n";
-            cin >> userAnswer;
+                valid = true;
+                cin >> userAnswer;
+                if(cin.fail()){
+                    cin.clear();
+                    cin.ignore();
+                    cout << "Please enter a number (especially you, Michael)\n";
+                    valid = false;
+                }
+            }
             if(userAnswer <= 20 && userAnswer >= 1){
                 player.scrollName[i] = allScrollNames[userAnswer + 39];
 //description damages
@@ -2195,8 +2246,18 @@ cout << player.reasonSave << endl;
             data << player.scrollHaveHigherSave[i] << endl;
             data.close();
         } else if(player.playerStyle == "Air"){
+            valid = false;
+            while(!valid){
             cout << "\n1. " << allScrollNames[60] << "\n2. " << allScrollNames[61] << "\n3. " << allScrollNames[62] << "\n4. " << allScrollNames[63] << "\n5. " << allScrollNames[64] << "\n6." << allScrollNames[65] << "\n7." << allScrollNames[66] << "\n8." << allScrollNames[67] << "\n9." << allScrollNames[68] << "\n10." << allScrollNames[69] << "\n11." << allScrollNames[70] << "\n12." << allScrollNames[71] << "\n13." << allScrollNames[72] << "\n14." << allScrollNames[73] << "\n15." << allScrollNames[74] << "\n16." << allScrollNames[75] << "\n17." << allScrollNames[76] << "\n18." << allScrollNames[77] << "\n19." << allScrollNames[78] << "\n20. " << allScrollNames[79] << "\n";
-            cin >> userAnswer;
+                valid = true;
+                cin >> userAnswer;
+                if(cin.fail()){
+                    cin.clear();
+                    cin.ignore();
+                    cout << "Please enter a number (especially you, Michael)\n";
+                    valid = false;
+                }
+            }
             if(userAnswer <= 20 && userAnswer >= 1){
                 player.scrollName[i] = allScrollNames[userAnswer + 59];
 //description damages
@@ -2520,8 +2581,18 @@ cout << player.reasonSave << endl;
             data << player.scrollHaveHigherSave[i] << endl;
             data.close();
         } else if(player.playerStyle == "Devoted"){
+            valid = false;
+            while(!valid){
             cout << "\n1. " << allScrollNames[80] << "\n2. " << allScrollNames[81] << "\n3. " << allScrollNames[82] << "\n4. " << allScrollNames[83] << "\n5. " << allScrollNames[84] << "\n6." << allScrollNames[85] << "\n7." << allScrollNames[86] << "\n8." << allScrollNames[87] << "\n9." << allScrollNames[88] << "\n10." << allScrollNames[89] << "\n11." << allScrollNames[90] << "\n12." << allScrollNames[91] << "\n13." << allScrollNames[92] << "\n14." << allScrollNames[93] << "\n15." << allScrollNames[94] << "\n16." << allScrollNames[95] << "\n17." << allScrollNames[96] << "\n18." << allScrollNames[97] << "\n";
-            cin >> userAnswer;
+                valid = true;
+                cin >> userAnswer;
+                if(cin.fail()){
+                    cin.clear();
+                    cin.ignore();
+                    cout << "Please enter a number (especially you, Michael)\n";
+                    valid = false;
+                }
+            }
             if(userAnswer <= 18 && userAnswer >= 1){
                 player.scrollName[i] = allScrollNames[userAnswer + 79];
 //description damages
@@ -2854,8 +2925,7 @@ characterInfo loadCharacter(){
     ifstream data;
 
     data.open("Data/Other/name.txt");
-    getline(data, player.playerName);    
-    //data >> player.playerName;
+    getline(data, player.playerName);
     data.close();
 
     data.open("Data/Other/style.txt");
@@ -2863,7 +2933,6 @@ characterInfo loadCharacter(){
     data.close();
 
     data.open("Data/Other/path.txt");
-    //data >> player.playerPath;
     getline(data, player.playerPath, '\n');
     cout << player.playerPath;
     data.close();
@@ -2882,7 +2951,6 @@ characterInfo loadCharacter(){
 
     data.open("Data/Other/background.txt");
     getline(data, player.playerBackground);
-    //data >> player.playerBackground;
     data.close();
 
     data.open("Data.Other/subBackground.txt");
@@ -2891,7 +2959,6 @@ characterInfo loadCharacter(){
 
     data.open("Data/Other/role.txt");
     getline(data, player.playerRole);
-    //data >> player.playerRole;
     data.close();
 
 //read the player proficiency bonus
@@ -4349,12 +4416,33 @@ int characterSheet(characterInfo player){
             cout << "\n\n\n";
         }
 
-        cout << "\n1. Roll for Stat\n2. Roll for Scroll Attack\n3. Roll for Weapon Attack\n4. Edit Something\n5. Use Practice Points\n6. Quit\n";
-        cin >> userAnswer;
+        valid = false;
+        while(!valid){
+            cout << "\n1. Roll for Stat\n2. Roll for Scroll Attack\n3. Roll for Weapon Attack\n4. Edit Something\n5. Use Practice Points\n6. Quit\n";
+            valid = true;
+            cin >> userAnswer;
+            if(cin.fail()){
+                cin.clear();
+                cin.ignore();
+                cout << "Please enter a number (especially you, Michael)\n";
+                valid = false;
+            }
+        }
+
         switch(userAnswer){
             case 1:
-                cout << "1. Power\n2. Power Save\n3. Finesse\n4. Finesse Save\n5. Vitality\n6. Vitality Save\n7. Knowledge\n8. Knowledge Save\n9. Reason\n10. Reason Save\n11. Character\n12. Character Save\n13. Athletics\n14. Acrobatics\n15. Escamotage\n16. Stealth\n17. Willpower\n18. History\n19. Investigation\n20. Nature\n21. Seafaring\n22. Spirit\n23. Taming\n24. Hunting\n25. Insight\n26. Medicine\n27. Perception\n28. Deception\n29. Intimidation\n30. Performance\n31. Persuasion\n32. Back\n";
-                cin >> userAnswer;
+                valid = false;
+                while(!valid){
+                    cout << "1. Power\n2. Power Save\n3. Finesse\n4. Finesse Save\n5. Vitality\n6. Vitality Save\n7. Knowledge\n8. Knowledge Save\n9. Reason\n10. Reason Save\n11. Character\n12. Character Save\n13. Athletics\n14. Acrobatics\n15. Escamotage\n16. Stealth\n17. Willpower\n18. History\n19. Investigation\n20. Nature\n21. Seafaring\n22. Spirit\n23. Taming\n24. Hunting\n25. Insight\n26. Medicine\n27. Perception\n28. Deception\n29. Intimidation\n30. Performance\n31. Persuasion\n32. Back\n";
+                    valid = true;
+                    cin >> userAnswer;
+                    if(cin.fail()){
+                        cin.clear();
+                        cin.ignore();
+                        cout << "Please enter a number (especially you, Michael)\n";
+                        valid = false;
+                    }
+                }
                 switch(userAnswer){
                     case 1:
                        statRoll(player.powerMod, "Power");
@@ -4456,11 +4544,21 @@ int characterSheet(characterInfo player){
                 cin >> inputWait;
                 break;
             case 2:
-                cout << "Which scroll?\n";
-                for(int i = 0; i < player.scrollCount; i++){
-                    cout << (i + 1) << ". " << player.scrollName[i] << endl;
+                valid = false;
+                while(!valid){
+                    cout << "Which scroll?\n";
+                    for(int i = 0; i < player.scrollCount; i++){
+                        cout << (i + 1) << ". " << player.scrollName[i] << endl;
+                    }
+                    valid = true;
+                    cin >> userAnswer;
+                    if(cin.fail()){
+                        cin.clear();
+                        cin.ignore();
+                        cout << "Please enter a number (especially you, Michael)\n";
+                        valid = false;
+                    }
                 }
-                cin >> userAnswer;
                 if( userAnswer > player.scrollCount ){
                     cout << "Invalid Option\n"; 
                 } else{
@@ -4487,8 +4585,18 @@ int characterSheet(characterInfo player){
                 cout << "I haven't implemented weapons yet, soon though.";
                 break;
             case 4:
-                cout << "1. Change Name\n2. Style\n3. Path\n4. Tier\n5. Outward\n6. Inward\n7. Background\n8. Role\n9. Spirit Bond\n10. Max Health\n11. Current Health\n12. Max Stamina\n13. Current Stamina\n14. Max Fortitude\n15. Current Fortitude\n16. Stats\n17. Proficiencies\n18. Party Members\n19. Allies\n20. Inventory\n21. Money\n22. Scrolls\n23. Back\n";
-                cin >> userAnswer;
+                valid = false;
+                while(!valid){
+                    cout << "1. Change Name\n2. Style\n3. Path\n4. Tier\n5. Outward\n6. Inward\n7. Background\n8. Role\n9. Spirit Bond\n10. Max Health\n11. Current Health\n12. Max Stamina\n13. Current Stamina\n14. Max Fortitude\n15. Current Fortitude\n16. Stats\n17. Proficiencies\n18. Party Members\n19. Allies\n20. Inventory\n21. Money\n22. Scrolls\n23. Back\n";
+                    valid = true;
+                    cin >> userAnswer;
+                    if(cin.fail()){
+                        cin.clear();
+                        cin.ignore();
+                        cout << "Please enter a number (especially you, Michael)\n";
+                        valid = false;
+                    }
+                }
                 switch(userAnswer){
                     case 1:
                         cout << "What would you like to change your name to?\n";
@@ -4500,8 +4608,18 @@ int characterSheet(characterInfo player){
                     case 2:
                         condition = 0;
                         while( condition == 0 ) {
-                            cout << "What is your character's new style?\n1. Water\n2. Earth\n3. Fire\n4. Air\n5. Devoted" << endl;
-                            cin >> userAnswer;        
+                            valid = false;
+                            while(!valid){
+                                cout << "What is your character's new style?\n1. Water\n2. Earth\n3. Fire\n4. Air\n5. Devoted" << endl;
+                                valid = true;
+                                cin >> userAnswer;
+                                if(cin.fail()){
+                                    cin.clear();
+                                    cin.ignore();
+                                    cout << "Please enter a number (especially you, Michael)\n";
+                                    valid = false;
+                                }
+                            }
                             switch(userAnswer){
                                 case 1:
                                     player.playerStyle = "Water";

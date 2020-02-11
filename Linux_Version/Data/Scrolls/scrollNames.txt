@@ -1,2 +1,3 @@
-Fire Blast
-Fire Fall
+Water Blast
+Rising Shield
+Water Whip
