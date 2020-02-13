@@ -1,3 +1,8 @@
+Full, Half[]
+Reaction
+Full, Half[]
+Full
+Full, Half[]
 Placeholder
 Placeholder
 Placeholder
@@ -13,6 +18,11 @@ Placeholder
 Placeholder
 Placeholder
 Placeholder
+Full, Half[]
+Full
+Reaction
+Full, Half[]
+Full
 Placeholder
 Placeholder
 Placeholder
@@ -28,6 +38,11 @@ Placeholder
 Placeholder
 Placeholder
 Placeholder
+Full
+Full
+Full
+Full
+Full
 Placeholder
 Placeholder
 Placeholder
@@ -43,25 +58,10 @@ Placeholder
 Placeholder
 Placeholder
 Placeholder
-Placeholder
-Placeholder
-Placeholder
-Placeholder
-Placeholder
-Placeholder
-Placeholder
-Placeholder
-Placeholder
-Placeholder
-Placeholder
-Placeholder
-Placeholder
-Placeholder
-Placeholder
-Placeholder
-Placeholder
-Placeholder
-Placeholder
+Full, Half[]
+Full
+Full
+Reaction
 Placeholder
 Placeholder
 Placeholder

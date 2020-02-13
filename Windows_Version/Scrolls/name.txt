@@ -23,7 +23,7 @@ Unstable Footing
 Rock Wall
 Jolting Column
 Dust Cloud
-eT2S1
+Shattered Earth
 eT2S2
 eT2S3
 eT2S4
@@ -62,7 +62,7 @@ Air Blast
 Forceful Gale
 Air Funnel
 Deflecting Flow
-Air Shift
+aT1S5
 aT2S1
 aT2S2
 aT2S3

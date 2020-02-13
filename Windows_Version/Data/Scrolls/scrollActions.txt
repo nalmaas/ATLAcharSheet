@@ -1,2 +1,2 @@
-Full
-Full
+Full, Half[]
+Reaction
