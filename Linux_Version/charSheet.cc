@@ -3027,7 +3027,7 @@ characterInfo loadCharacter(){
     getline(data, player.playerBackground);
     data.close();
 
-    data.open("Data.Other/subBackground.txt");
+    data.open("Data/Other/subBackground.txt");
     data >> player.playerSubBackground;
     data.close();
 
@@ -3954,7 +3954,7 @@ int characterSheet(characterInfo player){
 
     //done generating all of the stat modifiers
         cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlayer: " << player.playerName << "    Style: " << player.playerStyle << "    Path: " << player.playerPath << "    Tier: " << player.playerTier << endl;   
-        cout << "Outward: " << player.playerOutward << "    Inward: " << player.playerInward << "    Background: " << player.playerBackground << "    Role: " << player.playerRole << endl << endl;
+        cout << "Outward: " << player.playerOutward << "    Inward: " << player.playerInward << "    Background: " << player.playerBackground << ", " << player.playerSubBackground << "    Role: " << player.playerRole << endl << endl;
 
         switch(player.playerSpiritBond){
             case 0:
@@ -4414,9 +4414,9 @@ int characterSheet(characterInfo player){
         cout << "\n\n--------------------------------------------------------------------------------\n\n";
 
         cout << "Features:\n";
-        /*cout << "1. Filler feature\n    -This feature will remain here until Nathan gets his shit together and properly adds features to this barely functional program.\n\n";
-*/
-        cout << "1. " << player.featureName[0] << "\n   " << player.featureDescription[0] << "\n\n";
+        for(int i = 0; i < player.featureCount; i++){
+            cout << (i + 1) << ". " << player.featureName[i] << "\n   " << player.featureDescription[i] << "\n\n";
+        }
 
         cout << "Party Members:\n";
         ifstream reading;
@@ -4750,8 +4750,18 @@ int characterSheet(characterInfo player){
                     case 3:
                         if( player.playerStyle == "Water" ){
                             while( condition == 0 ) {
-                                cout << "What is your character's new path?\n1. Path of Restoration\n2. Path of the Stoic\n3. Path of Subjugation\n4. None" << endl;
-                                cin >> userAnswer;        
+                                valid = false;
+                                while(!valid){
+                                    cout << "What is your character's new path?\n1. Path of Restoration\n2. Path of the Stoic\n3. Path of Subjugation\n4. None\n";
+                                    valid = true;
+                                    cin >> userAnswer;
+                                    if(cin.fail()){
+                                        cin.clear();
+                                        cin.ignore();
+                                        cout << "Please enter a number (especially you, Michael)\n";
+                                        valid = false;
+                                    }
+                                }
                                 switch(userAnswer){
                                     case 1:
                                         player.playerPath = "Path of Restoration";
@@ -4768,13 +4778,24 @@ int characterSheet(characterInfo player){
                                     default:
                                         player.playerPath = "None";
                                         condition = 1;
-                                        break;} 
+                                        break;
+                                }
                             }
                             condition = 0;
                         } else if( player.playerStyle == "Earth" ){
                             while( condition == 0 ) {
-                                cout << "What is your character's new path?\n1. Path of the Peacekeeper\n2. Path of the Purist\n3. Path of the Ravager\n4. None" << endl;
-                                cin >> userAnswer;        
+                                valid = false;
+                                while(!valid){
+                                    cout << "What is your character's new path?\n1. Path of the Peacekeeper\n2. Path of the Purist\n3. Path of the Ravager\n4. None\n";
+                                    valid = true;
+                                    cin >> userAnswer;
+                                    if(cin.fail()){
+                                        cin.clear();
+                                        cin.ignore();
+                                        cout << "Please enter a number (especially you, Michael)\n";
+                                        valid = false;
+                                    }
+                                }
                                 switch(userAnswer){
                                     case 1:
                                         player.playerPath = "Path of the Peacekeeper";
@@ -4791,13 +4812,24 @@ int characterSheet(characterInfo player){
                                     default:
                                         player.playerPath = "None";
                                         condition = 1;
-                                        break;}
+                                        break;
+                                }
                             }
                             condition = 0;
                         } else if( player.playerStyle == "Fire" ){
                             while( condition == 0 ) {
-                                cout << "What is your character's new path?\n1. Path of the Elevated\n2. Path of the Zelous\n3. Path of the Fanatic\n4. None" << endl;
-                                cin >> userAnswer;        
+                                valid = false;
+                                while(!valid){
+                                    cout << "What is your character's new path?\n1. Path of the Elevated\n2. Path of the Zelous\n3. Path of the Fanatic\n4. None\n";
+                                    valid = true;
+                                    cin >> userAnswer;
+                                    if(cin.fail()){
+                                        cin.clear();
+                                        cin.ignore();
+                                        cout << "Please enter a number (especially you, Michael)\n";
+                                        valid = false;
+                                    }
+                                }
                                 switch(userAnswer){
                                    case 1:
                                         player.playerPath = "Path of the Elevated";
@@ -4814,13 +4846,24 @@ int characterSheet(characterInfo player){
                                     default:
                                         player.playerPath = "None";
                                         condition = 1;
-                                        break;}
+                                        break;
+                                }
                             }
                             condition = 0;
                         } else if( player.playerStyle == "Air" ){
                             while( condition == 0 ) {
-                                cout << "What is your character's new path?\n1. Path of Peace\n2. Path of Indifference\n3. Path of Conflict\n4. None" << endl;
-                                cin >> userAnswer;        
+                                valid = false;
+                                while(!valid){
+                                    cout << "What is your character's new path?\n1. Path of Peace\n2. Path of Indifference\n3. Path of Conflict\n4. None\n";
+                                    valid = true;
+                                    cin >> userAnswer;
+                                    if(cin.fail()){
+                                        cin.clear();
+                                        cin.ignore();
+                                        cout << "Please enter a number (especially you, Michael)\n";
+                                        valid = false;
+                                    }
+                                }
                                 switch(userAnswer){
                                     case 1:
                                         player.playerPath = "Path of Peace";
@@ -4837,13 +4880,24 @@ int characterSheet(characterInfo player){
                                     default:
                                         player.playerPath = "None";
                                         condition = 1;
-                                        break;}
+                                        break;
+                                }
                             }
                                 condition = 0;
                         } else if( player.playerStyle == "Devoted" ){
                             while( condition == 0 ) {
-                                cout << "What is your character's new path?\n1. Spirit Blocker\n2. The Duelist\n3. The Assassin\n4. None" << endl;
-                                cin >> userAnswer;        
+                                valid = false;
+                                while(!valid){
+                                    cout << "What is your character's new path?\n1. Spirit Blocker\n2. The Duelist\n3. The Assassin\n4. None\n";
+                                    valid = true;
+                                    cin >> userAnswer;
+                                    if(cin.fail()){
+                                        cin.clear();
+                                        cin.ignore();
+                                        cout << "Please enter a number (especially you, Michael)\n";
+                                        valid = false;
+                                    }
+                                }
                                 switch(userAnswer){
                                     case 1:
                                         player.playerPath = "Spirit Blocker";
@@ -4869,25 +4923,35 @@ int characterSheet(characterInfo player){
                         data.close();
                         break;
                     case 4:
-                        cout << "What is your new tier?\n";
-                        cin >> userAnswer;
-                            switch(userAnswer){
-                                case 2:
-                                    player.playerTier = 2;
-                                    break;
-                                case 3:
-                                    player.playerTier  = 3;
-                                    break;
-                                case 4:
-                                    player.playerTier = 4;
-                                    break;
-                                default:
-                                    player.playerTier = 1;
-                                    break;
+                        valid = false;
+                        while(!valid){
+                            cout << "What is your new tier?\n";
+                            valid = true;
+                            cin >> userAnswer;
+                            if(cin.fail()){
+                                cin.clear();
+                                cin.ignore();
+                                cout << "Please enter a number (especially you, Michael)\n";
+                                valid = false;
+                            }
+                        }
+                        switch(userAnswer){
+                            case 2:
+                                player.playerTier = 2;
+                                break;
+                            case 3:
+                                player.playerTier  = 3;
+                                break;
+                            case 4:
+                                player.playerTier = 4;
+                                break;
+                            default:
+                                player.playerTier = 1;
+                                break;
+                        }
                         data.open("Data/Other/tier.txt", std::fstream::trunc);
                         data << player.playerTier;
                         data.close();
-                            }
                         break;
                     case 5:
                         cout << "What is your character's new outward personality?" << endl << "1. Benevolent\n2. Ambivalent\n3. Malevolent\n";
@@ -4925,32 +4989,25 @@ int characterSheet(characterInfo player){
                         data << player.playerInward;
                         data.close();
                         break;
-                    case 7://update this
-                        cout << "What is your character's new background?\n";
-                        cin >> player.playerBackground;
-                        data.open("Data/Other/background.txt", std::fstream::trunc);
-                        data << player.playerBackground;
-                        data.close();
-
-
+                    case 7:
                         valid = false;
-                            while(!valid){
-                                cout << "\nWhat is your character's background?\n1. Seaman\n2. Townsman\n3. Traveler\n4. Urchin\n5. Warrior\n" << endl;
-                                valid = true;
-                                cin >> userAnswer;
-                                if(cin.fail()){
-                                    cin.clear();
-                                    cin.ignore();
-                                    cout << "Please enter a number (especially you, Michael)\n";
-                                    valid = false;
-                                }
+                        while(!valid){
+                            cout << "\nWhat is your character's new background?\n1. Seaman\n2. Townsfolk\n3. Traveler\n4. Urchin\n5. Warrior\n" << endl;
+                            valid = true;
+                            cin >> userAnswer;
+                            if(cin.fail()){
+                                cin.clear();
+                                cin.ignore();
+                                cout << "Please enter a number (especially you, Michael)\n";
+                                valid = false;
                             }
+                        }
                         switch(userAnswer){
                             case 1:
                                 player.playerBackground = "Seaman";
                                 break;
                             case 2:
-                                player.playerBackground = "Townsman";
+                                player.playerBackground = "Townsfolk";
                                 break;
                             case 3:
                                 player.playerBackground = "Traveler";
@@ -4966,13 +5023,12 @@ int characterSheet(characterInfo player){
                                 break;
                         }
 
-
                         valid = false;
                             while(!valid){
-                                cout << "\nWhat is your character's secondary background?\n";
+                                cout << "\nWhat is your character's new secondary background?\n";
                                 if(player.playerBackground == "Seaman"){
                                     cout << "1. Fisherman\n2. Sailor\n";
-                                }else if(player.playerBackground == "Townsman"){
+                                }else if(player.playerBackground == "Townsfolk"){
                                     cout << "1. Merchant\n2. Official\n";
                                 }else if(player.playerBackground == "Traveler"){
                                     cout << "1. Huntsman\n2. Guide\n";
@@ -5006,13 +5062,25 @@ int characterSheet(characterInfo player){
                                     player.playerSubBackground = "None";
                                     break;
                             }
-                        }else if(player.playerBackground == "Townsman"){
+                        }else if(player.playerBackground == "Townsfolk"){
                             switch(userAnswer){
                                 case 1:
-                                    player.playerSubBackground = "Merchant";
+                                    player.playerSubBackground = "Innkeep";
                                     break;
                                 case 2:
-                                    player.playerSubBackground = "Official";
+                                    player.playerSubBackground = "Merchant";
+                                    break;
+                                default:
+                                    player.playerSubBackground = "None";
+                                    break;
+                            }
+                        }else if(player.playerBackground == "Official"){
+                            switch(userAnswer){
+                                case 1:
+                                    player.playerSubBackground = "Councilman";
+                                    break;
+                                case 2:
+                                    player.playerSubBackground = "Peacekeeper";
                                     break;
                                 default:
                                     player.playerSubBackground = "None";
