@@ -210,7 +210,7 @@ int main(){
     count = 0;
     while(!extracting.eof()){
         getline(extracting, allScrollNames[count]);
-        count = count + 1;
+        count++;
     }
     extracting.close();
 
@@ -1351,7 +1351,7 @@ cout << player.reasonSave << endl;
                     } else{
                         getline(extracting, player.scrollDescriptionDamage[i]);
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //description actives
@@ -1364,7 +1364,7 @@ cout << player.reasonSave << endl;
                     } else{
                         getline(extracting, player.scrollDescriptionActive[i]);
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //dice types
@@ -1377,7 +1377,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollDiceType[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //dice counts
@@ -1390,7 +1390,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollDiceCount[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //tiers
@@ -1404,7 +1404,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollTier[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //ranges
@@ -1417,7 +1417,7 @@ cout << player.reasonSave << endl;
                     } else{
                         getline(extracting, player.scrollRange[i]);
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //actions
@@ -1431,7 +1431,7 @@ cout << player.reasonSave << endl;
                     } else{
                         getline(extracting, player.scrollAction[i]);
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //types
@@ -1445,7 +1445,7 @@ cout << player.reasonSave << endl;
                     } else{
                         getline(extracting, player.scrollStyle[i]);
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //extra damages
@@ -1459,7 +1459,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollExtraDamage[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //have extra damages
@@ -1473,7 +1473,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHaveExtraDamage[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //half actions
@@ -1486,7 +1486,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHalfAction[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //have half actions
@@ -1499,7 +1499,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHaveHalfAction[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //extra dies
@@ -1512,7 +1512,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollExtraDie[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //have extra dies
@@ -1525,7 +1525,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHaveExtraDie[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //extra ranges
@@ -1538,7 +1538,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollExtraRange[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //have extra ranges
@@ -1551,7 +1551,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHaveExtraRange[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //higher saves
@@ -1564,7 +1564,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHigherSave[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //have higher saves
@@ -1577,7 +1577,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHaveHigherSave[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
             } else{
@@ -1627,7 +1627,7 @@ cout << player.reasonSave << endl;
                     } else{
                         getline(extracting, player.scrollDescriptionDamage[i]);
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //description actives
@@ -1640,7 +1640,7 @@ cout << player.reasonSave << endl;
                     } else{
                         getline(extracting, player.scrollDescriptionActive[i]);
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //dice types
@@ -1653,7 +1653,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollDiceType[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //dice counts
@@ -1666,7 +1666,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollDiceCount[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //tiers
@@ -1679,7 +1679,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollTier[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //ranges
@@ -1692,7 +1692,7 @@ cout << player.reasonSave << endl;
                     } else{
                         getline(extracting, player.scrollRange[i]);
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //actions
@@ -1705,7 +1705,7 @@ cout << player.reasonSave << endl;
                     } else{
                         getline(extracting, player.scrollAction[i]);
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //types
@@ -1718,7 +1718,7 @@ cout << player.reasonSave << endl;
                     } else{
                         getline(extracting, player.scrollStyle[i]);
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //extra damages
@@ -1731,7 +1731,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollExtraDamage[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //have extra damages
@@ -1744,7 +1744,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHaveExtraDamage[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //half actions
@@ -1757,7 +1757,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHalfAction[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //have half actions
@@ -1770,7 +1770,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHaveHalfAction[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //extra dies
@@ -1783,7 +1783,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollExtraDie[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //have extra dies
@@ -1796,7 +1796,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHaveExtraDie[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //extra ranges
@@ -1809,7 +1809,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollExtraRange[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //have extra ranges
@@ -1822,7 +1822,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHaveExtraRange[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //higher saves
@@ -1835,7 +1835,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHigherSave[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //have higher saves
@@ -1848,7 +1848,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHaveHigherSave[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
             } else{
@@ -1898,7 +1898,7 @@ cout << player.reasonSave << endl;
                     } else{
                         getline(extracting, player.scrollDescriptionDamage[i]);
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //description actives
@@ -1911,7 +1911,7 @@ cout << player.reasonSave << endl;
                     } else{
                         getline(extracting, player.scrollDescriptionActive[i]);
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //dice types
@@ -1925,7 +1925,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollDiceType[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //dice counts
@@ -1939,7 +1939,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollDiceCount[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //tiers
@@ -1953,7 +1953,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollTier[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //ranges
@@ -1967,7 +1967,7 @@ cout << player.reasonSave << endl;
                     } else{
                         getline(extracting, player.scrollRange[i]);
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //actions
@@ -1981,7 +1981,7 @@ cout << player.reasonSave << endl;
                     } else{
                         getline(extracting, player.scrollAction[i]);
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //types
@@ -1995,7 +1995,7 @@ cout << player.reasonSave << endl;
                     } else{
                         getline(extracting, player.scrollStyle[i]);
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //extra damages
@@ -2009,7 +2009,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollExtraDamage[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //have extra damages
@@ -2023,7 +2023,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHaveExtraDamage[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //half actions
@@ -2036,7 +2036,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHalfAction[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //have half actions
@@ -2049,7 +2049,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHaveHalfAction[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //extra dies
@@ -2062,7 +2062,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollExtraDie[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //have extra dies
@@ -2075,7 +2075,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHaveExtraDie[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //extra ranges
@@ -2088,7 +2088,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollExtraRange[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //have extra ranges
@@ -2101,7 +2101,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHaveExtraRange[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //higher saves
@@ -2114,7 +2114,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHigherSave[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //have higher saves
@@ -2127,7 +2127,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHaveHigherSave[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
             } else{
@@ -2177,7 +2177,7 @@ cout << player.reasonSave << endl;
                     } else{
                         getline(extracting, player.scrollDescriptionDamage[i]);
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //description actives
@@ -2190,7 +2190,7 @@ cout << player.reasonSave << endl;
                     } else{
                         getline(extracting, player.scrollDescriptionActive[i]);
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //dice types
@@ -2204,7 +2204,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollDiceType[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //dice counts
@@ -2218,7 +2218,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollDiceCount[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //tiers
@@ -2232,7 +2232,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollTier[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //ranges
@@ -2246,7 +2246,7 @@ cout << player.reasonSave << endl;
                     } else{
                         getline(extracting, player.scrollRange[i]);
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //actions
@@ -2260,7 +2260,7 @@ cout << player.reasonSave << endl;
                     } else{
                         getline(extracting, player.scrollAction[i]);
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //types
@@ -2274,7 +2274,7 @@ cout << player.reasonSave << endl;
                     } else{
                         getline(extracting, player.scrollStyle[i]);
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //extra damages
@@ -2288,7 +2288,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollExtraDamage[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //have extra damages
@@ -2302,7 +2302,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHaveExtraDamage[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //half actions
@@ -2315,7 +2315,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHalfAction[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //have half actions
@@ -2328,7 +2328,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHaveHalfAction[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //extra dies
@@ -2341,7 +2341,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollExtraDie[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //have extra dies
@@ -2354,7 +2354,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHaveExtraDie[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //extra ranges
@@ -2367,7 +2367,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollExtraRange[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //have extra ranges
@@ -2380,7 +2380,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHaveExtraRange[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //higher saves
@@ -2393,7 +2393,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHigherSave[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //have higher saves
@@ -2406,7 +2406,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHaveHigherSave[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
             } else{
@@ -2456,7 +2456,7 @@ cout << player.reasonSave << endl;
                     } else{
                         getline(extracting, player.scrollDescriptionDamage[i]);
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //description actives
@@ -2469,7 +2469,7 @@ cout << player.reasonSave << endl;
                     } else{
                         getline(extracting, player.scrollDescriptionActive[i]);
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //dice types
@@ -2483,7 +2483,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollDiceType[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //dice counts
@@ -2497,7 +2497,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollDiceCount[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //tiers
@@ -2511,7 +2511,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollTier[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //ranges
@@ -2525,7 +2525,7 @@ cout << player.reasonSave << endl;
                     } else{
                         getline(extracting, player.scrollRange[i]);
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //actions
@@ -2539,7 +2539,7 @@ cout << player.reasonSave << endl;
                     } else{
                         getline(extracting, player.scrollAction[i]);
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //types
@@ -2553,7 +2553,7 @@ cout << player.reasonSave << endl;
                     } else{
                         getline(extracting, player.scrollStyle[i]);
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //extra damages
@@ -2567,7 +2567,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollExtraDamage[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //have extra damages
@@ -2581,7 +2581,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHaveExtraDamage[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //half actions
@@ -2594,7 +2594,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHalfAction[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //have half actions
@@ -2607,7 +2607,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHaveHalfAction[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //extra dies
@@ -2620,7 +2620,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollExtraDie[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //have extra dies
@@ -2633,7 +2633,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHaveExtraDie[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //extra ranges
@@ -2646,7 +2646,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollExtraRange[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //have extra ranges
@@ -2659,7 +2659,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHaveExtraRange[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //higher saves
@@ -2672,7 +2672,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHigherSave[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
 //have higher saves
@@ -2685,7 +2685,7 @@ cout << player.reasonSave << endl;
                     } else{
                         extracting >> player.scrollHaveHigherSave[i];
                     }
-                    count = count + 1;
+                    count++;
                 }
                 extracting.close();
             } else{
@@ -2845,7 +2845,7 @@ characterInfo loadCharacter(){
     {
         getline(extracting, player.playerParty[count], '\n');
         //cout << count << ". " << player.playerParty[count] << endl;
-        count = count + 1;
+        count++;
     }
     extracting.close();
 
@@ -2860,7 +2860,7 @@ characterInfo loadCharacter(){
     {
         getline(extracting, player.playerAllies[count], '\n');
         cout << count << ". " << player.playerAllies[count] << endl;
-        count = count + 1;
+        count++;
     }
     extracting.close();
 
@@ -2878,7 +2878,7 @@ characterInfo loadCharacter(){
     {
         getline(extracting, player.playerInventory[count], '\n');
         //cout << count << ". " << player.playerInventory[count] << endl;
-        count = count + 1;
+        count++;
     }
     extracting.close();
 
@@ -2903,7 +2903,7 @@ characterInfo loadCharacter(){
     while(!extracting.eof() && count < player.scrollCount)
     {
         getline(extracting, player.scrollName[count], '\n');
-        count = count + 1;
+        count++;
     }
     extracting.close();
 
@@ -2912,7 +2912,7 @@ characterInfo loadCharacter(){
     while(!extracting.eof() && count < player.scrollCount)
     {
         getline(extracting, player.scrollDescriptionDamage[count], '\n');
-        count = count + 1;
+        count++;
     }
     extracting.close();
 
@@ -2922,7 +2922,7 @@ characterInfo loadCharacter(){
     {
         getline(extracting, player.scrollDescriptionActive[count], '\n');
         cout << player.scrollDescriptionActive[count] << endl;
-        count = count + 1;
+        count++;
     }
     extracting.close();
 //add converting string to int later
@@ -2932,7 +2932,7 @@ characterInfo loadCharacter(){
     {
         extracting >> player.scrollDiceType[count];
         cout << player.scrollDiceType[count] << endl;
-        count = count + 1;
+        count++;
     }
     extracting.close();
 
@@ -2941,7 +2941,7 @@ characterInfo loadCharacter(){
     while(!extracting.eof() && count < player.scrollCount)
     {
         extracting >> player.scrollDiceCount[count];
-        count = count + 1;
+        count++;
     }
     extracting.close();
 
@@ -2950,7 +2950,7 @@ characterInfo loadCharacter(){
     while(!extracting.eof() && count < player.scrollCount)
     {
         extracting >> player.scrollTier[count];
-        count = count + 1;
+        count++;
     }
     extracting.close();
 
@@ -2959,7 +2959,7 @@ characterInfo loadCharacter(){
     while(!extracting.eof() && count < player.scrollCount)
     {
         getline(extracting, player.scrollRange[count]);
-        count = count + 1;
+        count++;
     }
     extracting.close();
 
@@ -2969,7 +2969,7 @@ characterInfo loadCharacter(){
     {
         //extracting >> player.scrollAction[count];
         getline(extracting, player.scrollAction[count]);
-        count = count + 1;
+        count++;
     }
     extracting.close();
 
@@ -2978,7 +2978,7 @@ characterInfo loadCharacter(){
     while(!extracting.eof() && count < player.scrollCount)
     {
         extracting >> player.scrollStyle[count];
-        count = count + 1;
+        count++;
     }
     extracting.close();
 
@@ -2987,7 +2987,7 @@ characterInfo loadCharacter(){
     while(!extracting.eof() && count < player.scrollCount)
     {
         extracting >> player.scrollExtraDamage[count];
-        count = count + 1;
+        count++;
     }
     extracting.close();
 
@@ -2996,7 +2996,7 @@ characterInfo loadCharacter(){
     while(!extracting.eof() && count < player.scrollCount)
     {
         extracting >> player.scrollHaveExtraDamage[count];
-        count = count + 1;
+        count++;
     }
     extracting.close();
 
@@ -3005,7 +3005,7 @@ characterInfo loadCharacter(){
     while(!extracting.eof() && count < player.scrollCount)
     {
         extracting >> player.scrollHalfAction[count];
-        count = count + 1;
+        count++;
     }
     extracting.close();
 
@@ -3014,7 +3014,7 @@ characterInfo loadCharacter(){
     while(!extracting.eof() && count < player.scrollCount)
     {
         extracting >> player.scrollHaveHalfAction[count];
-        count = count + 1;
+        count++;
     }
     extracting.close();
 
@@ -3023,7 +3023,7 @@ characterInfo loadCharacter(){
     while(!extracting.eof() && count < player.scrollCount)
     {
         extracting >> player.scrollExtraDie[count];
-        count = count + 1;
+        count++;
     }
     extracting.close();
 
@@ -3032,7 +3032,7 @@ characterInfo loadCharacter(){
     while(!extracting.eof() && count < player.scrollCount)
     {
         extracting >> player.scrollHaveExtraDie[count];
-        count = count + 1;
+        count++;
     }
     extracting.close();
 
@@ -3041,7 +3041,7 @@ characterInfo loadCharacter(){
     while(!extracting.eof() && count < player.scrollCount)
     {
         extracting >> player.scrollExtraRange[count];
-        count = count + 1;
+        count++;
     }
     extracting.close();
 
@@ -3050,7 +3050,7 @@ characterInfo loadCharacter(){
     while(!extracting.eof() && count < player.scrollCount)
     {
         extracting >> player.scrollHaveExtraRange[count];
-        count = count + 1;
+        count++;
     }
     extracting.close();
 
@@ -3059,7 +3059,7 @@ characterInfo loadCharacter(){
     while(!extracting.eof() && count < player.scrollCount)
     {
         extracting >> player.scrollHigherSave[count];
-        count = count + 1;
+        count++;
     }
     extracting.close();
 
@@ -3068,7 +3068,7 @@ characterInfo loadCharacter(){
     while(!extracting.eof() && count < player.scrollCount)
     {
         extracting >> player.scrollHaveHigherSave[count];
-        count = count + 1;
+        count++;
     }
     extracting.close();
 
@@ -3164,7 +3164,7 @@ int characterSheet(characterInfo player){
         {
             getline(extracting, player.playerParty[count], '\n');
             //cout << count << ". " << player.playerParty[count] << endl;
-            count = count + 1;
+            count++;
         }
         extracting.close();
 
@@ -3176,7 +3176,7 @@ int characterSheet(characterInfo player){
         {
             getline(extracting, player.playerAllies[count], '\n');
             cout << count << ". " << player.playerAllies[count] << endl;
-            count = count + 1;
+            count++;
         }
         extracting.close();
 
@@ -3210,7 +3210,7 @@ int characterSheet(characterInfo player){
         {
             getline(extracting, player.playerInventory[count], '\n');
             //cout << count << ". " << player.playerInventory[count] << endl;
-            count = count + 1;
+            count++;
         }
         extracting.close();
     
