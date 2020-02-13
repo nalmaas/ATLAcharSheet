@@ -253,6 +253,7 @@ int main(){
 characterInfo createCharacter(){
     characterInfo player;    
     ofstream data;
+    ifstream extracting;
     cout << "Welcome to the character creator! Just follow the instructions to create your character. Don't worry if you input something incorrectly. You can go back and change it later so just continue filling in everything else." << endl << endl;
 
     cout << "What is your character's name?" << endl;
@@ -545,7 +546,7 @@ characterInfo createCharacter(){
 
     valid = false;
         while(!valid){
-            cout << "\nWhat is your character's background?\n1. Seaman\n2. Townsman\n3. Traveler\n4. Urchin\n5. Warrior\n" << endl;
+            cout << "\nWhat is your character's background?\n1. Seaman\n2. Townsfolk\n3. Official\n4. Traveler\n5. Urchin\n6. Warrior\n" << endl;
             valid = true;
             cin >> userAnswer;
             if(cin.fail()){
@@ -560,15 +561,18 @@ characterInfo createCharacter(){
             player.playerBackground = "Seaman";
             break;
         case 2:
-            player.playerBackground = "Townsman";
+            player.playerBackground = "Townsfolk";
             break;
         case 3:
-            player.playerBackground = "Traveler";
+            player.playerBackground = "Official";
             break;
         case 4:
-            player.playerBackground = "Urchin";
+            player.playerBackground = "Traveler";
             break;
         case 5:
+            player.playerBackground = "Urchin";
+            break;
+        case 6:
             player.playerBackground = "Warrior";
             break;
         default:
@@ -582,8 +586,10 @@ characterInfo createCharacter(){
             cout << "\nWhat is your character's secondary background?\n";
             if(player.playerBackground == "Seaman"){
                 cout << "1. Fisherman\n2. Sailor\n";
-            }else if(player.playerBackground == "Townsman"){
-                cout << "1. Merchant\n2. Official\n";
+            }else if(player.playerBackground == "Townsfolk"){
+                cout << "1. Inkeep\n2. Merchant\n";
+            }else if(player.playerBackground == "Official"){
+                cout << "1. Councilman\n2. Peacekeeper\n";
             }else if(player.playerBackground == "Traveler"){
                 cout << "1. Huntsman\n2. Guide\n";
             }else if(player.playerBackground == "Urchin"){
@@ -603,26 +609,45 @@ characterInfo createCharacter(){
                 valid = false;
             }
         }
-
+    int featureNumber = -1;
+    player.featureCount = 1;
     if(player.playerBackground == "Seaman"){
         switch(userAnswer){
             case 1:
                 player.playerSubBackground = "Fisherman";
+                featureNumber = 1;
                 break;
             case 2:
                 player.playerSubBackground = "Sailor";
+                featureNumber = 2;
                 break;
             default:
                 player.playerSubBackground = "None";
                 break;
         }
-    }else if(player.playerBackground == "Townsman"){
+    }else if(player.playerBackground == "Townsfolk"){
         switch(userAnswer){
             case 1:
-                player.playerSubBackground = "Merchant";
+                player.playerSubBackground = "Innkeep";
+                featureNumber = 3;
                 break;
             case 2:
-                player.playerSubBackground = "Official";
+                player.playerSubBackground = "Merchant";
+                featureNumber = 4;
+                break;
+            default:
+                player.playerSubBackground = "None";
+                break;
+        }
+    }else if(player.playerBackground == "Official"){
+        switch(userAnswer){
+            case 1:
+                player.playerSubBackground = "Councilman";
+                featureNumber = 5;
+                break;
+            case 2:
+                player.playerSubBackground = "Peacekeeper";
+                featureNumber = 6;
                 break;
             default:
                 player.playerSubBackground = "None";
@@ -632,9 +657,11 @@ characterInfo createCharacter(){
         switch(userAnswer){
             case 1:
                 player.playerSubBackground = "Huntsman";
+                featureNumber = 7;
                 break;
             case 2:
                 player.playerSubBackground = "Guide";
+                featureNumber = 8;
                 break;
             default:
                 player.playerSubBackground = "None";
@@ -644,9 +671,11 @@ characterInfo createCharacter(){
         switch(userAnswer){
             case 1:
                 player.playerSubBackground = "Thief";
+                featureNumber = 9;
                 break;
             case 2:
                 player.playerSubBackground = "Pirate";
+                featureNumber = 10;
                 break;
             default:
                 player.playerSubBackground = "None";
@@ -656,9 +685,11 @@ characterInfo createCharacter(){
         switch(userAnswer){
             case 1:
                 player.playerSubBackground = "Mercenary";
+                featureNumber = 11;
                 break;
             case 2:
                 player.playerSubBackground = "Soldier";
+                featureNumber = 12;
                 break;
             default:
                 player.playerSubBackground = "None";
@@ -675,6 +706,50 @@ characterInfo createCharacter(){
     data.open("Data/Other/subBackground.txt", std::fstream::trunc);
     data << player.playerSubBackground;
     data.close();
+
+//determine features
+    if(featureNumber == -1){
+        player.featureName[0] = "";
+        player.featureDescription[0] = "";
+    }else{
+        count = 0;
+        extracting.open("Features/featureName.txt", std::ifstream::in);
+        while(!extracting.eof()){
+            count++;
+            if(count != featureNumber){
+                getline(extracting, tempString);
+            } else{
+                getline(extracting, player.featureName[0]);
+            }
+        }
+        extracting.close();
+        count = 0;
+        extracting.open("Features/featureDescription.txt", std::ifstream::in);
+        while(!extracting.eof()){
+            count++;
+            if(count != featureNumber){
+                getline(extracting, tempString);
+            } else{
+                getline(extracting, player.featureDescription[0]);
+            }
+        }
+        extracting.close();
+    }
+    cout << "\n\n" << player.featureName[0] << "\n" << player.featureDescription[0] << "\n\n";
+
+    data.open("Data/Features/featureNames.txt", std::fstream::trunc);
+    data << player.featureName[0] << endl;
+    data.close();
+
+    data.open("Data/Features/featureDescriptions.txt", std::fstream::trunc);    
+    data << player.featureDescription[0] << endl;
+    data.close();
+
+    data.open("Data/Features/featureCount.txt", std::fstream::trunc);
+    data << player.featureCount;
+    data.close();
+
+
 
 //initialize saving throws and proficiencies
     player.powerSave = false;
@@ -1249,7 +1324,6 @@ cout << player.reasonSave << endl;
 
     eraseScrolls();
 
-    ifstream extracting;
     for(int i = 0; i < player.scrollCount; i++){
         if(player.playerStyle == "Water"){
             valid = false;
@@ -3172,7 +3246,8 @@ characterInfo loadCharacter(){
     count = 0;
     while(!extracting.eof() && count < player.scrollCount)
     {
-        extracting >> player.scrollAction[count];
+        //extracting >> player.scrollAction[count];
+        getline(extracting, player.scrollAction[count]);
         count = count + 1;
     }
     extracting.close();
@@ -3386,6 +3461,25 @@ int characterSheet(characterInfo player){
 
 //will add notes
 //will add features
+        extracting.open("Data/Features/featureCount.txt", std::ifstream::in);
+        extracting >> player.featureCount;
+        extracting.close();
+
+        extracting.open("Data/Features/featureNames.txt", std::ifstream::in);
+        count = 0;
+        while(!extracting.eof()){
+            getline(extracting, player.featureName[count], '\n');
+            count++;
+        }
+        extracting.close();
+
+        extracting.open("Data/Features/featureDescriptions.txt", std::ifstream::in);
+        count = 0;
+        while(!extracting.eof()){
+            getline(extracting, player.featureDescription[count], '\n');
+            count++;
+        }
+        extracting.close();
 
 
 //will add inventory *added*
@@ -4320,7 +4414,9 @@ int characterSheet(characterInfo player){
         cout << "\n\n--------------------------------------------------------------------------------\n\n";
 
         cout << "Features:\n";
-        cout << "1. Filler feature\n    -This feature will remain here until Nathan gets his shit together and properly adds features to this barely functional program.\n\n";
+        /*cout << "1. Filler feature\n    -This feature will remain here until Nathan gets his shit together and properly adds features to this barely functional program.\n\n";
+*/
+        cout << "1. " << player.featureName[0] << "\n   " << player.featureDescription[0] << "\n\n";
 
         cout << "Party Members:\n";
         ifstream reading;
