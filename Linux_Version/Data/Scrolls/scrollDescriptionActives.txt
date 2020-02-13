@@ -1,0 +1,2 @@
+Placeholder
+If the target’s fortitude is at or below 13, you may instead have the whip pull the target 10 feet closer.

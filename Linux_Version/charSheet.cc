@@ -214,7 +214,6 @@ int main(){
     }
     extracting.close();
 
-
     characterInfo characterData;
     while( condition == 0 ) {
         valid = false;
